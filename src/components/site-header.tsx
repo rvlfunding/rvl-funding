@@ -17,7 +17,7 @@ export function SiteHeader() {
           <div className="brand-mark">RVL</div>
           <div className="brand-text">
             <h4>RVL Funding</h4>
-            <p>Cross-Border Wealth · U.S. Immigration</p>
+            <p>Wealth · Immigration</p>
           </div>
         </Link>
         <nav aria-label="Primary">
