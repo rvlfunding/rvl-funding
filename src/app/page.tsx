@@ -7,7 +7,7 @@ export default function Home() {
     <div className="page-home">
       <section className="hero-home" aria-label="Hero">
         <div className="hero-home-shine" aria-hidden={true} />
-<div className="hero-home-noise" aria-hidden={true} />
+        <div className="hero-home-noise" aria-hidden={true} />
         <div className="hero-home-inner">
           <div className="hero-home-copy">
             <span className="eyebrow">Wealth · Immigration · Tax Strategy</span>
@@ -24,7 +24,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-         <div className="hero-glass-panel" aria-hidden={true} style={{ textAlign: 'center' }}>
+          <div className="hero-glass-panel" aria-hidden={true} style={{ textAlign: 'center' }}>
             <div className="hero-monogram" style={{ textAlign: 'center' }}>RVL</div>
             <p className="hero-glass-tagline" style={{
               color: 'rgba(212, 175, 55, 0.7)',
@@ -38,18 +38,6 @@ export default function Home() {
               Reliability · Value · Legacy
             </p>
           </div>
-  <div className="hero-monogram">RVL</div>
-  <p className="hero-glass-tagline" style={{
-    color: 'var(--gold)',
-    fontSize: 'clamp(1rem, 1.8vw, 1.35rem)',
-    letterSpacing: '0.08em',
-    lineHeight: 1.6,
-    opacity: 1,
-    textAlign: 'center',
-  }}>
-    Reliability · Value · Legacy
-  </p>
-</div>
         </div>
       </section>
 
@@ -57,10 +45,10 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Capabilities</span>
-            <h2 id="services-heading">Four pillars for capital that crosses Borders</h2>
+            <h2 id="services-heading">Four Pillars for Capital That Crosses Borders</h2>
             <p>
-  Immigration as the anchor. Followed by strategic allocation, tax efficiency, and protective structures—all orchestrated under a single, cohesive project cadence that your auditors and outside counsel can rely on with confidence.
-</p>
+              Immigration as the anchor. Followed by strategic allocation, tax efficiency, and protective structures—all orchestrated under a single, cohesive project cadence that your auditors and outside counsel can rely on with confidence.
+            </p>
           </div>
           <div className="service-grid">
             <article className="service-card">
@@ -131,23 +119,23 @@ export default function Home() {
           <div className="testimonial-grid">
             <blockquote className="testimonial-card">
               <p className="testimonial-quote">
-                “From EB-1A evidence to tax-residency transitions, the team runs with investment-bank
+                "From EB-1A evidence to tax-residency transitions, the team runs with investment-bank
                 discipline—tight workstreams and a full audit trail. Non-negotiable for a listed-company
-                principal.”
+                principal."
               </p>
               <footer className="testimonial-meta">UHNW · Technology &amp; investing · Anonymous</footer>
             </blockquote>
             <blockquote className="testimonial-card">
               <p className="testimonial-quote">
-                “Cross-border restructuring and trust design in one operating rhythm. This is balance-sheet
-                thinking, not product placement.”
+                "Cross-border restructuring and trust design in one operating rhythm. This is balance-sheet
+                thinking, not product placement."
               </p>
               <footer className="testimonial-meta">Family office principal · APAC · Anonymous</footer>
             </blockquote>
             <blockquote className="testimonial-card">
               <p className="testimonial-quote">
-                “Reputation risk is everything. The advice is conservative where it should be, decisive where it
-                counts—and second opinions land when stakes are high.”
+                "Reputation risk is everything. The advice is conservative where it should be, decisive where it
+                counts—and second opinions land when stakes are high."
               </p>
               <footer className="testimonial-meta">Founder · Global industrial · Anonymous</footer>
             </blockquote>
@@ -337,7 +325,7 @@ export default function Home() {
             <article className="value-card">
               <h3>Expertise over volume</h3>
               <p>
-                We take fewer mandates and develop them deeper. That's how we build institutional-grade
+                We take fewer mandates and develop them deeper. That&apos;s how we build institutional-grade
                 processes and keep the attention span on what matters most.
               </p>
             </article>
@@ -358,7 +346,7 @@ export default function Home() {
             <article className="value-card">
               <h3>Ecosystem thinking</h3>
               <p>
-                Immigration counsel, tax advisors, and trust institutions aren't afterthoughts. We coordinate
+                Immigration counsel, tax advisors, and trust institutions aren&apos;t afterthoughts. We coordinate
                 under one timeline and hold accountability across disciplines.
               </p>
             </article>
