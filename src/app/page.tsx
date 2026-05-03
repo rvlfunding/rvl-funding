@@ -32,33 +32,31 @@ export default function Home() {
             justifyContent: 'center',
             gap: '1rem',
           }}>
-            {/* Second line renders first to establish natural width, then R V L stretches to match */}
+            <p style={{
+              color: 'var(--gold)',
+              fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+              fontWeight: 700,
+              letterSpacing: '1.1em',
+              paddingLeft: '1.1em',
+              lineHeight: 1,
+              margin: 0,
+              textAlign: 'center',
+            }}>
+              RVL
+            </p>
             <p style={{
               color: 'var(--white)',
               fontSize: 'clamp(0.72rem, 1.15vw, 0.9rem)',
               fontWeight: 700,
               letterSpacing: '0.22em',
+              paddingLeft: '0.22em',
               lineHeight: 1,
               margin: 0,
               textAlign: 'center',
               textTransform: 'uppercase',
               whiteSpace: 'nowrap',
-              order: 2,
             }}>
               Reliability · Value · Legacy
-            </p>
-            <p style={{
-              color: 'var(--gold)',
-              fontSize: 'clamp(2.5rem, 6vw, 4rem)',
-              fontWeight: 700,
-              lineHeight: 1,
-              margin: 0,
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignSelf: 'stretch',
-              order: 1,
-            }}>
-              <span>R</span><span>V</span><span>L</span>
             </p>
           </div>
         </div>
