@@ -17,17 +17,17 @@ export default function Home() {
             </p>
             <div className="hero-home-actions">
               <a href="/eb1a-checklist.pdf" download className="btn-primary">
-                Download free EB-1A checklist (PDF)
+                Get Checklist
               </a>
               <Link href="/contact" className="btn-secondary">
-                Schedule a confidential call
+                Book a Call
               </Link>
             </div>
           </div>
           <div className="hero-glass-panel" aria-hidden>
             <div className="hero-monogram">RVL</div>
             <p className="hero-glass-tagline">
-              Audit-ready documentation · Measured risk framing · Discretion by default
+              Precision. Confidentiality. Results.
             </p>
           </div>
         </div>
