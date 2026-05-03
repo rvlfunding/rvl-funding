@@ -26,7 +26,7 @@ export default function Home() {
           </div>
           <div className="hero-glass-panel" aria-hidden>
             <p className="hero-glass-tagline">
-              Reliability · Value · Legacy
+              Reliability· Value· Legacy
             </p>
           </div>
         </div>
