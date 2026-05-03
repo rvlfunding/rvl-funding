@@ -25,7 +25,6 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-glass-panel" aria-hidden>
-            <div className="hero-monogram">RVL</div>
             <p className="hero-glass-tagline">
               Precision. Confidentiality. Results.
             </p>
