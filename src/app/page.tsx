@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <div className="page-home">
       <section className="hero-home" aria-label="Hero">
-        <div className="hero-home-shine" aria-hidden />
-        <div className="hero-home-noise" aria-hidden />
+        <div className="hero-home-shine" aria-hidden={true} />
+<div className="hero-home-noise" aria-hidden={true} />
         <div className="hero-home-inner">
           <div className="hero-home-copy">
             <span className="eyebrow">Wealth · Immigration · Tax Strategy</span>
