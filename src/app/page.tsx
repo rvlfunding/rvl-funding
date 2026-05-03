@@ -25,9 +25,15 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-glass-panel" aria-hidden>
-            <p className="hero-glass-tagline">
-              Reliability· Value· Legacy
-            </p>
+            <p className="hero-glass-tagline" style={{
+  color: 'var(--gold)',
+  fontSize: 'clamp(1rem, 1.8vw, 1.35rem)',
+  letterSpacing: '0.08em',
+  lineHeight: 1.6,
+  opacity: 1,
+}}>
+  Reliability · Value · Legacy
+</p>
           </div>
         </div>
       </section>
