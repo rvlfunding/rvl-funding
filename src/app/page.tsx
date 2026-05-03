@@ -30,30 +30,35 @@ export default function Home() {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '1.25rem',
+            gap: '1rem',
           }}>
+            {/* Second line renders first to establish natural width, then R V L stretches to match */}
+            <p style={{
+              color: 'var(--white)',
+              fontSize: 'clamp(0.72rem, 1.15vw, 0.9rem)',
+              fontWeight: 700,
+              letterSpacing: '0.22em',
+              lineHeight: 1,
+              margin: 0,
+              textAlign: 'center',
+              textTransform: 'uppercase',
+              whiteSpace: 'nowrap',
+              order: 2,
+            }}>
+              Reliability · Value · Legacy
+            </p>
             <p style={{
               color: 'var(--gold)',
               fontSize: 'clamp(2.5rem, 6vw, 4rem)',
               fontWeight: 700,
-              letterSpacing: '0.55em',
               lineHeight: 1,
               margin: 0,
-              textAlign: 'center',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignSelf: 'stretch',
+              order: 1,
             }}>
-              R V L
-            </p>
-            <p style={{
-              color: 'var(--white)',
-              fontSize: 'clamp(0.65rem, 1.1vw, 0.85rem)',
-              fontWeight: 700,
-              letterSpacing: '0.18em',
-              lineHeight: 1.5,
-              margin: 0,
-              textAlign: 'center',
-              textTransform: 'uppercase',
-            }}>
-              Reliability · Value · Legacy
+              <span>R</span><span>V</span><span>L</span>
             </p>
           </div>
         </div>
