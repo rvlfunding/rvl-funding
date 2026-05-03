@@ -10,10 +10,10 @@ export default function Home() {
         <div className="hero-home-noise" aria-hidden />
         <div className="hero-home-inner">
           <div className="hero-home-copy">
-            <span className="eyebrow">Cross-border wealth · U.S. employment immigration</span>
-            <h1>RVL Funding | Cross-border allocation &amp; U.S. career immigration</h1>
+            <span className="eyebrow">Wealth · Immigration · Tax Strategy</span>
+            <h1>Cross-Border Advisory for Global Families</h1>
             <p className="hero-subtitle">
-              EB-1 · EB-2 · EB-3 · NIW · global tax optimization · cross-border asset protection
+              U.S. Immigration · Asset Protection · Tax Optimization
             </p>
             <div className="hero-home-actions">
               <a href="/eb1a-checklist.pdf" download className="btn-primary">
