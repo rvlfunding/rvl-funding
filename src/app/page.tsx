@@ -24,7 +24,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="hero-glass-panel" aria-hidden style={{ textAlign: 'center' }}>
+          <div className="hero-glass-panel" aria-hidden={true} style={{...}}>
   <div className="hero-monogram" style={{ textAlign: 'center' }}>RVL</div>
   <p className="hero-glass-tagline" style={{
     color: 'rgba(212, 175, 55, 0.6)',
