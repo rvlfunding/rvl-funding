@@ -66,7 +66,7 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Capabilities</span>
-            <h2 id="services-heading">Four Pillars for Capital That Crosses Borders</h2>
+            <h2 id="services-heading">Four Pillars For Capital That Crosses Borders</h2>
             <p>
               Immigration as the anchor. Followed by strategic allocation, tax efficiency, and protective structures—all orchestrated under a single, cohesive project cadence that your auditors and outside counsel can rely on with confidence.
             </p>
