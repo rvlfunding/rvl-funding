@@ -27,7 +27,7 @@ export default function Home() {
           <div className="hero-glass-panel" aria-hidden>
             <p className="hero-glass-tagline" style={{
   color: 'var(--gold)',
-  fontSize: 'clamp(1rem, 1.8vw, 1.35rem)',
+  fontSize: 'clamp(1.4rem, 2.8vw, 2rem)',
   letterSpacing: '0.08em',
   lineHeight: 1.6,
   opacity: 1,
