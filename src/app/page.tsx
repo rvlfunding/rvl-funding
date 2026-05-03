@@ -24,14 +24,32 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="hero-glass-panel" aria-hidden={true} style={{ textAlign: 'center' }}>
-            <div className="hero-monogram" style={{ textAlign: 'center' }}>RVL</div>
-            <p className="hero-glass-tagline" style={{
-              color: 'rgba(212, 175, 55, 0.7)',
-              fontSize: 'clamp(1.4rem, 2.8vw, 2rem)',
-              letterSpacing: '0.08em',
-              lineHeight: 1.6,
-              opacity: 1,
+          <div className="hero-glass-panel" aria-hidden={true} style={{
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '1.25rem',
+          }}>
+            <p style={{
+              color: 'var(--gold)',
+              fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+              fontWeight: 700,
+              letterSpacing: '0.55em',
+              lineHeight: 1,
+              margin: 0,
+              textAlign: 'center',
+            }}>
+              R V L
+            </p>
+            <p style={{
+              color: 'var(--white)',
+              fontSize: 'clamp(0.65rem, 1.1vw, 0.85rem)',
+              fontWeight: 700,
+              letterSpacing: '0.18em',
+              lineHeight: 1.5,
+              margin: 0,
               textAlign: 'center',
               textTransform: 'uppercase',
             }}>
