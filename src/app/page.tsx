@@ -42,11 +42,10 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Capabilities</span>
-            <h2 id="services-heading">Four pillars for capital that crosses jurisdictions</h2>
+            <h2 id="services-heading">Four pillars for capital that crosses Borders</h2>
             <p>
-              Immigration as the anchor—then allocation, tax, and protective structures—under one project
-              rhythm your auditors and outside counsel can rely on.
-            </p>
+  Immigration as the anchor. Followed by strategic allocation, tax efficiency, and protective structures—all orchestrated under a single, cohesive project cadence that your auditors and outside counsel can rely on with confidence.
+</p>
           </div>
           <div className="service-grid">
             <article className="service-card">
