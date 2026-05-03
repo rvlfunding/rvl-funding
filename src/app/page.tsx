@@ -25,16 +25,19 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-glass-panel" aria-hidden style={{ textAlign: 'center' }}>
-  <p style={{
-    fontSize: 'clamp(0.65rem, 1vw, 0.8rem)',
-    fontWeight: 700,
-    letterSpacing: '0.18em',
+  <div className="hero-monogram" style={{ textAlign: 'center' }}>RVL</div>
+  <p className="hero-glass-tagline" style={{
+    color: 'rgba(212, 175, 55, 0.6)',
+    fontSize: 'clamp(1.4rem, 2.8vw, 2rem)',
+    letterSpacing: '0.08em',
+    lineHeight: 1.6,
+    opacity: 1,
+    textAlign: 'center',
     textTransform: 'uppercase',
-    color: 'rgba(255,255,255,0.45)',
-    marginBottom: '1.25rem',
   }}>
     Reliability · Value · Legacy
   </p>
+</div>
   <div className="hero-monogram">RVL</div>
   <p className="hero-glass-tagline" style={{
     color: 'var(--gold)',
