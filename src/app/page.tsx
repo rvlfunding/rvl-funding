@@ -253,43 +253,48 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Resources</span>
-            <h2 id="resources-heading">Downloads &amp; private community</h2>
+            <h2 id="resources-heading">Downloads &amp; Private Community</h2>
             <p>
-              Start with the EB-1A checklist. Our Zsxq-hosted circle carries longer memos, moderated Q&amp;A,
-              and invitations to small-format salons.
+              Start with the L1-A checklist. Our private community provides in-depth memoranda, moderated
+              Q&amp;A sessions, and invitations to exclusive small-format salons.
             </p>
           </div>
-          <div className="resources-grid">
-            <div className="resource-tile">
-              <span className="resource-pill">Free download</span>
-              <h3>EB-1A checklist (PDF)</h3>
-              <p>Prioritized document and evidence list for self-review before counsel sign-off.</p>
-              <a href="/eb1a-checklist.pdf" download className="btn-primary">
+          <div className="resources-grid" style={{ alignItems: 'stretch' }}>
+            <div className="resource-tile" style={{ display: 'flex', flexDirection: 'column' }}>
+              <span className="resource-pill">Free Download</span>
+              <h3>L1-A Checklist (PDF)</h3>
+              <p style={{ flex: 1 }}>
+                Prioritized document and evidence checklist for self-review prior to immigration counsel
+                sign-off.
+              </p>
+              <a href="/eb1a-checklist.pdf" download className="btn-primary" style={{ marginTop: '1.25rem' }}>
                 Download PDF
               </a>
             </div>
-            <div className="resource-tile">
-              <span className="resource-pill">Free download</span>
-              <h3>Cross-border allocation worksheet</h3>
-              <p>Jurisdiction and exposure mapping to align vocabulary with your advisory team.</p>
-              <a href="/asset-allocation-template.pdf" download className="btn-primary">
-                Download template
+            <div className="resource-tile" style={{ display: 'flex', flexDirection: 'column' }}>
+              <span className="resource-pill">Free Download</span>
+              <h3>Cross-Border Allocation Worksheet</h3>
+              <p style={{ flex: 1 }}>
+                Jurisdiction and exposure mapping to align terminology with your advisory team.
+              </p>
+              <a href="/asset-allocation-template.pdf" download className="btn-primary" style={{ marginTop: '1.25rem' }}>
+                Download Template
               </a>
             </div>
-            <div className="resource-tile">
+            <div className="resource-tile" style={{ display: 'flex', flexDirection: 'column' }}>
               <span className="resource-pill">Community</span>
-              <h3>RVL circle on Zsxq</h3>
-              <p>
-                Replace the outbound link with your invite URL when ready. We publish working drafts here
-                first.
+              <h3>RVL Private Circle</h3>
+              <p style={{ flex: 1 }}>
+                Members-only community offering early access to working drafts and curated discussions.
               </p>
               <a
                 href="https://zsxq.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
+                style={{ marginTop: '1.25rem' }}
               >
-                Open Zsxq community
+                Join the Community
               </a>
             </div>
           </div>
