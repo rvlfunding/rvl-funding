@@ -163,13 +163,23 @@ export default function Home() {
           </div>
 
           <h3 className="section-label" style={{ marginBottom: '1rem' }}>
-            Credentials &amp; network
+            Credentials &amp; Network
           </h3>
-          <div className="badge-row">
-            <span className="trust-badge">Non-discretionary advisory</span>
-            <span className="trust-badge">U.S. immigration counsel network</span>
-            <span className="trust-badge">Global tax &amp; compliance framework</span>
-            <span className="trust-badge">Trust &amp; estate institution partners</span>
+          <div style={{
+            background: 'linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%)',
+            borderRadius: 'var(--radius)',
+            padding: 'clamp(1.5rem, 3vw, 2rem) clamp(1.75rem, 4vw, 2.5rem)',
+            border: '1px solid rgba(212, 175, 55, 0.2)',
+          }}>
+            <p style={{
+              color: 'var(--white)',
+              fontSize: 'clamp(0.92rem, 1.2vw, 1.05rem)',
+              lineHeight: 1.75,
+              margin: 0,
+              fontWeight: 400,
+            }}>
+              Non-discretionary advisory backed by a tightly curated U.S. immigration counsel network, a robust global tax &amp; compliance framework, and premier trust &amp; estate institution partners—delivering seamless, accountable coordination across disciplines under a single project cadence.
+            </p>
           </div>
         </div>
       </section>
