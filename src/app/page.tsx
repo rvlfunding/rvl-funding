@@ -104,7 +104,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="trust-section" aria-labelledby="trust-heading" style={{ paddingTop: 'clamp(3rem, 6vw, 5rem)' }}>
+      <section className="trust-section" aria-labelledby="trust-heading" style={{ paddingTop: 'clamp(3rem, 6vw, 5rem)', paddingBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Track record</span>
@@ -184,7 +184,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="insights-blog-section" aria-labelledby="intel-heading">
+      <section className="insights-blog-section" aria-labelledby="intel-heading" style={{ paddingTop: 'clamp(2.5rem, 5vw, 4rem)' }}>
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Intelligence</span>
