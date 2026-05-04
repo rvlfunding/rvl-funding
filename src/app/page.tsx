@@ -357,7 +357,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="values-grid">
+          <div className="values-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
             <article className="value-card">
               <h3>Expertise over volume</h3>
               <p>
@@ -380,10 +380,11 @@ export default function Home() {
               </p>
             </article>
             <article className="value-card">
-              <h3>Ecosystem thinking</h3>
+              <h3>Ecosystem Thinking</h3>
               <p>
-                Immigration counsel, tax advisors, and trust institutions aren&apos;t afterthoughts. We coordinate
-                under one timeline and hold accountability across disciplines.
+                Immigration, taxation, and wealth structures form one integrated ecosystem—not isolated
+                elements. We orchestrate every party under a single unified timeline, delivering full
+                cross-disciplinary accountability with the end outcome defined from the very first step.
               </p>
             </article>
           </div>
