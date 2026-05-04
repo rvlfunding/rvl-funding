@@ -98,7 +98,7 @@ export default function Home() {
           </div>
           <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
             <Link href="/contact" className="btn-primary">
-              立即咨询
+              Request a Consultation
             </Link>
           </div>
         </div>
