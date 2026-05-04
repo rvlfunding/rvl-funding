@@ -66,38 +66,33 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Capabilities</span>
-            <h2 id="services-heading">Four Pillars For Capital That Crosses Borders</h2>
+            <h2 id="services-heading">Three Pillars for Capital That Crosses Borders</h2>
             <p>
               Immigration as the anchor. Followed by strategic allocation, tax efficiency, and protective structures—all orchestrated under a single, cohesive project cadence that your auditors and outside counsel can rely on with confidence.
             </p>
           </div>
-          <div className="service-grid">
+          <div className="service-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
             <article className="service-card">
-              <h3>U.S. immigration &amp; status planning</h3>
+              <h3>U.S. Immigration &amp; Status Planning</h3>
               <p>
-                EB-1, EB-2, EB-3, and NIW roadmaps; evidence architecture and narrative alignment with
-                independent immigration counsel.
+                Strategic EB-1, EB-2, EB-3, and NIW roadmaps supported by meticulously architected evidence
+                portfolios and compelling narratives, developed in full alignment with independent immigration
+                counsel.
               </p>
             </article>
             <article className="service-card">
-              <h3>Cross-border asset allocation</h3>
+              <h3>Cross-Border Asset Allocation</h3>
               <p>
-                Jurisdiction-aware positioning, liquidity ladders, and concentration management for global
-                balance sheets and family offices.
+                Jurisdiction-optimized positioning, structured liquidity frameworks, and disciplined
+                concentration management—delivering resilient, balanced global balance sheets for sophisticated
+                family offices.
               </p>
             </article>
             <article className="service-card">
-              <h3>Global tax optimization &amp; compliance</h3>
+              <h3>Global Tax Optimization &amp; Compliance</h3>
               <p>
-                FATCA, CRS, and pre-immigration planning without aggressive schemes—structures we can defend
-                under scrutiny.
-              </p>
-            </article>
-            <article className="service-card">
-              <h3>Asset protection trusts &amp; offshore architecture</h3>
-              <p>
-                Trust and SPV layering for creditor protection, governance, and privacy—where law and policy
-                allow.
+                Robust FATCA and CRS compliance integrated with proactive pre-immigration planning—delivering
+                transparent, defensible structures that withstand the highest regulatory scrutiny.
               </p>
             </article>
           </div>
