@@ -129,7 +129,7 @@ export default function Home() {
               <div className="lbl">Assets under planning &amp; coordination</div>
             </div>
             <div className="trust-stat">
-              <div className="num">20+</div>
+              <div className="num">15+</div>
               <div className="lbl">Years in cross-border wealth &amp; status</div>
             </div>
           </div>
@@ -337,7 +337,7 @@ export default function Home() {
             <span className="eyebrow">Our foundation</span>
             <h2 id="team-heading">Principles, expertise, and the people behind RVL</h2>
             <p>
-              Built by practitioners with 20+ years in cross-border wealth and immigration. We believe in deep
+              Built by practitioners with 15+ years in cross-border wealth and immigration. We believe in deep
               expertise, institutional discipline, and the kind of confidentiality that earns family-office trust.
             </p>
           </div>
@@ -381,7 +381,7 @@ export default function Home() {
                 <h4>Founder &amp; Lead advisor</h4>
                 <p className="member-title">Immigration &amp; wealth strategy</p>
                 <p className="member-bio">
-                  20+ years advising ultra-high-net-worth families and founders on U.S. immigration, tax, and
+                  15+ years advising ultra-high-net-worth families and founders on U.S. immigration, tax, and
                   trust architecture. Prior: Big-4 tax, in-house counsel at a family office.
                 </p>
               </div>
