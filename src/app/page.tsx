@@ -436,14 +436,14 @@ export default function Home() {
             <p>
               Interested in joining a practice that combines expertise, discretion, and ecosystem thinking?
             </p>
-            <Link href="/contact" className="link-pill">
-              Start a conversation with our team
+            <Link href="/contact" className="link-pill" style={{ marginTop: '1.5rem', display: 'inline-flex' }}>
+              Join Us
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="cta-band" aria-labelledby="cta-heading">
+      <section className="cta-band" aria-labelledby="cta-heading" style={{ paddingTop: 'clamp(2rem, 4vw, 3rem)' }}>
         <div className="container">
           <div className="cta-inner">
             <span className="eyebrow" style={{ textAlign: 'center' }}>
