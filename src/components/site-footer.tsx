@@ -7,7 +7,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-trust-strip">
         <div className="container footer-trust-inner">
-          <span>Independent advisory · Est. 2004 · 20+ years institutional discipline</span>
+          <span>Independent advisory · Est. 2010 · 15+ years institutional discipline</span>
         </div>
       </div>
       <div className="footer-content">
