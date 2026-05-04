@@ -62,7 +62,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-section home-section--mist" aria-labelledby="services-heading">
+      <section className="home-section home-section--mist" aria-labelledby="services-heading" style={{ paddingBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Capabilities</span>
@@ -96,10 +96,15 @@ export default function Home() {
               </p>
             </article>
           </div>
+          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+            <Link href="/contact" className="btn-primary">
+              立即咨询
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="trust-section" aria-labelledby="trust-heading">
+      <section className="trust-section" aria-labelledby="trust-heading" style={{ paddingTop: 'clamp(3rem, 6vw, 5rem)' }}>
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Track record</span>
