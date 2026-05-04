@@ -393,30 +393,40 @@ export default function Home() {
             <h3 className="section-label">Leadership &amp; team</h3>
             <div className="team-grid">
               <div className="team-member">
-                <div className="member-avatar">R</div>
-                <h4>Founder &amp; Lead advisor</h4>
-                <p className="member-title">Immigration &amp; wealth strategy</p>
+                <div className="member-avatar">
+                  <span style={{ fontSize: '1.1em' }}>R</span>
+                  <span style={{ fontSize: '0.45em', fontWeight: 400, letterSpacing: '0.05em' }}>uby</span>
+                </div>
+                <h4>Ruby</h4>
+                <p className="member-title">Founder &amp; Wealth Strategist</p>
                 <p className="member-bio">
-                  15+ years advising ultra-high-net-worth families and founders on U.S. immigration, tax, and
-                  trust architecture. Prior: Big-4 tax, in-house counsel at a family office.
+                  Over 15 years of experience advising high-net-worth families and cross-border entrepreneurs
+                  on U.S. immigration and financial strategies. She serves as in-house financial advisor to
+                  family offices.
                 </p>
               </div>
               <div className="team-member">
-                <div className="member-avatar">V</div>
-                <h4>Senior advisor</h4>
-                <p className="member-title">Cross-border tax &amp; operations</p>
+                <div className="member-avatar">
+                  <span style={{ fontSize: '1.1em' }}>V</span>
+                  <span style={{ fontSize: '0.45em', fontWeight: 400, letterSpacing: '0.05em' }}>ictor</span>
+                </div>
+                <h4>Victor</h4>
+                <p className="member-title">Senior Advisor &amp; Immigration Counsel</p>
                 <p className="member-bio">
-                  15+ years on global tax planning and compliance for multinational families. Licensed in three
-                  jurisdictions; network spans Hong Kong, Singapore, London, and New York.
+                  U.S. immigration attorney with deep expertise in strategic visa and status planning for
+                  high-net-worth individuals and families.
                 </p>
               </div>
               <div className="team-member">
-                <div className="member-avatar">L</div>
-                <h4>Senior advisor</h4>
-                <p className="member-title">Trust &amp; asset protection</p>
+                <div className="member-avatar">
+                  <span style={{ fontSize: '1.1em' }}>L</span>
+                  <span style={{ fontSize: '0.45em', fontWeight: 400, letterSpacing: '0.05em' }}>eo</span>
+                </div>
+                <h4>Leo</h4>
+                <p className="member-title">Senior Advisor – Cross-Border Tax &amp; Operations</p>
                 <p className="member-bio">
-                  Specialized in offshore trust design, SPV layering, and legacy structures. Prior: trust
-                  counsel at a Cayman-based institution; relationships with global fiduciaries.
+                  Big Four tax professional with extensive experience as in-house tax advisor to family
+                  offices, specializing in cross-border tax planning and compliance.
                 </p>
               </div>
             </div>
