@@ -443,16 +443,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cta-band" aria-labelledby="cta-heading" style={{ paddingTop: 'clamp(1rem, 2vw, 1.5rem)' }}>
+      <section className="cta-band" aria-labelledby="cta-heading" style={{ paddingTop: 'clamp(0.5rem, 1vw, 1rem)', paddingBottom: 'clamp(3rem, 6vw, 5rem)' }}>
         <div className="container">
           <div className="cta-inner">
             <span className="eyebrow" style={{ textAlign: 'center' }}>
-              Next step
+              Next Step
             </span>
-            <h2 id="cta-heading">Confidential intake for qualified mandates</h2>
+            <h2 id="cta-heading">Action is Everything</h2>
             <p>
-              Share objectives under NDA when appropriate. We reply with a scoped path—not a generic pitch.
-              Legal opinions come from your retained counsel; we coordinate delivery.
+              We engage exclusively with qualified mandates. Share your objectives with us—we deliver a
+              precisely scoped action plan, never a generic pitch. Our advisory counsel team provides legal
+              opinions while we coordinate and ensure seamless cross-disciplinary execution.
             </p>
             <Link href="/contact" className="btn-navy">
               Contact RVL
