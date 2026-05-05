@@ -437,13 +437,13 @@ export default function Home() {
               Interested in joining a practice that combines expertise, discretion, and ecosystem thinking?
             </p>
             <Link href="/contact" className="link-pill" style={{ marginTop: '1.5rem', display: 'inline-flex' }}>
-              Join Us
+              JOIN US NOW
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="cta-band" aria-labelledby="cta-heading" style={{ paddingTop: 'clamp(2rem, 4vw, 3rem)' }}>
+      <section className="cta-band" aria-labelledby="cta-heading" style={{ paddingTop: 'clamp(1rem, 2vw, 1.5rem)' }}>
         <div className="container">
           <div className="cta-inner">
             <span className="eyebrow" style={{ textAlign: 'center' }}>
