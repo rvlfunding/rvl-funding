@@ -16,7 +16,7 @@ export function SiteHeader() {
         <Link href="/" className="brand-logo">
           <div className="brand-mark">RVL</div>
           <div className="brand-text">
-            <h4>RVL Funding</h4>
+            <h4>RVL FUNDING</h4>
             <p>Wealth &amp; Immigration</p>
           </div>
         </Link>
