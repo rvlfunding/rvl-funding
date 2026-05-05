@@ -15,7 +15,7 @@ export function SiteFooter() {
           <h4>RVL Funding</h4>
           <p>
             Private advisory for global families and founders—U.S. employment-based immigration, allocation,
-            tax compliance, and trust architecture. We coordinate—not replace—licensed counsel.
+            tax compliance, and trust architecture.
           </p>
         </div>
         <div className="footer-nav">
@@ -53,11 +53,11 @@ export function SiteFooter() {
             <li>
               <Link href="/blog">Blog</Link>
             </li>
-            <li className="footer-ref-highlight">
-              <Link href="/ref">Ref · Partner tools</Link>
-            </li>
             <li>
               <Link href="/contact">Contact</Link>
+            </li>
+            <li className="footer-ref-highlight">
+              <Link href="/ref">Ref · Partner tools</Link>
             </li>
           </ul>
         </div>
