@@ -16,7 +16,7 @@ export default function Home() {
               U.S. Immigration · Asset Protection · Tax Optimization
             </p>
             <div className="hero-home-actions">
-              <a href="/Are_We_the_Right_Partner_for_You_.pdf" download className="btn-primary">
+              <a href="/fit-assessment.pdf" download className="btn-primary">
                 Take the Fit Assessment
               </a>
               <Link href="/contact" className="btn-secondary">
