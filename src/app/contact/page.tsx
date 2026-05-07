@@ -137,18 +137,31 @@ export default function ContactPage() {
                 <div
                   style={{
                     marginTop: '2rem',
-                    padding: '1.1rem 1.4rem',
+                    padding: '1.25rem',
                     background: 'rgba(212,175,55,0.08)',
                     border: '1px solid rgba(212,175,55,0.22)',
                     borderRadius: 'var(--radius)',
+                    textAlign: 'center',
                   }}
                 >
-                  <p style={{ color: 'var(--gold)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase' as const, marginBottom: '0.4rem' }}>
-                    Prefer email?
+                  <p style={{ color: 'var(--gold)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase' as const, marginBottom: '0.75rem' }}>
+                    WeChat · usruby
                   </p>
-                  <a href="mailto:info@rvlfunding.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.95rem', fontWeight: 500, textDecoration: 'none' }}>
-                    info@rvlfunding.com
-                  </a>
+                  <img
+                    src="/wechat-qr.jpg"
+                    alt="WeChat QR Code — usruby"
+                    style={{
+                      width: '160px',
+                      height: '160px',
+                      objectFit: 'cover',
+                      borderRadius: '8px',
+                      display: 'block',
+                      margin: '0 auto',
+                    }}
+                  />
+                  <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.75rem', marginTop: '0.6rem' }}>
+                    Scan to add on WeChat
+                  </p>
                 </div>
               </div>
             </div>
