@@ -455,13 +455,53 @@ export default function Home() {
               precisely scoped action plan, never a generic pitch. Our advisory counsel team provides legal
               opinions while we coordinate and ensure seamless cross-disciplinary execution.
             </p>
-            <Link href="/contact" className="btn-navy">
-              Contact RVL
-            </Link>
-            <Link href="/book" className="btn-primary" style={{ marginTop: '1rem', display: 'inline-flex' }}>
-              Book a Free 15-Min Call
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '0.5rem' }}>
+              <Link href="/contact" className="btn-navy">
+                Contact RVL
+              </Link>
+              <Link href="/book" className="btn-primary" style={{ display: 'inline-flex' }}>
+                Book a Free 15-Min Call
+              </Link>
+            </div>
+          </div>
+
+          {/* 2026 Tax Summary — bottom of homepage, same as Taurus */}
+          <div style={{
+            marginTop: '3rem',
+            paddingTop: '2.5rem',
+            borderTop: '1px solid var(--border)',
+            textAlign: 'center',
+          }}>
+            <p style={{
+              fontSize: '0.72rem',
+              fontWeight: 700,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: 'var(--text-muted)',
+              marginBottom: '0.75rem',
+            }}>
+              Client Resources
+            </p>
+            <Link
+              href="/tax-summary"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                fontFamily: 'inherit',
+                fontSize: '1rem',
+                fontWeight: 700,
+                color: 'var(--navy)',
+                textDecoration: 'none',
+                borderBottom: '2px solid var(--gold)',
+                paddingBottom: '3px',
+                transition: 'color 0.2s',
+              }}
+            >
+              View 2026 Tax Summary →
             </Link>
           </div>
+
         </div>
       </section>
     </div>
