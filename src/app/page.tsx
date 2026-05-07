@@ -280,6 +280,23 @@ export default function Home() {
               <a href="/asset-allocation-template.pdf" download className="btn-primary" style={{ marginTop: '1.25rem' }}>
                 Download Template
               </a>
+              <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
+                <Link
+                  href="/tax-summary"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    fontSize: '0.82rem',
+                    fontWeight: 700,
+                    color: 'var(--gold)',
+                    textDecoration: 'none',
+                    letterSpacing: '0.04em',
+                  }}
+                >
+                  View 2026 Tax Summary →
+                </Link>
+              </div>
             </div>
             <div className="resource-tile" style={{ display: 'flex', flexDirection: 'column' }}>
               <span className="resource-pill">Community</span>
@@ -465,42 +482,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 2026 Tax Summary — bottom of homepage, same as Taurus */}
-          <div style={{
-            marginTop: '3rem',
-            paddingTop: '2.5rem',
-            borderTop: '1px solid var(--border)',
-            textAlign: 'center',
-          }}>
-            <p style={{
-              fontSize: '0.72rem',
-              fontWeight: 700,
-              letterSpacing: '0.18em',
-              textTransform: 'uppercase',
-              color: 'var(--text-muted)',
-              marginBottom: '0.75rem',
-            }}>
-              Client Resources
-            </p>
-            <Link
-              href="/tax-summary"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                fontFamily: 'inherit',
-                fontSize: '1rem',
-                fontWeight: 700,
-                color: 'var(--navy)',
-                textDecoration: 'none',
-                borderBottom: '2px solid var(--gold)',
-                paddingBottom: '3px',
-                transition: 'color 0.2s',
-              }}
-            >
-              View 2026 Tax Summary →
-            </Link>
-          </div>
 
         </div>
       </section>
