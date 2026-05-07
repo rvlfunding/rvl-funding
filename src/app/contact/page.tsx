@@ -111,7 +111,7 @@ export default function ContactPage() {
                 </p>
                 <ul style={{ listStyle: 'none', padding: 0, flex: 1 }}>
                   {[
-                    'Initial consultation is completely free',
+                    'First 30-minute consultation is complimentary',
                     'All information strictly confidential',
                     'English & Mandarin advisors available',
                     'Tax, Immigration, and Wealth questions welcome',
