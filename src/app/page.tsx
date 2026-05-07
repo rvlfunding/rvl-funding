@@ -19,7 +19,7 @@ export default function Home() {
               <a href="/fit-assessment.pdf" download className="btn-primary">
                 Take the Fit Assessment
               </a>
-              <Link href="/contact" className="btn-secondary">
+              <Link href="/book" className="btn-secondary">
                 Book a Call
               </Link>
             </div>
@@ -457,6 +457,9 @@ export default function Home() {
             </p>
             <Link href="/contact" className="btn-navy">
               Contact RVL
+            </Link>
+            <Link href="/book" className="btn-primary" style={{ marginTop: '1rem', display: 'inline-flex' }}>
+              Book a Free 15-Min Call
             </Link>
           </div>
         </div>
