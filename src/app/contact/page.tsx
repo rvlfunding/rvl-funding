@@ -32,15 +32,10 @@ export default function ContactPage() {
               <h3>Hours</h3>
               <p>Monday–Friday, 10:00 a.m.–4:00 p.m. PDT — Pacific Daylight Time</p>
             </article>
-            <Link href="/services" style={{ textDecoration: 'none' }}>
-              <article className="service-card" style={{ cursor: 'pointer', height: '100%' }}>
-                <h3>Engagement</h3>
-                <p>Senior advisors respond to qualified inquiries; no call centers.</p>
-                <p style={{ marginTop: '1rem', fontSize: '0.82rem', fontWeight: 700, color: 'var(--gold)', letterSpacing: '0.06em' }}>
-                  Learn more →
-                </p>
-              </article>
-            </Link>
+            <article className="service-card">
+              <h3>Address</h3>
+              <p>17800 Castleton St, City of Industry, CA 91748</p>
+            </article>
           </div>
         </div>
       </section>
