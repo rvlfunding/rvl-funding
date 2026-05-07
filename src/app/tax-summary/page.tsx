@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 export default function TaxSummaryPage() {
   return (
     <main className="page-shell">
@@ -8,14 +6,6 @@ export default function TaxSummaryPage() {
         <div className="container">
           <p className="eyebrow">Client Resources</p>
           <h1>2026 Tax Summary</h1>
-          <p className="hero-text">
-            Key federal tax figures for 2026 — source: IRS Rev. Proc. 2025-32 &amp; One Big Beautiful Bill Act (OBBBA).
-            For informational purposes only. Consult a qualified tax professional for advice specific to your situation.
-          </p>
-          <div className="hero-actions">
-            <Link href="/book" className="btn-primary">Book a Free Consultation</Link>
-            <Link href="/contact" className="btn-navy">Contact RVL</Link>
-          </div>
         </div>
       </section>
 
@@ -232,36 +222,16 @@ export default function TaxSummaryPage() {
 
           {/* DISCLAIMER */}
           <div style={{ marginTop: '2.5rem', padding: '1.5rem 2rem', background: 'var(--white)', border: '1px solid var(--border)', borderRadius: 'var(--radius)' }}>
-            <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '0.5rem' }}>
-              <strong>Source:</strong> IRS Rev. Proc. 2025-32 · One Big Beautiful Bill Act (OBBBA, enacted 2025).
+            <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: 1.7 }}>
               This summary is for informational purposes only and does not constitute tax or legal advice.
               Figures are subject to change. Consult a qualified tax professional for advice specific to your situation.
-            </p>
-            <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-              © 2026 RVL Funding ·{' '}
-              <a href="https://www.rvlfunding.com" style={{ color: 'var(--gold)' }}>www.rvlfunding.com</a>
-              {' '}·{' '}
-              <a href="mailto:info@rvlfunding.com" style={{ color: 'var(--gold)' }}>info@rvlfunding.com</a>
+              © 2026 RVL Funding · www.rvlfunding.com
             </p>
           </div>
 
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 0', background: 'var(--white)', borderTop: '1px solid var(--border)' }}>
-        <div className="container">
-          <div className="cta-inner">
-            <span className="eyebrow" style={{ textAlign: 'center' }}>Next Step</span>
-            <h2>Questions about your tax situation?</h2>
-            <p>Our advisors specialize in cross-border tax, immigration timing, and wealth structuring for high-net-worth families.</p>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' as const, marginTop: '1.5rem' }}>
-              <Link href="/book" className="btn-primary">Book a Free 15-Min Call</Link>
-              <Link href="/contact" className="btn-navy">Contact RVL</Link>
-            </div>
-          </div>
-        </div>
-      </section>
 
     </main>
   );
