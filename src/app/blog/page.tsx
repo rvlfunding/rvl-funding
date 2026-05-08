@@ -22,7 +22,6 @@ function ArticleCarousel() {
 
   function prev() { setCurrent((c) => Math.max(c - 1, 0)); }
   function next() { setCurrent((c) => Math.min(c + 1, maxIndex)); }
-
   function onTouchStart(e: React.TouchEvent) { touchStartX.current = e.touches[0].clientX; }
   function onTouchEnd(e: React.TouchEvent) {
     if (touchStartX.current === null) return;
@@ -43,7 +42,6 @@ function ArticleCarousel() {
           <button onClick={next} disabled={current >= maxIndex} style={{ width: 40, height: 40, borderRadius: '50%', border: '1px solid var(--border)', background: current >= maxIndex ? 'var(--mist-2)' : 'var(--navy)', color: current >= maxIndex ? 'var(--text-muted)' : 'var(--gold)', cursor: current >= maxIndex ? 'not-allowed' : 'pointer', fontSize: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}>→</button>
         </div>
       </div>
-
       <div style={{ overflow: 'hidden' }} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         <div style={{ display: 'flex', gap: '1.5rem', transform: `translateX(calc(-${current} * (100% / ${VISIBLE} + 0.5rem)))`, transition: 'transform 0.4s cubic-bezier(0.23, 1, 0.32, 1)' }}>
           {articles.map((article, idx) => (
@@ -62,7 +60,6 @@ function ArticleCarousel() {
           ))}
         </div>
       </div>
-
       <div style={{ display: 'flex', justifyContent: 'center', gap: '6px', marginTop: '1.5rem' }}>
         {Array.from({ length: maxIndex + 1 }).map((_, i) => (
           <button key={i} onClick={() => setCurrent(i)} style={{ width: i === current ? 24 : 8, height: 8, borderRadius: '999px', border: 'none', background: i === current ? 'var(--gold)' : 'var(--border)', cursor: 'pointer', padding: 0, transition: 'all 0.3s ease' }} />
@@ -87,7 +84,6 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
-
       <section className="section-intro">
         <div className="container">
           <p className="section-label">Selected Articles</p>
@@ -95,7 +91,6 @@ export default function BlogPage() {
           <ArticleCarousel />
         </div>
       </section>
-
       <section className="cta-band">
         <div className="container">
           <div className="cta-inner">
