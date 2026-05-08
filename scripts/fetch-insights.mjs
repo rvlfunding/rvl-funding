@@ -17,7 +17,7 @@ const DATA_FILE = path.join(__dirname, '..', 'public', 'insights-data.json');
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const RESEND_AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID;
-const FROM_EMAIL = 'insights@rvlfunding.com';
+const FROM_EMAIL = 'onboarding@resend.dev';
 
 // ── RSS FEEDS ──────────────────────────────────────────────────────────────
 const RSS_FEEDS = {
@@ -128,13 +128,12 @@ function formatDateShort() {
 // ── SEND EMAIL ─────────────────────────────────────────────────────────────
 async function getSubscribers() {
   try {
-    const res = await fetch(`https://api.resend.com/audiences/${RESEND_AUDIENCE_ID}/contacts`, {
-      headers: { Authorization: `Bearer ${RESEND_API_KEY}` },
-    });
-    const data = await res.json();
-    return (data.data || []).filter((c) => !c.unsubscribed).map((c) => c.email);
+    const filePath = path.join(__dirname, '..', 'public', 'subscribers.json');
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    const data = JSON.parse(raw);
+    return data.subscribers || [];
   } catch (e) {
-    console.error('Failed to fetch subscribers:', e.message);
+    console.error('Failed to read subscribers.json:', e.message);
     return [];
   }
 }
@@ -233,7 +232,7 @@ async function sendDigest(subscribers, immigrationItems, financialItems) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: `RVL Funding Insights <${FROM_EMAIL}>`,
+          from: 'RVL Funding Insights <onboarding@resend.dev>',
           to: email,
           subject,
           html,
