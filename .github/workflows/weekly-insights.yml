@@ -1,1 +1,37 @@
+name: Weekly Insights Update
+
+"on":
+  schedule:
+    - cron: '0 17 * * 1'
+  workflow_dispatch:
+
+jobs:
+  update-insights:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run insights fetch script
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+        run: node scripts/fetch-insights.mjs
+
+      - name: Commit updated insights data
+        run: |
+          git config user.name "RVL Insights Bot"
+          git config user.email "bot@rvlfunding.com"
+          git add public/insights-data.json
+          git diff --staged --quiet || git commit -m "Weekly insights update - $(date +'%Y-%m-%d')"
+          git push
 
