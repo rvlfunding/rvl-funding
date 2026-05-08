@@ -22,13 +22,57 @@ const FROM_EMAIL = 'onboarding@resend.dev';
 // ── RSS FEEDS ──────────────────────────────────────────────────────────────
 const RSS_FEEDS = {
   immigration: [
-    'https://www.uscis.gov/feeds/uscis_news.rss',
-    'https://travel.state.gov/content/travel/en/travelinformation/ExpressEntry.rss',
+    // USCIS Official
+    'https://www.uscis.gov/feeds/uscis_news_releases.rss',
+    'https://www.uscis.gov/feeds/uscis_alerts.rss',
+
+    // State Department (Visa Bulletin, Visa Policy)
+    'https://www.state.gov/rss-feeds/press-releases/',
+
+    // Department of Homeland Security
+    'https://www.dhs.gov/news/rss',
+
+    // Department of Justice (Federal Court cases)
+    'https://www.justice.gov/feed/rss/news',
+
+    // NAFSA (Immigration Advisors)
+    'https://www.nafsa.org/rss-feed.xml?feed=am_news',
+
+    // Google News: USCIS + Chinese immigrants
+    'https://news.google.com/rss/search?q=USCIS+Chinese+immigrants+visa&hl=en-US&gl=US&ceid=US:en',
+
+    // Google News: US immigration policy
+    'https://news.google.com/rss/search?q=US+immigration+EB1+EB2+L1+H1B+2026&hl=en-US&gl=US&ceid=US:en',
+
+    // Google News: DOJ immigration enforcement China
+    'https://news.google.com/rss/search?q=DOJ+immigration+China+federal+court&hl=en-US&gl=US&ceid=US:en',
   ],
   financial: [
-    'https://feeds.reuters.com/reuters/CNtopNews',
+    // IRS Official News
+    'https://www.irs.gov/rss/irs-newsroom-news-releases.rss',
+    'https://www.irs.gov/rss/irs-tax-tips.rss',
+
+    // Federal Register (Tax & Financial Regulations)
+    'https://www.federalregister.gov/articles/search.rss?conditions%5Bagencies%5D%5B%5D=internal-revenue-service',
+
+    // South China Morning Post (Business & Finance)
+    'https://www.scmp.com/rss/92/feed',
+    'https://www.scmp.com/rss/91/feed',
+
+    // MarketWatch
     'https://feeds.marketwatch.com/marketwatch/topstories/',
-    'https://www.caixinglobal.com/rss/rss.xml',
+
+    // Google News: IRS China Chinese Americans tax
+    'https://news.google.com/rss/search?q=IRS+tax+Chinese+Americans+cross-border+wealth&hl=en-US&gl=US&ceid=US:en',
+
+    // Google News: US China financial regulations
+    'https://news.google.com/rss/search?q=US+China+financial+regulation+FBAR+FATCA+2026&hl=en-US&gl=US&ceid=US:en',
+
+    // Google News: Federal court China financial
+    'https://news.google.com/rss/search?q=federal+court+China+tax+fraud+immigration+2026&hl=en-US&gl=US&ceid=US:en',
+
+    // Supreme Court immigration decisions
+    'https://news.google.com/rss/search?q=Supreme+Court+immigration+ruling+2026&hl=en-US&gl=US&ceid=US:en',
   ],
 };
 
@@ -69,9 +113,15 @@ async function filterAndSummarize(items, type) {
   const prompt = `You are an editorial assistant for RVL Funding, a financial advisory firm serving high-net-worth Chinese nationals and Chinese-American families in the U.S.
 
 Review these ${type === 'immigration' ? 'USCIS/immigration' : 'financial/wealth'} news items and:
-1. SELECT only items relevant to Chinese nationals, Chinese-Americans, cross-border wealth, U.S.-China financial matters, or immigration categories commonly used by Chinese professionals (EB-1, L-1, O-1, EB-5, etc.)
-2. For each selected item, write a 2–3 sentence English summary that highlights the practical implication for our clients
-3. Return a maximum of 4 items per week
+1. SELECT items that are relevant to any of the following:
+   - Chinese nationals or Chinese-Americans living in the U.S.
+   - High-skilled immigration categories (H-1B, L-1, O-1, EB-1, EB-2, EB-3, EB-5, NIW)
+   - Cross-border wealth, U.S.-China financial matters, international tax
+   - ANY significant USCIS policy change that affects immigrants generally
+   - U.S. immigration fees, processing times, or rule changes
+   - Cross-border asset planning or international family wealth
+2. For each selected item, write a 2–3 sentence English summary highlighting the practical implication for high-net-worth immigrant clients
+3. Return a maximum of 4 items. If there are relevant items, ALWAYS return at least 1-2 items.
 
 Return ONLY valid JSON array, no other text:
 [
