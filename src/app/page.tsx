@@ -258,6 +258,24 @@ export default function Home() {
               Start with the L1-A checklist. Our private community provides in-depth memoranda, moderated
               Q&amp;A sessions, and invitations to exclusive small-format salons.
             </p>
+            <Link
+              href="/resources"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                marginTop: '1rem',
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                color: 'var(--gold)',
+                textDecoration: 'none',
+                letterSpacing: '0.06em',
+                borderBottom: '1px solid rgba(212,175,55,0.4)',
+                paddingBottom: '2px',
+              }}
+            >
+              View all resources →
+            </Link>
           </div>
           <div className="resources-grid" style={{ alignItems: 'stretch' }}>
             <div className="resource-tile" style={{ display: 'flex', flexDirection: 'column' }}>
@@ -471,4 +489,3 @@ export default function Home() {
     </div>
   );
 }
-
