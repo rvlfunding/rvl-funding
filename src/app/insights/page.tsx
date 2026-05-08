@@ -129,13 +129,14 @@ export default function InsightsPage() {
             cross-border wealth, and regulatory change.
           </p>
 
-          {/* Three pillars — light background fix */}
+          {/* Three pillars */}
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '1rem',
-            marginTop: '2rem',
-            maxWidth: '760px',
+            gap: '1.5rem',
+            marginTop: '2.5rem',
+            width: '100%',
+            maxWidth: '900px',
           }}>
             {[
               {
@@ -152,24 +153,25 @@ export default function InsightsPage() {
               },
             ].map(({ label, desc }) => (
               <div key={label} style={{
-                padding: '1rem 1.25rem',
+                padding: '1.75rem 1.5rem',
                 background: 'var(--white)',
                 border: '1px solid var(--border)',
-                borderRadius: '10px',
-                boxShadow: '0 4px 16px rgba(10,37,64,0.05)',
+                borderTop: '3px solid var(--gold)',
+                borderRadius: '12px',
+                boxShadow: '0 8px 32px rgba(10,37,64,0.07)',
               }}>
                 <p style={{
-                  margin: '0 0 6px',
-                  fontSize: '0.68rem', fontWeight: 700,
-                  color: 'var(--gold)', letterSpacing: '0.12em',
+                  margin: '0 0 10px',
+                  fontSize: '0.72rem', fontWeight: 700,
+                  color: 'var(--gold)', letterSpacing: '0.14em',
                   textTransform: 'uppercase' as const,
                 }}>
                   {label}
                 </p>
                 <p style={{
-                  margin: 0, fontSize: '0.8rem',
+                  margin: 0, fontSize: '0.88rem',
                   color: 'var(--text-muted)',
-                  lineHeight: 1.6,
+                  lineHeight: 1.75,
                 }}>
                   {desc}
                 </p>
