@@ -24,22 +24,79 @@ function getInsightsData(): InsightsData {
   return JSON.parse(raw);
 }
 
-function ArticleCard({ article }: { article: Article }) {
+const blogPosts = [
+  {
+    id: 'blog-001',
+    date: 'April 2026',
+    title: 'EB-1A Evidence: What Officers Weight First',
+    excerpt:
+      'How to sequence publications, compensation, and leadership proof when your profile is strong but uneven. A practitioner framework for building a file that survives RFE.',
+    category: 'Immigration',
+    readTime: '8 min',
+    href: '/blog',
+  },
+  {
+    id: 'blog-002',
+    date: 'March 2026',
+    title: 'Cross-Border Tax: Compliance Before Optimization',
+    excerpt:
+      'A practical ordering of disclosures and structures when multiple tax residences are in play. Get the sequencing wrong and optimization becomes liability.',
+    category: 'Tax Planning',
+    readTime: '6 min',
+    href: '/blog',
+  },
+  {
+    id: 'blog-003',
+    date: 'March 2026',
+    title: 'Sequencing the Balance Sheet Before the Green Card',
+    excerpt:
+      'Ordering tax, trust, and operating moves ahead of the status inflection point. The decisions made in the 18 months before filing define the next decade.',
+    category: 'Wealth Architecture',
+    readTime: '7 min',
+    href: '/blog',
+  },
+  {
+    id: 'blog-004',
+    date: 'February 2026',
+    title: 'When NIW Fits — and When EB-1A Is the Cleaner Play',
+    excerpt:
+      'A decision framework for scientists and operators with uneven public profiles. NIW and EB-1A are not interchangeable — knowing the difference saves 12–18 months.',
+    category: 'Immigration',
+    readTime: '9 min',
+    href: '/blog',
+  },
+];
+
+function ArticleCard({ article }: {
+  article: {
+    id: string; date: string; title: string; excerpt: string;
+    source?: string; sourceUrl?: string; category: string;
+    readTime?: string; href?: string;
+  }
+}) {
+  const url = article.sourceUrl || article.href || '/blog';
+  const isExternal = url.startsWith('http');
+
   return (
-    <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block' }}>
+    <a
+      href={url}
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
+      style={{ textDecoration: 'none', display: 'block', height: '100%' }}
+    >
       <article className="service-card" style={{ cursor: 'pointer', height: '100%' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem' }}>
           <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
             {article.category}
           </span>
-          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600 }}>
-            {article.source}
+          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 500 }}>
+            {article.source || article.readTime || ''}
           </span>
         </div>
         <h3 style={{ marginBottom: '0.65rem', fontSize: '1rem', color: 'var(--navy)', lineHeight: 1.4 }}>
           {article.title}
         </h3>
-        <p style={{ marginBottom: '1rem', fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--text-muted)' }}>
+        <p style={{ marginBottom: '1rem', fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--text-muted)', flex: 1 }}>
           {article.excerpt}
         </p>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '0.85rem', borderTop: '1px solid var(--border)' }}>
@@ -53,12 +110,12 @@ function ArticleCard({ article }: { article: Article }) {
 
 function SectionDivider({ label }: { label: string }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
       <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
       <div style={{
         background: 'var(--navy)', color: 'var(--gold)',
-        fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.18em',
-        textTransform: 'uppercase' as const, padding: '0.4rem 1.2rem',
+        fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.2em',
+        textTransform: 'uppercase' as const, padding: '0.4rem 1.25rem',
         borderRadius: '999px', whiteSpace: 'nowrap' as const,
       }}>
         {label}
@@ -73,24 +130,70 @@ export default function InsightsPage() {
 
   return (
     <main className="page-shell">
+
+      {/* ── HERO ── */}
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow">Intelligence</span>
-          <h1>Insights &amp; Policy Updates</h1>
+          <h1>What You Need to Know. Nothing More.</h1>
           <p className="hero-text">
-            Curated weekly briefings on U.S. immigration policy and cross-border financial intelligence —
-            filtered for relevance to Chinese nationals and Chinese-American families.
+            Three curated streams — updated weekly — for principals navigating U.S. immigration,
+            cross-border wealth, and regulatory change.
           </p>
-          <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
+
+          {/* Three pillars summary */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '1rem',
+            marginTop: '2rem',
+            maxWidth: '760px',
+          }}>
+            {[
+              {
+                label: 'Immigration Policy',
+                desc: 'USCIS alerts, visa bulletin shifts, and enforcement signals — filtered for high-skilled and investor categories.',
+              },
+              {
+                label: 'Financial Intelligence',
+                desc: 'IRS guidance, cross-border tax developments, and U.S.–China regulatory signals that affect your balance sheet.',
+              },
+              {
+                label: 'Editorial',
+                desc: 'Long-form analysis on immigration strategy, wealth architecture, and the decisions that define your next decade.',
+              },
+            ].map(({ label, desc }) => (
+              <div key={label} style={{
+                padding: '1rem 1.25rem',
+                background: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(212,175,55,0.2)',
+                borderRadius: '10px',
+              }}>
+                <p style={{
+                  margin: '0 0 6px',
+                  fontSize: '0.68rem', fontWeight: 700,
+                  color: 'var(--gold)', letterSpacing: '0.12em',
+                  textTransform: 'uppercase' as const,
+                }}>
+                  {label}
+                </p>
+                <p style={{ margin: 0, fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>
+                  {desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '1.25rem' }}>
             Last updated: {data.lastUpdated}
           </p>
         </div>
       </section>
 
-      {/* IMMIGRATION */}
+      {/* ── 1. IMMIGRATION ── */}
       <section className="section-intro">
         <div className="container">
-          <SectionDivider label="USCIS · Immigration Policy" />
+          <SectionDivider label="Immigration Policy" />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
             {data.immigration.map((article) => (
               <ArticleCard key={article.id} article={article} />
@@ -99,7 +202,7 @@ export default function InsightsPage() {
         </div>
       </section>
 
-      {/* FINANCIAL */}
+      {/* ── 2. FINANCIAL ── */}
       <section className="section-intro" style={{ background: 'var(--mist-2)' }}>
         <div className="container">
           <SectionDivider label="Financial & Wealth Intelligence" />
@@ -111,20 +214,34 @@ export default function InsightsPage() {
         </div>
       </section>
 
-      {/* SUBSCRIBE */}
+      {/* ── 3. BLOG / EDITORIAL ── */}
+      <section className="section-intro">
+        <div className="container">
+          <SectionDivider label="Editorial" />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
+            {blogPosts.map((post) => (
+              <ArticleCard key={post.id} article={post} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SUBSCRIBE ── */}
       <section className="cta-band">
         <div className="container">
           <div className="cta-inner">
             <span className="eyebrow" style={{ textAlign: 'center' }}>Weekly Briefing</span>
-            <h2>Subscribe to Our Insights</h2>
-            <p style={{ color: 'var(--text-muted)' }}>
-              Every Monday — curated USCIS updates and cross-border financial intelligence,
-              relevant to Chinese nationals and Chinese-American families.
+            <h2>Delivered Every Monday.</h2>
+            <p style={{ color: 'var(--text-muted)', maxWidth: '460px', margin: '0 auto' }}>
+              Immigration policy, financial intelligence, and editorial commentary —
+              curated for Chinese nationals and Chinese-American families.
+              No noise. No sales sequence.
             </p>
             <SubscribeForm />
           </div>
         </div>
       </section>
+
     </main>
   );
 }
