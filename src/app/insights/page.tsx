@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import SubscribeForm from './SubscribeForm';
 
 interface Article {
   id: string;
@@ -25,18 +26,13 @@ function getInsightsData(): InsightsData {
 
 function ArticleCard({ article }: { article: Article }) {
   return (
-    <a
-      href={article.sourceUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{ textDecoration: 'none', display: 'block' }}
-    >
+    <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block' }}>
       <article className="service-card" style={{ cursor: 'pointer', height: '100%' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem' }}>
           <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
             {article.category}
           </span>
-          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, letterSpacing: '0.05em' }}>
+          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600 }}>
             {article.source}
           </span>
         </div>
@@ -52,6 +48,23 @@ function ArticleCard({ article }: { article: Article }) {
         </div>
       </article>
     </a>
+  );
+}
+
+function SectionDivider({ label }: { label: string }) {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+      <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+      <div style={{
+        background: 'var(--navy)', color: 'var(--gold)',
+        fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.18em',
+        textTransform: 'uppercase' as const, padding: '0.4rem 1.2rem',
+        borderRadius: '999px', whiteSpace: 'nowrap' as const,
+      }}>
+        {label}
+      </div>
+      <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+    </div>
   );
 }
 
@@ -74,21 +87,10 @@ export default function InsightsPage() {
         </div>
       </section>
 
-      {/* ── IMMIGRATION ── */}
+      {/* IMMIGRATION */}
       <section className="section-intro">
         <div className="container">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-            <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
-            <div style={{
-              background: 'var(--navy)', color: 'var(--gold)',
-              fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.18em',
-              textTransform: 'uppercase', padding: '0.4rem 1.2rem', borderRadius: '999px',
-              whiteSpace: 'nowrap',
-            }}>
-              USCIS · Immigration Policy
-            </div>
-            <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
-          </div>
+          <SectionDivider label="USCIS · Immigration Policy" />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
             {data.immigration.map((article) => (
               <ArticleCard key={article.id} article={article} />
@@ -97,21 +99,10 @@ export default function InsightsPage() {
         </div>
       </section>
 
-      {/* ── FINANCIAL ── */}
+      {/* FINANCIAL */}
       <section className="section-intro" style={{ background: 'var(--mist-2)' }}>
         <div className="container">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-            <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
-            <div style={{
-              background: 'var(--navy)', color: 'var(--gold)',
-              fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.18em',
-              textTransform: 'uppercase', padding: '0.4rem 1.2rem', borderRadius: '999px',
-              whiteSpace: 'nowrap',
-            }}>
-              Financial &amp; Wealth Intelligence
-            </div>
-            <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
-          </div>
+          <SectionDivider label="Financial & Wealth Intelligence" />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
             {data.financial.map((article) => (
               <ArticleCard key={article.id} article={article} />
@@ -120,7 +111,7 @@ export default function InsightsPage() {
         </div>
       </section>
 
-      {/* ── SUBSCRIBE ── */}
+      {/* SUBSCRIBE */}
       <section className="cta-band">
         <div className="container">
           <div className="cta-inner">
@@ -137,30 +128,3 @@ export default function InsightsPage() {
     </main>
   );
 }
-
-function SubscribeForm() {
-  'use client';
-  return (
-    <form
-      action="/api/subscribe"
-      method="POST"
-      style={{ display: 'flex', gap: '0.75rem', maxWidth: '480px', margin: '1.5rem auto 0', flexWrap: 'wrap' }}
-    >
-      <input
-        type="email"
-        name="email"
-        placeholder="Email address"
-        required
-        style={{
-          flex: 1, minWidth: '200px', padding: '0.85rem 1rem',
-          borderRadius: '999px', border: '1px solid var(--border)',
-          fontSize: '1rem', fontFamily: 'inherit',
-        }}
-      />
-      <button type="submit" className="btn-primary" style={{ whiteSpace: 'nowrap' }}>
-        Subscribe
-      </button>
-    </form>
-  );
-}
-
