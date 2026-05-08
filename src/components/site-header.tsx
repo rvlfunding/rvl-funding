@@ -10,10 +10,9 @@ const nav = [
   {
     label: 'Resources',
     children: [
-      { href: '/resources', label: 'Downloads' },
+      { href: '/resources', label: 'Library' },
       { href: '/insights', label: 'Insights' },
-      { href: '/tax-summary', label: '2026 Tax Summary' },
-      { href: '/l1a-checklist', label: 'L1-A Checklist' },
+      { href: '/members', label: 'Members' },
     ],
   },
   { href: '/about', label: 'About' },
