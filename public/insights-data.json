@@ -1,1 +1,44 @@
+{
+  "lastUpdated": "2026-05-07",
+  "immigration": [
+    {
+      "id": "uscis-001",
+      "date": "May 2026",
+      "title": "USCIS Updates Premium Processing Times for EB-1 Categories",
+      "excerpt": "USCIS has revised premium processing timelines for EB-1A and EB-1C petitions, with implications for Chinese nationals in managerial and executive roles seeking expedited adjudication.",
+      "source": "USCIS",
+      "sourceUrl": "https://www.uscis.gov/news",
+      "category": "Immigration"
+    },
+    {
+      "id": "uscis-002",
+      "date": "April 2026",
+      "title": "New I-140 Evidence Standards: What Chinese Professionals Need to Know",
+      "excerpt": "USCIS officers are applying stricter evidentiary standards for extraordinary ability petitions, particularly affecting technology and finance professionals from China.",
+      "source": "USCIS",
+      "sourceUrl": "https://www.uscis.gov/news",
+      "category": "Immigration"
+    }
+  ],
+  "financial": [
+    {
+      "id": "fin-001",
+      "date": "May 2026",
+      "title": "Cross-Border Wealth Transfers: New IRS Reporting Thresholds",
+      "excerpt": "Updated IRS guidance on foreign gift and inheritance reporting thresholds directly impacts Chinese-American families receiving assets from abroad. Key deadlines and compliance steps outlined.",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com",
+      "category": "Tax & Wealth"
+    },
+    {
+      "id": "fin-002",
+      "date": "April 2026",
+      "title": "U.S.-China Tax Treaty: Planning Opportunities for Dual Residents",
+      "excerpt": "Recent regulatory clarifications on the U.S.-China tax treaty create targeted planning opportunities for high-net-worth individuals holding assets in both jurisdictions.",
+      "source": "MarketWatch",
+      "sourceUrl": "https://www.marketwatch.com",
+      "category": "Tax & Wealth"
+    }
+  ]
+}
 
