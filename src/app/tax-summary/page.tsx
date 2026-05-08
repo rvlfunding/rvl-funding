@@ -12,7 +12,7 @@ export default function TaxSummaryPage() {
       <section style={{ padding: 'clamp(3rem, 7vw, 5rem) 0', background: 'var(--mist-2)' }}>
         <div className="container">
 
-          {/* INCOME TAX BRACKETS */}
+          {/* INCOME TAX BRACKETS — Source: IRS Rev. Proc. 2025-32 */}
           <div style={cardStyle}>
             <h2 style={cardTitle}>2026 Federal Income Tax Brackets</h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
@@ -63,7 +63,7 @@ export default function TaxSummaryPage() {
             </div>
           </div>
 
-          {/* CAPITAL GAINS */}
+          {/* CAPITAL GAINS — Source: IRS Rev. Proc. 2025-32 */}
           <div style={cardStyle}>
             <h2 style={cardTitle}>2026 Long-Term Capital Gains &amp; Qualified Dividends</h2>
             <table style={tableStyle}>
@@ -77,9 +77,9 @@ export default function TaxSummaryPage() {
               </thead>
               <tbody>
                 {[
-                  ['0%',  '$0 – $49,450',        '$0 – $98,900',        '$0 – $66,200'],
-                  ['15%', '$49,451 – $545,500',   '$98,901 – $613,700',  '$66,201 – $579,600'],
-                  ['20%', 'Over $545,500',         'Over $613,700',        'Over $579,600'],
+                  ['0%',  '$0 – $49,450',       '$0 – $98,900',       '$0 – $66,200'],
+                  ['15%', '$49,451 – $545,500',  '$98,901 – $613,700', '$66,201 – $579,600'],
+                  ['20%', 'Over $545,500',        'Over $613,700',       'Over $579,600'],
                 ].map(([rate, s, mfj, hoh], i) => (
                   <tr key={i} style={{ background: i % 2 === 0 ? 'var(--mist-2)' : 'var(--white)' }}>
                     <td style={{ ...td, color: 'var(--gold)', fontWeight: 700 }}>{rate}</td>
@@ -95,17 +95,19 @@ export default function TaxSummaryPage() {
 
           {/* STANDARD DEDUCTION + RETIREMENT */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+
+            {/* Source: IRS Rev. Proc. 2025-32 + OBBBA */}
             <div style={cardStyle}>
               <h2 style={cardTitle}>2026 Standard Deduction</h2>
               <table style={tableStyle}>
                 <tbody>
                   {[
-                    ['Single / MFS', '$16,100'],
-                    ['Married Filing Jointly', '$32,200'],
-                    ['Head of Household', '$24,150'],
-                    ['Age 65+ / Blind add-on (Single)', '+$2,050'],
+                    ['Single / MFS',                        '$16,100'],
+                    ['Married Filing Jointly',              '$32,200'],
+                    ['Head of Household',                   '$24,150'],
+                    ['Age 65+ / Blind add-on (Single)',     '+$2,050'],
                     ['Age 65+ / Blind add-on (MFJ, each)', '+$1,650'],
-                    ['Senior Bonus Deduction (age 65+)*', '+$6,000'],
+                    ['Senior Bonus Deduction (age 65+)*',  '+$6,000'],
                   ].map(([label, val], i) => (
                     <tr key={i} style={{ background: i % 2 === 0 ? 'var(--mist-2)' : 'var(--white)' }}>
                       <td style={td}>{label}</td>
@@ -117,21 +119,22 @@ export default function TaxSummaryPage() {
               <p style={noteStyle}>*Senior Bonus phases out at 6% for MAGI over $75,000 (single) / $150,000 (MFJ). Temporary through 2028.</p>
             </div>
 
+            {/* Source: IRS Notice 2025-67 + IRS Rev. Proc. 2025-19 (HSA) */}
             <div style={cardStyle}>
               <h2 style={cardTitle}>2026 Retirement Contribution Limits</h2>
               <table style={tableStyle}>
                 <tbody>
                   {[
-                    ['401(k) / 403(b) / 457', '$24,500'],
-                    ['Catch-up (age 50–59 / 64+)', '+$7,500'],
-                    ['Super Catch-up (age 60–63)', '+$11,250'],
-                    ['Traditional / Roth IRA', '$7,500'],
-                    ['IRA Catch-up (age 50+)', '+$1,100'],
-                    ['SEP-IRA (25% of comp, max)', '$70,000'],
-                    ['SIMPLE IRA', '$16,500'],
-                    ['HSA — Self Only', '$4,400'],
-                    ['HSA — Family', '$8,750'],
-                    ['HSA Catch-up (age 55+)', '+$1,000'],
+                    ['401(k) / 403(b) / 457 / TSP',    '$24,500'],
+                    ['Catch-up (age 50–59 / 64+)',      '+$8,000'],
+                    ['Super Catch-up (age 60–63)',      '+$11,250'],
+                    ['Traditional / Roth IRA',           '$7,500'],
+                    ['IRA Catch-up (age 50+)',            '+$1,100'],
+                    ['SEP-IRA (415c limit)',              '$72,000'],
+                    ['SIMPLE IRA',                      '$17,000'],
+                    ['HSA — Self Only',                  '$4,400'],
+                    ['HSA — Family',                     '$8,750'],
+                    ['HSA Catch-up (age 55+)',            '+$1,000'],
                   ].map(([label, val], i) => (
                     <tr key={i} style={{ background: i % 2 === 0 ? 'var(--mist-2)' : 'var(--white)' }}>
                       <td style={td}>{label}</td>
@@ -145,17 +148,19 @@ export default function TaxSummaryPage() {
 
           {/* ESTATE + AMT */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '1.5rem' }}>
+
+            {/* Source: IRS Rev. Proc. 2025-32 */}
             <div style={cardStyle}>
               <h2 style={cardTitle}>2026 Estate &amp; Gift Tax</h2>
               <table style={tableStyle}>
                 <tbody>
                   {[
-                    ['Federal Estate Tax Exemption', '$15,000,000'],
-                    ['Lifetime Gift Tax Exemption', '$15,000,000'],
-                    ['Married Couple Combined', '$30,000,000'],
-                    ['Annual Gift Tax Exclusion', '$19,000'],
-                    ['Annual Exclusion — Non-Citizen Spouse', '$190,400'],
-                    ['Top Estate / Gift Tax Rate', '40%'],
+                    ['Federal Estate Tax Exemption',          '$15,000,000'],
+                    ['Lifetime Gift Tax Exemption',           '$15,000,000'],
+                    ['Married Couple Combined',               '$30,000,000'],
+                    ['Annual Gift Tax Exclusion',             '$19,000'],
+                    ['Annual Exclusion — Non-Citizen Spouse', '$194,000'],
+                    ['Top Estate / Gift Tax Rate',            '40%'],
                   ].map(([label, val], i) => (
                     <tr key={i} style={{ background: i % 2 === 0 ? 'var(--mist-2)' : 'var(--white)' }}>
                       <td style={td}>{label}</td>
@@ -167,20 +172,21 @@ export default function TaxSummaryPage() {
               <p style={noteStyle}>OBBBA made the higher TCJA exemption permanent and indexed for inflation going forward.</p>
             </div>
 
+            {/* Source: IRS Rev. Proc. 2025-32 (AMT) | SSA COLA 2026 (SS Wage Base) | OBBBA (SALT/CTC) */}
             <div style={cardStyle}>
               <h2 style={cardTitle}>2026 AMT &amp; Other Key Figures</h2>
               <table style={tableStyle}>
                 <tbody>
                   {[
-                    ['AMT Exemption — Single', '$90,100'],
-                    ['AMT Exemption — MFJ', '$140,200'],
-                    ['AMT Phase-out — Single', 'Above $500,000'],
-                    ['AMT Phase-out — MFJ', 'Above $1,000,000'],
-                    ['Social Security Wage Base', '$176,100'],
-                    ['Medicare Tax Rate (employees)', '1.45%'],
-                    ['Additional Medicare Tax (MAGI >$200K single)', '0.9%'],
-                    ['SALT Deduction Cap (OBBBA)', '$40,400 (MFJ)'],
-                    ['Child Tax Credit (per child)', '$2,200'],
+                    ['AMT Exemption — Single',             '$90,100'],
+                    ['AMT Exemption — MFJ',                '$140,200'],
+                    ['AMT Phase-out — Single',             'Above $500,000'],
+                    ['AMT Phase-out — MFJ',                'Above $1,000,000'],
+                    ['Social Security Wage Base (OASDI)',  '$184,500'],
+                    ['Medicare Tax Rate (employees)',      '1.45%'],
+                    ['Add. Medicare Tax (MAGI >$200K)',    '0.9%'],
+                    ['SALT Deduction Cap (OBBBA, MFJ)',    '$40,400'],
+                    ['Child Tax Credit (per child)',       '$2,200'],
                   ].map(([label, val], i) => (
                     <tr key={i} style={{ background: i % 2 === 0 ? 'var(--mist-2)' : 'var(--white)' }}>
                       <td style={td}>{label}</td>
@@ -193,7 +199,7 @@ export default function TaxSummaryPage() {
             </div>
           </div>
 
-          {/* ROTH IRA */}
+          {/* ROTH IRA — Source: IRS Notice 2025-67 */}
           <div style={{ ...cardStyle, marginTop: '1.5rem' }}>
             <h2 style={cardTitle}>2026 Roth IRA Income Phase-Out Ranges</h2>
             <table style={tableStyle}>
@@ -206,9 +212,9 @@ export default function TaxSummaryPage() {
               </thead>
               <tbody>
                 {[
-                  ['Single / Head of Household', '$150,000', '$165,000'],
-                  ['Married Filing Jointly', '$242,000', '$252,000'],
-                  ['Married Filing Separately', '$0', '$10,000'],
+                  ['Single / Head of Household', '$153,000', '$168,000'],
+                  ['Married Filing Jointly',      '$242,000', '$252,000'],
+                  ['Married Filing Separately',   '$0',       '$10,000'],
                 ].map(([status, start, end], i) => (
                   <tr key={i} style={{ background: i % 2 === 0 ? 'var(--mist-2)' : 'var(--white)' }}>
                     <td style={td}>{status}</td>
@@ -223,6 +229,7 @@ export default function TaxSummaryPage() {
           {/* DISCLAIMER */}
           <div style={{ marginTop: '2.5rem', padding: '1.5rem 2rem', background: 'var(--white)', border: '1px solid var(--border)', borderRadius: 'var(--radius)' }}>
             <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: 1.7 }}>
+              <strong>Sources:</strong> IRS Rev. Proc. 2025-32 · IRS Notice 2025-67 · SSA COLA 2026 · One Big Beautiful Bill Act (OBBBA).
               This summary is for informational purposes only and does not constitute tax or legal advice.
               Figures are subject to change. Consult a qualified tax professional for advice specific to your situation.
               © 2026 RVL Funding · www.rvlfunding.com
@@ -231,7 +238,6 @@ export default function TaxSummaryPage() {
 
         </div>
       </section>
-
 
     </main>
   );
