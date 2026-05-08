@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const nav = [
   { href: '/', label: 'Home' },
@@ -20,7 +20,17 @@ const nav = [
 ] as const;
 
 export function SiteHeader() {
-  const [openDropdown, setOpenDropdown] = useState(false);
+  const [open, setOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function handleEnter() {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpen(true);
+  }
+
+  function handleLeave() {
+    closeTimer.current = setTimeout(() => setOpen(false), 200);
+  }
 
   return (
     <header className="site-header">
@@ -40,71 +50,94 @@ export function SiteHeader() {
                   <li
                     key={item.label}
                     style={{ position: 'relative' }}
-                    onMouseEnter={() => setOpenDropdown(true)}
-                    onMouseLeave={() => setOpenDropdown(false)}
+                    onMouseEnter={handleEnter}
+                    onMouseLeave={handleLeave}
                   >
+                    {/* Trigger — no arrow, just underline on hover */}
                     <button
                       style={{
                         background: 'none',
                         border: 'none',
-                        color: 'var(--navy)',
+                        color: open ? 'var(--gold)' : 'var(--navy)',
                         fontWeight: 600,
                         fontSize: '0.82rem',
                         letterSpacing: '0.02em',
                         cursor: 'pointer',
                         fontFamily: 'inherit',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '4px',
                         padding: '0.35rem 0',
+                        transition: 'color 0.2s',
+                        position: 'relative',
                       }}
                     >
                       {item.label}
+                      {/* Subtle gold underline when open */}
                       <span style={{
-                        fontSize: '9px',
-                        transition: 'transform 0.2s',
-                        transform: openDropdown ? 'rotate(180deg)' : 'rotate(0deg)',
-                        display: 'inline-block',
-                      }}>▼</span>
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        height: '2px',
+                        background: 'linear-gradient(90deg, var(--gold), rgba(212,175,55,0.2))',
+                        transform: open ? 'scaleX(1)' : 'scaleX(0)',
+                        transformOrigin: 'left',
+                        transition: 'transform 0.3s cubic-bezier(0.23,1,0.32,1)',
+                      }} />
                     </button>
 
-                    {openDropdown && (
-                      <ul style={{
+                    {/* Invisible bridge so mouse can travel to dropdown */}
+                    {open && (
+                      <div style={{
                         position: 'absolute',
                         top: '100%',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        marginTop: '8px',
-                        background: 'var(--white)',
-                        border: '1px solid var(--border)',
-                        borderRadius: '12px',
-                        boxShadow: '0 16px 48px rgba(10,37,64,0.12)',
-                        listStyle: 'none',
-                        padding: '8px',
-                        minWidth: '180px',
-                        zIndex: 200,
-                      }}>
+                        left: '-20px',
+                        right: '-20px',
+                        height: '16px',
+                      }} />
+                    )}
+
+                    {/* Dropdown */}
+                    {open && (
+                      <ul
+                        onMouseEnter={handleEnter}
+                        onMouseLeave={handleLeave}
+                        style={{
+                          position: 'absolute',
+                          top: 'calc(100% + 12px)',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          background: 'var(--white)',
+                          border: '1px solid var(--border)',
+                          borderRadius: '14px',
+                          boxShadow: '0 20px 60px rgba(10,37,64,0.12)',
+                          listStyle: 'none',
+                          padding: '6px',
+                          minWidth: '160px',
+                          zIndex: 200,
+                        }}
+                      >
                         {item.children.map((child) => (
                           <li key={child.href}>
                             <Link
                               href={child.href}
                               style={{
                                 display: 'block',
-                                padding: '8px 14px',
+                                padding: '9px 16px',
                                 color: 'var(--navy)',
                                 fontWeight: 500,
                                 fontSize: '0.82rem',
-                                borderRadius: '8px',
+                                borderRadius: '9px',
                                 textDecoration: 'none',
                                 transition: 'background 0.15s, color 0.15s',
                               }}
                               onMouseEnter={e => {
-                                (e.target as HTMLElement).style.background = 'var(--mist)';
-                                (e.target as HTMLElement).style.color = 'var(--gold)';
+                                const el = e.currentTarget as HTMLElement;
+                                el.style.background = 'var(--mist)';
+                                el.style.color = 'var(--gold)';
                               }}
                               onMouseLeave={e => {
-                                (e.target as HTMLElement).style.background = 'transparent';
-                                (e.target as HTMLElement).style.color = 'var(--navy)';
+                                const el = e.currentTarget as HTMLElement;
+                                el.style.background = 'transparent';
+                                el.style.color = 'var(--navy)';
                               }}
                             >
                               {child.label}
