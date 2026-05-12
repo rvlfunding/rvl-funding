@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'RVL Website <onboarding@resend.dev>',
+        from: 'RVL Funding <info@rvlfunding.com>',
         to: 'info@rvlfunding.com',
         subject: `New Subscriber: ${email}`,
         html: `
@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'RVL Funding Insights <onboarding@resend.dev>',
+        from: 'RVL Funding <info@rvlfunding.com>',
         to: email,
         subject: 'You\'re subscribed to RVL Insights',
         html: `
