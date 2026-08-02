@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>华人家庭财务自查清单 | Family Financial Self-Audit Checklist — RVL Funding</title>
+<meta name="description" content="RVL Funding 华人家庭财务自查清单：身份、现金流、税务、保障、教育、退休、传承七大模块，60+ 项自查要点，帮助跨境华人家庭系统体检家庭财务。">
+<style>
+  :root {
+    --navy: #0b1830;
+    --navy-2: #122647;
+    --gold: #c9a227;
+    --gold-light: #e8d48a;
+    --ink: #1c2333;
+    --muted: #5b6478;
+    --line: #e3e7ef;
+    --bg: #f7f8fa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Georgia, serif;
+    background: var(--bg); color: var(--ink); line-height: 1.65;
+  }
+  .topbar {
+    background: var(--navy); color: #fff; padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+  }
+  .topbar .logo { font-size: 18px; letter-spacing: 4px; font-weight: 700; }
+  .topbar .logo small { display: block; letter-spacing: 1px; font-weight: 400; color: var(--gold-light); font-size: 11px; }
+  .topbar nav a { color: #cdd6e4; text-decoration: none; font-size: 13.5px; margin-left: 18px; }
+  .topbar nav a:hover { color: var(--gold-light); }
+  .hero {
+    background: linear-gradient(150deg, var(--navy) 0%, var(--navy-2) 100%);
+    color: #fff; text-align: center; padding: 56px 24px 48px;
+    border-bottom: 4px solid var(--gold);
+  }
+  .hero h1 { font-size: 32px; letter-spacing: 2px; }
+  .hero h1 .hl { color: var(--gold-light); }
+  .hero .mods { margin-top: 14px; color: var(--gold-light); font-size: 15px; letter-spacing: 2px; }
+  .hero .tagline { margin-top: 18px; color: #aeb9cc; font-size: 13.5px; }
+  .hero .btn {
+    display: inline-block; margin-top: 26px; background: var(--gold); color: var(--navy);
+    font-weight: 700; padding: 12px 32px; border-radius: 6px; text-decoration: none; font-size: 15px;
+  }
+  .hero .btn:hover { background: var(--gold-light); }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 12px 22px 56px; }
+  .intro {
+    background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--gold);
+    border-radius: 8px; padding: 18px 22px; margin: 30px 0 8px; font-size: 14.5px; color: var(--muted);
+  }
+  section.mod {
+    background: #fff; border: 1px solid var(--line); border-radius: 10px;
+    margin-top: 28px; overflow: hidden; box-shadow: 0 2px 8px rgba(11,24,48,0.05);
+  }
+  .mod-head {
+    background: var(--navy); color: #fff; padding: 14px 22px;
+    display: flex; align-items: baseline; gap: 12px;
+  }
+  .mod-head .no { color: var(--gold-light); font-size: 13px; letter-spacing: 2px; }
+  .mod-head h2 { font-size: 19px; letter-spacing: 1px; }
+  .mod-head .en { color: #8fa1bd; font-size: 12px; margin-left: auto; letter-spacing: 1px; }
+  .mod ul { list-style: none; padding: 10px 22px 18px; }
+  .mod li {
+    padding: 10px 0 10px 34px; border-bottom: 1px dashed var(--line);
+    position: relative; font-size: 14.5px;
+  }
+  .mod li:last-child { border-bottom: none; }
+  .mod li::before {
+    content: ""; position: absolute; left: 2px; top: 13px;
+    width: 16px; height: 16px; border: 2px solid var(--gold);
+    border-radius: 4px; background: #fff;
+  }
+  .mod li b { color: var(--navy); }
+  .mod li small { color: var(--muted); display: block; font-size: 12.5px; margin-top: 2px; }
+  .score {
+    background: linear-gradient(150deg, var(--navy) 0%, var(--navy-2) 100%);
+    color: #fff; border-radius: 10px; padding: 26px 28px; margin-top: 36px;
+  }
+  .score h2 { color: var(--gold-light); font-size: 18px; margin-bottom: 12px; letter-spacing: 1px; }
+  .score p { font-size: 14px; color: #cdd6e4; margin-bottom: 8px; }
+  .score .cta { margin-top: 14px; }
+  .score .cta a { color: var(--gold-light); font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+  .disclaimer { margin-top: 30px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+  footer {
+    background: var(--navy); color: #8fa1bd; text-align: center;
+    padding: 26px 20px; font-size: 12.5px; margin-top: 40px;
+  }
+  footer .brand { color: #fff; letter-spacing: 3px; font-weight: 700; margin-bottom: 6px; }
+  @media print {
+    .topbar nav, .hero .btn { display: none; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">RVL FUNDING<small>Wealth &amp; Immigration</small></div>
+  <nav>
+    <a href="/">Home</a><a href="/services">Services</a><a href="/cases">Cases</a>
+    <a href="/resources">Resources</a><a href="/about">About</a><a href="/contact">Contact</a>
+  </nav>
+</div>
+
+<div class="hero">
+  <h1>华人家庭财务<span class="hl">自查清单</span></h1>
+  <div class="mods">身份 ｜ 现金流 ｜ 税务 ｜ 保障 ｜ 教育 ｜ 退休 ｜ 传承</div>
+  <div class="tagline">—— 正确，来自规划。 ——</div>
+  <a class="btn" href="/rvl-family-financial-checklist.pdf" download>下载 PDF 版本 ↓</a>
+</div>
+
+<div class="wrap">
+
+<div class="intro">
+  这份清单为在美及跨境华人家庭设计，共七大模块、60+ 项自查要点。建议每年至少完整过一遍（推荐在报税季前）。
+  每一项能明确回答"是/已完成"才算通过；答不上来的项，就是您家庭财务的风险敞口。
+</div>
+
+<section class="mod">
+  <div class="mod-head"><span class="no">01</span><h2>身份</h2><span class="en">IMMIGRATION &amp; STATUS</span></div>
+  <ul>
+    <li><b>全家身份状态梳理</b>：每位家庭成员的签证/绿卡/公民状态、有效期、下一步节点是否清楚？<small>护照有效期是否都在 6 个月以上？</small></li>
+    <li><b>身份与税务居民身份是否分清</b>：是否明确自己是美国税务居民（Resident Alien）还是非居民（NRA）？<small>绿卡测试 / 实际停留天数测试（Substantial Presence Test）</small></li>
+    <li><b>入籍/转身份时间表</b>：绿卡满足入籍条件的时间、EB-1C/NIW 等升级路径是否有规划？</li>
+    <li><b>身份变化对资产的影响评估</b>：成为美国税务居民<b>之前</b>，海外资产是否做过预移民税务规划（Pre-immigration Planning）？<small>资产重组、赠与、信托设立宜在登陆前完成</small></li>
+    <li><b>家庭成员分布规划</b>：夫妻双方是否需要不同的身份安排（一方保持NRA）？子女出生地/国籍安排是否明确？</li>
+    <li><b>重要身份文件备份</b>：护照、绿卡、签证、出生证、结婚证是否有电子备份并存放在家人可获取的位置？</li>
+  </ul>
+</section>
+
+<section class="mod">
+  <div class="mod-head"><span class="no">02</span><h2>现金流</h2><span class="en">CASH FLOW</span></div>
+  <ul>
+    <li><b>家庭月度收支表</b>：是否清楚每月固定收入、固定支出、可变支出的具体数字？</li>
+    <li><b>应急基金</b>：是否备有 3–6 个月家庭开支的现金（高收入单职工家庭建议 6–12 个月）？</li>
+    <li><b>跨境资金通道</b>：中美之间的合规资金调动渠道是否通畅？是否了解每人每年 $50,000 购汇额度及大额汇款的申报要求？</li>
+    <li><b>负债健康度</b>：房贷、车贷、信用卡的利率是否都清楚？有没有利率高于 8% 的"坏负债"未处理？</li>
+    <li><b>信用记录</b>：夫妻双方是否都建立了美国信用记录？信用分是否在 740 以上？</li>
+    <li><b>银行账户结构</b>：家庭账户是否做了分层（日常账户 / 应急账户 / 投资账户）？联名与单名账户的安排是否有意为之？</li>
+    <li><b>汇率敞口</b>：家庭资产的美元/人民币比例是否与未来生活地匹配？</li>
+  </ul>
+</section>
+
+<section class="mod">
+  <div class="mod-head"><span class="no">03</span><h2>税务</h2><span class="en">TAX</span></div>
+  <ul>
+    <li><b>海外账户申报（FBAR）</b>：海外金融账户合计超过 $10,000 是否每年申报 FinCEN 114？<small>漏报罚款极重，这是华人家庭最常见的合规漏洞</small></li>
+    <li><b>FATCA 申报（Form 8938）</b>：海外金融资产达到门槛是否随税表申报？</li>
+    <li><b>海外赠与申报（Form 3520）</b>：单年收到海外亲属赠与超过 $100,000 是否申报？<small>只是申报义务，不产生税，但漏报罚 25%</small></li>
+    <li><b>中国收入是否如实申报</b>：房租、利息、股息、公司分红等全球收入是否纳入美国税表？</li>
+    <li><b>年度赠与豁免利用</b>：是否利用每人每年 <b>$19,000</b>（2026年）的免申报赠与额度做家庭资产转移？</li>
+    <li><b>税务优化工具是否用满</b>：401(k)/IRA/HSA/529 等税收优惠账户是否已优先使用？</li>
+    <li><b>州税筹划</b>：现居州与计划迁往州的税负差异是否评估过（如加州 13.3% vs 德州/佛州 0%）？</li>
+    <li><b>专业团队</b>：是否有熟悉中美两边规则的 CPA？每年是否做一次税前规划（而不只是报税）？</li>
+  </ul>
+</section>
+
+<section class="mod">
+  <div class="mod-head"><span class="no">04</span><h2>保障</h2><span class="en">PROTECTION</span></div>
+  <ul>
+    <li><b>人寿保险覆盖</b>：家庭经济支柱的寿险保额是否达到年收入 10 倍或覆盖全部负债+子女教育费用？</li>
+    <li><b>保单结构检查</b>：现有保单（定期/终身/IUL）的保额、现金值、受益人是否每年核对一次？</li>
+    <li><b>受益人指定</b>：所有保单、退休账户的受益人是否为当前意愿？<small>离婚、再婚、添丁后最容易遗漏更新</small></li>
+    <li><b>医疗保险</b>：全家医保是否覆盖？自付上限（Out-of-pocket Max）是多少心里有数吗？</li>
+    <li><b>伤残收入保险（Disability）</b>：家庭主要收入者是否有长期伤残保障？<small>工作年龄段伤残概率远高于身故</small></li>
+    <li><b>财产与责任保险</b>：房屋、车辆保额是否足够？高净值家庭是否配置了雨伞险（Umbrella，建议 ≥ 净资产额度）？</li>
+    <li><b>资产保护结构</b>：出租房等风险资产是否用 LLC 隔离？个人资产与经营资产是否分开？</li>
+  </ul>
+</section>
+
+<section class="mod">
+  <div class="mod-head"><span class="no">05</span><h2>教育</h2><span class="en">EDUCATION</span></div>
+  <ul>
+    <li><b>教育费用目标</b>：每个孩子的教育路径（公立/私立/留学）预估总费用是否算过？</li>
+    <li><b>529 计划</b>：是否开设并定投 529 教育储蓄账户？是否了解本州的州税抵扣政策？</li>
+    <li><b>超额赠与教育金</b>：是否知道 529 可一次性预存 5 年赠与额度（2026年：$19,000 × 5 = $95,000/人）？</li>
+    <li><b>教育金与财务援助</b>：资产放在谁名下对 FAFSA 助学金影响不同，是否规划过？</li>
+    <li><b>身份与学费</b>：子女的身份状态对州内学费（in-state tuition）和国际生学费的影响是否清楚？</li>
+    <li><b>子女财商启蒙</b>：是否开始给子女建立托管账户（UTMA）或 Roth IRA（有劳动收入后）？</li>
+  </ul>
+</section>
+
+<section class="mod">
+  <div class="mod-head"><span class="no">06</span><h2>退休</h2><span class="en">RETIREMENT</span></div>
+  <ul>
+    <li><b>退休目标数字</b>：退休后每年需要多少开支、需要攒到多少总资产，是否有具体数字？</li>
+    <li><b>雇主匹配是否拿满</b>：401(k) 至少存到雇主匹配上限了吗？<small>不拿满等于放弃白给的钱</small></li>
+    <li><b>年度额度是否用满</b>：2026年 401(k) 个人上限 <b>$24,500</b>、IRA 上限 <b>$7,500</b>，高收入自雇者是否用了 Solo 401(k)/SEP（上限 $72,000）？</li>
+    <li><b>Roth 布局</b>：是否评估过 Roth IRA / Roth 401(k) / Backdoor Roth 的适用性？低收入年份是否做 Roth 转换？</li>
+    <li><b>退休账户投资配置</b>：账户里的钱是否真的投出去了（而不是躺在现金/货币基金）？费用率是否检查过？</li>
+    <li><b>社安金（Social Security）</b>：是否已积累 40 个积分？是否查过预估领取金额（ssa.gov）？中美社保如何衔接是否清楚？</li>
+    <li><b>跨境退休规划</b>：若计划回国养老，退休账户的领取、税务、汇出路径是否规划过？</li>
+    <li><b>RMD 规划</b>：是否知道 73 岁起传统账户须强制取款，并提前规划税务（Roth 转换窗口期）？</li>
+  </ul>
+</section>
+
+<section class="mod">
+  <div class="mod-head"><span class="no">07</span><h2>传承</h2><span class="en">LEGACY</span></div>
+  <ul>
+    <li><b>遗嘱（Will）</b>：夫妻双方是否都立了有效遗嘱？未成年子女的监护人是否指定？</li>
+    <li><b>生前信托（Living Trust）</b>：房产等大额资产是否放入信托以避免遗嘱认证（Probate）？<small>加州 Probate 程序公开、耗时1–2年、费用高昂</small></li>
+    <li><b>授权文件</b>：财务持久授权书（POA）和医疗指示（Healthcare Directive）是否签署？</li>
+    <li><b>遗产税敞口测算</b>：家庭总资产是否接近 2026 年联邦遗产税豁免额（每人 <b>$1,500万</b>，夫妻 <b>$3,000万</b>）？<small>注意：非居民外国人（NRA）在美资产豁免额仅 $60,000，父母持有美国房产尤其要规划</small></li>
+    <li><b>跨境传承安排</b>：中国境内资产（房产、公司股权）的继承路径是否明确？两边的文件是否互认？</li>
+    <li><b>受益人与账户对齐</b>：所有金融账户的 TOD/POD、退休账户与保单受益人，是否与遗嘱/信托安排一致？</li>
+    <li><b>数字资产与密码</b>：银行、券商、加密货币、社交账户的访问方式，家人是否在紧急情况下能获取？</li>
+    <li><b>家庭财务地图</b>：是否有一页纸列明所有资产、账户、保单、顾问联系方式，并让配偶知晓存放位置？</li>
+  </ul>
+</section>
+
+<div class="score">
+  <h2>自查结果怎么看？</h2>
+  <p><b style="color:#fff">50 项以上通过</b> —— 您的家庭财务结构非常健康，每年例行复查即可。</p>
+  <p><b style="color:#fff">35–50 项通过</b> —— 基础尚可，但存在明显缺口，建议按"税务合规 → 保障 → 传承"的顺序优先补齐。</p>
+  <p><b style="color:#fff">35 项以下通过</b> —— 家庭财务存在系统性风险敞口，建议尽快做一次全面规划。</p>
+  <div class="cta">预约 RVL 家庭财务体检：<a href="/contact">联系我们 →</a></div>
+</div>
+
+<div class="disclaimer">
+  免责声明：本清单仅供一般参考，不构成法律、税务或投资建议。文中 2026 年数字来源于 IRS 官方公告（Notice 2025-67、Rev. Proc. 相关通胀调整），具体适用请咨询持牌专业人士。<br>
+  © 2026 RVL Funding. All rights reserved.
+</div>
+
+</div>
+
+<footer>
+  <div class="brand">RVL FUNDING</div>
+  Private advisory for global families and founders<br>
+  U.S. Immigration · Asset Protection · Tax Optimization
+</footer>
+
+</body>
+</html>

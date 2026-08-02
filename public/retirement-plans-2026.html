@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年美国退休金计划完整对比 | US Retirement Plans Guide — RVL Funding</title>
+<meta name="description" content="2026年美国常见退休金计划对比：401(k)、IRA、Roth、SEP、SIMPLE、457等10种计划的供款额度、领取年龄、税务处理与优缺点，数据来自IRS官方公告。">
+<style>
+  :root {
+    --navy: #0e1f3d;
+    --navy-2: #16294f;
+    --gold: #c9a227;
+    --gold-light: #e8d48a;
+    --ink: #1c2333;
+    --muted: #5b6478;
+    --line: #e3e7ef;
+    --bg: #f6f7fa;
+    --green: #1e7d4f;
+    --red: #b3413e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    padding: 0 0 48px;
+  }
+  header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+    color: #fff;
+    padding: 36px 28px 30px;
+    border-bottom: 4px solid var(--gold);
+  }
+  header h1 { font-size: 26px; font-weight: 700; letter-spacing: 1px; }
+  header .sub { color: var(--gold-light); margin-top: 8px; font-size: 14px; }
+  .wrap { max-width: 1500px; margin: 0 auto; padding: 0 20px; }
+  h2 {
+    font-size: 19px; color: var(--navy);
+    margin: 34px 0 14px; padding-left: 12px;
+    border-left: 4px solid var(--gold);
+  }
+  .table-scroll {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(14,31,61,0.06);
+  }
+  table { border-collapse: collapse; width: 100%; min-width: 1350px; font-size: 13.5px; }
+  thead th {
+    background: var(--navy); color: #fff;
+    padding: 12px 12px; text-align: left;
+    font-size: 13.5px; white-space: nowrap;
+    position: sticky; top: 0;
+  }
+  tbody th {
+    background: #f2f4f9; color: var(--navy);
+    font-weight: 700; padding: 12px; text-align: left;
+    min-width: 118px; position: sticky; left: 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  tbody td {
+    padding: 12px; border-bottom: 1px solid var(--line);
+    vertical-align: top; min-width: 150px;
+  }
+  tbody tr:nth-child(even) td { background: #fafbfd; }
+  tbody tr:hover td { background: #f4f7ee00; }
+  .num { font-weight: 700; color: var(--navy); }
+  .tag {
+    display: inline-block; font-size: 11.5px; font-weight: 600;
+    border-radius: 4px; padding: 1px 7px; margin: 0 2px 3px 0; white-space: nowrap;
+  }
+  .tag.pre  { background: #e8eefb; color: #2a4d8f; }
+  .tag.post { background: #eaf6ef; color: var(--green); }
+  .tag.warn { background: #fdf0ef; color: var(--red); }
+  .pro::before { content: "✓ "; color: var(--green); font-weight: 700; }
+  .con::before { content: "✗ "; color: var(--red); font-weight: 700; }
+  .pro, .con { display: block; margin-bottom: 4px; }
+  small.note { color: var(--muted); display: block; margin-top: 3px; font-size: 12px; }
+  .notes {
+    background: #fff; border: 1px solid var(--line); border-radius: 10px;
+    padding: 20px 24px; margin-top: 14px; font-size: 13.5px;
+    box-shadow: 0 2px 10px rgba(14,31,61,0.06);
+  }
+  .notes li { margin: 0 0 9px 18px; }
+  .src {
+    margin-top: 26px; font-size: 12.5px; color: var(--muted);
+    border-top: 1px solid var(--line); padding-top: 14px;
+  }
+  .src a { color: #2a4d8f; }
+  .topbar {
+    background: #0b1830; color: #fff; padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+  }
+  .topbar .logo { font-size: 18px; letter-spacing: 4px; font-weight: 700; }
+  .topbar .logo small { display: block; letter-spacing: 1px; font-weight: 400; color: var(--gold-light); font-size: 11px; }
+  .topbar nav a { color: #cdd6e4; text-decoration: none; font-size: 13.5px; margin-left: 18px; }
+  .topbar nav a:hover { color: var(--gold-light); }
+  .dl-btn {
+    display: inline-block; margin-top: 18px; background: var(--gold); color: var(--navy);
+    font-weight: 700; padding: 11px 30px; border-radius: 6px; text-decoration: none; font-size: 14.5px;
+  }
+  .dl-btn:hover { background: var(--gold-light); }
+  .sitefooter {
+    background: #0b1830; color: #8fa1bd; text-align: center;
+    padding: 26px 20px; font-size: 12.5px; margin-top: 44px;
+  }
+  .sitefooter .brand { color: #fff; letter-spacing: 3px; font-weight: 700; margin-bottom: 6px; }
+  @media print { .topbar nav, .dl-btn { display: none; } body { background: #fff; } }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="logo">RVL FUNDING<small>Wealth &amp; Immigration</small></div>
+  <nav>
+    <a href="/">Home</a><a href="/services">Services</a><a href="/cases">Cases</a>
+    <a href="/resources">Resources</a><a href="/about">About</a><a href="/contact">Contact</a>
+  </nav>
+</div>
+<header>
+  <div class="wrap">
+    <h1>2026年美国常见退休金计划完整对比表</h1>
+    <div class="sub">数据来源：IRS 官方公告 IR-2025-111 / Notice 2025-67（2025年11月13日发布）· 整理日期：2026年8月2日</div>
+    <a class="dl-btn" href="/rvl-us-retirement-plans-2026.pdf" download>下载 PDF 版本 ↓</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+<h2>一、核心对比总表（2026年）</h2>
+<div class="table-scroll">
+<table>
+<thead>
+<tr>
+  <th>计划</th>
+  <th>适用人群</th>
+  <th>2026年供款上限</th>
+  <th>追加供款（Catch-up）</th>
+  <th>收入限制</th>
+  <th>税务处理</th>
+  <th>领取年龄与规则</th>
+  <th>RMD（强制取款）</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+  <th>传统 401(k)</th>
+  <td>有雇主计划的员工</td>
+  <td><span class="num">$24,500</span>（员工个人）<br>员工+雇主合计 <span class="num">$72,000</span>（不含追加供款）<br><small class="note">计算供款的工资上限 $360,000</small></td>
+  <td>50岁+：<span class="num">+$8,000</span>（合计 $32,500）<br>60–63岁：<span class="num">+$11,250</span>（合计 $35,750）</td>
+  <td>供款无收入限制<br><small class="note">2025年社保工资 ≥ $150,000 者，追加供款必须存入 Roth（2026年新规）</small></td>
+  <td><span class="tag pre">税前供款</span><span class="tag pre">增长延税</span><span class="tag warn">领取时按普通收入交税</span></td>
+  <td>59½ 岁后免罚金取出；提前取款 10% 罚金 + 补税<br><small class="note">例外：55岁后离职可取（Rule of 55）、残疾、SEPP 等</small></td>
+  <td>73 岁起<br><small class="note">1960年后出生者为 75 岁（2033年起）</small></td>
+</tr>
+
+<tr>
+  <th>Roth 401(k)</th>
+  <td>雇主计划提供 Roth 选项的员工</td>
+  <td><span class="num">$24,500</span><br><small class="note">与传统 401(k) 共享同一额度</small></td>
+  <td>同 401(k)：50岁+ $8,000；60–63岁 $11,250</td>
+  <td>无收入限制<br><small class="note">高收入者也可存，是绕过 Roth IRA 收入限制的通道</small></td>
+  <td><span class="tag post">税后供款</span><span class="tag post">增长免税</span><span class="tag post">合格领取全部免税</span></td>
+  <td>59½ 岁 + 账户满 5 年，领取完全免税</td>
+  <td><span class="num">无 RMD</span>（2024年起）</td>
+</tr>
+
+<tr>
+  <th>传统 IRA</th>
+  <td>任何有劳动收入者</td>
+  <td><span class="num">$7,500</span><br><small class="note">与 Roth IRA 共享同一额度</small></td>
+  <td>50岁+：<span class="num">+$1,100</span>（合计 $8,600）</td>
+  <td>供款无限制，但<b>抵税</b>受收入限制（本人有雇主计划时）：<br>单身 $81,000–$91,000 逐步取消<br>夫妻合报 $129,000–$149,000<br><small class="note">配偶有计划、本人没有：$242,000–$252,000</small></td>
+  <td><span class="tag pre">供款可抵税*</span><span class="tag pre">增长延税</span><span class="tag warn">领取时按普通收入交税</span></td>
+  <td>59½ 岁后免罚金；提前取款 10% 罚金 + 补税<br><small class="note">例外：首次购房 $10,000、高等教育、医疗等</small></td>
+  <td>73 岁起</td>
+</tr>
+
+<tr>
+  <th>Roth IRA</th>
+  <td>收入在限制内的有劳动收入者</td>
+  <td><span class="num">$7,500</span></td>
+  <td>50岁+：<span class="num">+$1,100</span>（合计 $8,600）</td>
+  <td>有收入限制（MAGI）：<br>单身 $153,000–$168,000 逐步取消<br>夫妻合报 $242,000–$252,000<br><small class="note">超出者可用 Backdoor Roth 间接存入</small></td>
+  <td><span class="tag post">税后供款</span><span class="tag post">增长免税</span><span class="tag post">合格领取全部免税</span></td>
+  <td>本金随时可取（免税免罚金）；收益需 59½ 岁 + 满 5 年</td>
+  <td><span class="num">无 RMD</span>，可免税传承</td>
+</tr>
+
+<tr>
+  <th>SEP IRA</th>
+  <td>自雇者、小企业主（含员工）</td>
+  <td>薪酬的 25% 与 <span class="num">$72,000</span> 取较低者<br><small class="note">仅雇主供款，员工本人不供款</small></td>
+  <td>无追加供款</td>
+  <td>无收入限制<br><small class="note">供款计算的薪酬上限 $360,000</small></td>
+  <td><span class="tag pre">税前供款</span><span class="tag pre">增长延税</span><span class="tag warn">领取时交税</span><br><small class="note">SECURE 2.0 后也可选 Roth SEP</small></td>
+  <td>同传统 IRA：59½ 岁；提前 10% 罚金</td>
+  <td>73 岁起（传统型）</td>
+</tr>
+
+<tr>
+  <th>SIMPLE IRA</th>
+  <td>≤100人的小企业及其员工</td>
+  <td><span class="num">$17,000</span><br><small class="note">≤25人雇主或提供更高匹配的雇主：$18,100</small><br>雇主须匹配 3% 或统一供 2%</td>
+  <td>50岁+：<span class="num">+$4,000</span><br>60–63岁：<span class="num">+$5,250</span></td>
+  <td>无收入限制</td>
+  <td><span class="tag pre">税前供款</span><span class="tag pre">增长延税</span><span class="tag warn">领取时交税</span></td>
+  <td>59½ 岁；<b>开户前 2 年内取出罚金高达 25%</b>，之后 10%</td>
+  <td>73 岁起</td>
+</tr>
+
+<tr>
+  <th>Solo 401(k)</th>
+  <td>无全职员工的自雇者（配偶可参加）</td>
+  <td>员工身份 <span class="num">$24,500</span> + 雇主身份利润的 ~25%，合计上限 <span class="num">$72,000</span></td>
+  <td>50岁+：+$8,000（合计上限 $80,000）<br>60–63岁：+$11,250（合计上限 $83,250）</td>
+  <td>无收入限制</td>
+  <td>可选传统（<span class="tag pre">延税</span>）或 Roth（<span class="tag post">免税增长</span>）</td>
+  <td>同 401(k)：59½ 岁；支持账户贷款（最高 $50,000）</td>
+  <td>传统型 73 岁起；Roth 型无 RMD</td>
+</tr>
+
+<tr>
+  <th>403(b)</th>
+  <td>学校、医院、非营利组织员工</td>
+  <td><span class="num">$24,500</span>；员工+雇主合计 $72,000</td>
+  <td>50岁+：+$8,000；60–63岁：+$11,250<br><small class="note">另有服务满 15 年特别追加：最多 $3,000/年（终身 $15,000）</small></td>
+  <td>无收入限制</td>
+  <td>同 401(k)，可选传统或 Roth</td>
+  <td>同 401(k)：59½ 岁；适用 Rule of 55</td>
+  <td>73 岁起（Roth 无 RMD）</td>
+</tr>
+
+<tr>
+  <th>457(b)</th>
+  <td>州/地方政府员工，部分非营利高管</td>
+  <td><span class="num">$24,500</span><br><small class="note">额度独立——可与 401(k)/403(b) 同时存满两份</small></td>
+  <td>50岁+：+$8,000（政府版）；60–63岁：+$11,250<br><small class="note">退休前 3 年可用「双倍追加」最高 $49,000（与年龄追加二选一）</small></td>
+  <td>无收入限制</td>
+  <td>同 401(k)，政府版可选 Roth</td>
+  <td><span class="num">离职后任何年龄取款均无 10% 罚金</span>（只需正常交税）</td>
+  <td>73 岁起（Roth 无 RMD）</td>
+</tr>
+
+<tr>
+  <th>TSP</th>
+  <td>联邦政府雇员、军人</td>
+  <td><span class="num">$24,500</span>；含政府自动 1% + 最高 4% 匹配</td>
+  <td>50岁+：+$8,000；60–63岁：+$11,250</td>
+  <td>无收入限制</td>
+  <td>可选传统或 Roth</td>
+  <td>同 401(k)：59½ 岁；适用 Rule of 55（部分岗位 50 岁）</td>
+  <td>73 岁起（Roth 无 RMD）</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<h2>二、优缺点对比</h2>
+<div class="table-scroll">
+<table style="min-width:1100px;">
+<thead>
+<tr><th style="width:130px;">计划</th><th>优点</th><th>缺点</th></tr>
+</thead>
+<tbody>
+
+<tr>
+  <th>传统 401(k)</th>
+  <td>
+    <span class="pro">额度高（个人 $24,500，总额可达 $72,000）</span>
+    <span class="pro">雇主匹配 = 白拿的钱</span>
+    <span class="pro">税前供款直接降低当年应税收入</span>
+    <span class="pro">工资自动扣款，强制储蓄</span>
+    <span class="pro">受 ERISA 保护，抗债权人追索能力强</span>
+  </td>
+  <td>
+    <span class="con">投资选择仅限计划内基金菜单</span>
+    <span class="con">部分计划管理费偏高</span>
+    <span class="con">59½ 前取款有 10% 罚金</span>
+    <span class="con">73 岁起强制取款（RMD），退休后税率可能不低</span>
+  </td>
+</tr>
+
+<tr>
+  <th>Roth 401(k)</th>
+  <td>
+    <span class="pro">增长与合格领取完全免税</span>
+    <span class="pro">无收入限制，高收入者也能存 Roth</span>
+    <span class="pro">无 RMD，适合传承</span>
+    <span class="pro">同样享受雇主匹配</span>
+  </td>
+  <td>
+    <span class="con">供款不抵税，当期税负更重</span>
+    <span class="con">若退休后税率更低，则不如传统划算</span>
+    <span class="con">投资选择同样受计划限制</span>
+  </td>
+</tr>
+
+<tr>
+  <th>传统 IRA</th>
+  <td>
+    <span class="pro">任何有收入者都能开，不依赖雇主</span>
+    <span class="pro">投资选择极广（股票、基金、ETF、CD 等）</span>
+    <span class="pro">符合条件可抵税</span>
+  </td>
+  <td>
+    <span class="con">额度低（$7,500）</span>
+    <span class="con">有雇主计划时，抵税资格受收入限制</span>
+    <span class="con">有 RMD，提前取款有罚金</span>
+  </td>
+</tr>
+
+<tr>
+  <th>Roth IRA</th>
+  <td>
+    <span class="pro">免税增长 + 免税领取</span>
+    <span class="pro">本金随时可取，灵活性最高</span>
+    <span class="pro">无 RMD，是最佳传承工具之一</span>
+    <span class="pro">投资选择极广</span>
+  </td>
+  <td>
+    <span class="con">额度低（$7,500）</span>
+    <span class="con">高收入者受限（需走 Backdoor，多一道手续）</span>
+    <span class="con">供款不抵税</span>
+  </td>
+</tr>
+
+<tr>
+  <th>SEP IRA</th>
+  <td>
+    <span class="pro">额度高达 $72,000，自雇高收入者利器</span>
+    <span class="pro">设立和维护极简单，几乎无申报负担</span>
+    <span class="pro">供款金额每年可灵活调整（收入差的年份可不供）</span>
+  </td>
+  <td>
+    <span class="con">有员工时，必须给所有符合条件的员工按相同比例供款（成本高）</span>
+    <span class="con">员工本人不能供款，无追加供款</span>
+    <span class="con">传统型有 RMD</span>
+  </td>
+</tr>
+
+<tr>
+  <th>SIMPLE IRA</th>
+  <td>
+    <span class="pro">小企业设立成本和管理负担远低于 401(k)</span>
+    <span class="pro">雇主强制匹配，员工必得福利</span>
+  </td>
+  <td>
+    <span class="con">额度明显低于 401(k)（$17,000 vs $24,500）</span>
+    <span class="con">开户前 2 年内取出/转出罚金高达 25%</span>
+    <span class="con">雇主匹配义务是固定成本</span>
+  </td>
+</tr>
+
+<tr>
+  <th>Solo 401(k)</th>
+  <td>
+    <span class="pro">自雇者可用额度最高的计划（最高 $83,250）</span>
+    <span class="pro">可选 Roth，可账户贷款</span>
+    <span class="pro">「员工+雇主」双重身份供款，低收入也能存较多</span>
+  </td>
+  <td>
+    <span class="con">雇有全职员工即失去资格</span>
+    <span class="con">资产超 $25万 需每年申报 Form 5500-EZ</span>
+    <span class="con">设立文书比 SEP 略繁琐</span>
+  </td>
+</tr>
+
+<tr>
+  <th>403(b)</th>
+  <td>
+    <span class="pro">额度同 401(k)，另有 15 年服务特别追加</span>
+    <span class="pro">非营利/教育行业员工的主力工具</span>
+  </td>
+  <td>
+    <span class="con">历史上常被塞入高费用年金产品，需仔细挑选</span>
+    <span class="con">投资选择往往比 401(k) 更窄</span>
+  </td>
+</tr>
+
+<tr>
+  <th>457(b)</th>
+  <td>
+    <span class="pro">离职后取款无 10% 罚金——想提前退休者的黄金账户</span>
+    <span class="pro">额度独立，可与 401(k)/403(b) 叠加，一年最多再存 $24,500</span>
+    <span class="pro">退休前 3 年双倍追加</span>
+  </td>
+  <td>
+    <span class="con">非政府版 457(b) 资产在法律上仍属雇主，破产时有风险</span>
+    <span class="con">投资选择受计划限制</span>
+  </td>
+</tr>
+
+<tr>
+  <th>TSP</th>
+  <td>
+    <span class="pro">管理费全美最低之一（约 0.05% 上下）</span>
+    <span class="pro">政府自动 1% + 最高 4% 匹配</span>
+  </td>
+  <td>
+    <span class="con">仅限联邦雇员/军人</span>
+    <span class="con">仅 5 只核心基金 + 生命周期基金，选择少</span>
+  </td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<h2>三、重要规则备注</h2>
+<div class="notes">
+<ul>
+  <li><b>传统 IRA 与 Roth IRA 共享 $7,500 额度</b>；传统 401(k) 与 Roth 401(k) 共享 $24,500 额度。但 IRA 与 401(k) 的额度相互独立，可同时存满。</li>
+  <li><b>2026年新规（SECURE 2.0）</b>：上一年（2025年）社保工资（W-2 Box 3）≥ $150,000 的员工，其 401(k)/403(b)/457(b) 追加供款<b>必须</b>存入 Roth 账户，不能再存税前。</li>
+  <li><b>RMD（强制最低取款）</b>：目前为 73 岁；1960 年及以后出生者自 2033 年起为 75 岁。所有 Roth 账户（Roth IRA、Roth 401(k) 等）在账户持有人生前均无 RMD。</li>
+  <li><b>Roth 五年规则</b>：Roth 账户的收益部分需同时满足「59½ 岁 + 首笔供款满 5 个纳税年度」才能免税取出。</li>
+  <li><b>提前取款 10% 罚金的常见例外</b>：55 岁后离职（401k/403b 的 Rule of 55）、残疾、SEPP/72(t) 分期取款、医疗费超标、首次购房（仅 IRA，$10,000）、出生/领养（$5,000）等。</li>
+  <li><b>Backdoor Roth</b>：收入超过 Roth IRA 限制者，可先存不抵税的传统 IRA 再转换为 Roth（注意 pro-rata 规则）。</li>
+  <li>各州税务处理可能不同；本表为联邦税规则。本表仅供参考，不构成税务或投资建议，具体操作请咨询持牌会计师（CPA）或理财顾问。</li>
+</ul>
+</div>
+
+<div class="src">
+  数据来源：
+  <a href="https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500">IRS 新闻稿 IR-2025-111（2026年额度官方公告）</a> ·
+  <a href="https://www.irs.gov/pub/irs-drop/n-25-67.pdf">IRS Notice 2025-67（原文 PDF）</a> ·
+  <a href="https://www.smithlaw.com/newsroom/news/employer-alert-is-your-retirement-plan-ready-for-mandatory-roth-catch-up-contributions">2026 强制 Roth 追加供款规则（$150,000 门槛）</a> ·
+  <a href="https://www.kiplinger.com/retirement/sep-ira/sep-ira-limits">Kiplinger：2026 SEP IRA 额度</a>
+</div>
+
+</div>
+<footer class="sitefooter">
+  <div class="brand">RVL FUNDING</div>
+  Private advisory for global families and founders<br>
+  U.S. Immigration · Asset Protection · Tax Optimization<br>
+  © 2026 RVL Funding. All rights reserved.
+</footer>
+</body>
+</html>
