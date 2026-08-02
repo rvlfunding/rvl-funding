@@ -30,6 +30,16 @@ export default function ResourcesPage() {
               <span>View Online →</span>
             </Link>
 
+            <a className="resource-card" href="/financial-checklist.html">
+              <p>华人家庭财务自查清单 · Family Financial Self-Audit Checklist</p>
+              <span>View Online / PDF →</span>
+            </a>
+
+            <a className="resource-card" href="/retirement-plans-2026.html">
+              <p>2026 退休金计划完整对比 · US Retirement Plans Guide 2026</p>
+              <span>View Online / PDF →</span>
+            </a>
+
           </div>
         </div>
       </section>
