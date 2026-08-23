@@ -20,6 +20,11 @@ export default function ResourcesPage() {
           <h2>Checklists &amp; Tax Reference</h2>
           <div className="resource-cards">
 
+            <Link className="resource-card" href="/resources/ca-formation">
+              <p>美国加州公司注册咨询及服务报价 · California Entity Formation Advisory</p>
+              <span>Get the PDF →</span>
+            </Link>
+
             <Link className="resource-card" href="/l1a-checklist">
               <p>L1-A Checklist</p>
               <span>View Online →</span>
