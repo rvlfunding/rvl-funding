@@ -13,9 +13,9 @@ export default function ServicesPage() {
       <section className="page-hero">
         <div className="container">
           <p className="eyebrow">服务与价格 · Services &amp; Pricing</p>
-          <h1>三个产品，三个阶段，价格写在纸上</h1>
+          <h1>三种合作方式，一套看得见的规则</h1>
           <p className="hero-text">
-            先用一次性的路径评估看清楚；需要有人盯就按月；需要有人从头负责到底就五年。每个产品都写明包含、不包含、付款与退出。价格为参考价，以书面报价单为准。
+            一次性的评估、按月的陪跑、五年的全程负责。深度不同，规则一样：包含什么、不包含什么、怎么付、怎么退，签约前全部写清。价格为参考价，以书面报价单为准。
           </p>
           <div className="hero-actions">
             <Link className="btn-primary" href="/assessment">
@@ -66,9 +66,9 @@ export default function ServicesPage() {
                 </tr>
                 <tr>
                   <th>你买到的</th>
-                  <td>一份可以交给律师的书面落地方案</td>
-                  <td>每个截止日有人盯，每月一份经营记录包</td>
-                  <td>美国这边有一个全程负责、能到场能签字的团队</td>
+                  <td>方向、步骤、预算、风险，写成一份能拿给律师核对的方案</td>
+                  <td>一个长期在场的人：截止日有人盯，记录按月整理，材料提前备齐</td>
+                  <td>从设立到绿卡，一张五年时间表，一个团队负责到底</td>
                 </tr>
               </tbody>
             </table>
@@ -128,9 +128,9 @@ export default function ServicesPage() {
         <div className="container">
           <div className="cta-inner">
             <span className="eyebrow">不确定选哪个？</span>
-            <h2>都从路径评估开始</h2>
+            <h2>三条路都从评估开始</h2>
             <p style={{ margin: '1rem 0 2rem' }}>
-              落地方案的最后一页就是建议：不做、按月、还是五年。60 天内签约，评估费全额抵扣。
+              评估方案的最后一页会给出建议：不做、按月、还是五年。60 天内签约，评估费全额抵扣。
             </p>
             <Link href="/assessment" className="btn-primary">
               预约路径评估

@@ -42,7 +42,7 @@ export default function Home() {
           <div className="section-head">
             <span className="eyebrow">为谁服务 · 三种情况我们每天都在处理</span>
             <h2 id="audience-heading">中国企业落地美国后，谁在管日常运营？</h2>
-            <p>想做，不知道怎么做；不想做，怕美国税务；怕被骗。缺的不是价格，是一份可以交给律师的落地方案。</p>
+            <p>三种处境，一个共同点：不缺信息，缺一个把信息变成顺序、把顺序变成结果的人。</p>
           </div>
           <div className="service-grid">
             {AUDIENCE.map((a) => (
@@ -62,7 +62,7 @@ export default function Home() {
             <span className="eyebrow">三个产品 · 三个阶段</span>
             <h2 id="products-heading">三种合作方式：路径评估、运营陪跑、全程项目管理</h2>
             <p>
-              所有价格为参考价，以书面报价单为准。评估费在 60 天内签约可全额抵扣；月费签约当月起原有单项收费取消。
+              从一次性的评估，到按月的陪跑，再到五年的全程负责——深度不同，规则一样：包含什么、不包含什么、怎么付、怎么退，签约前写清。价格为参考价，以书面报价单为准。
             </p>
           </div>
           <div className="pricing-grid">
@@ -111,7 +111,7 @@ export default function Home() {
       <section className="home-section" aria-labelledby="team-heading">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">团队 · 一个入口，七个职能</span>
+            <span className="eyebrow">团队 · Team</span>
             <h2 id="team-heading">我们协调移民律师、税法律师、CPA、保险与 PEO，你只对接一个人</h2>
             <p>{TEAM.intro}</p>
           </div>
@@ -131,7 +131,7 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <p className="team-note">律师与 CPA 为独立持牌专业人士，是 RVL 长期整合的固定合作团队；由 RVL 总协调师统一调度，你只对接一个人。</p>
+          <p className="team-note">{TEAM.note}</p>
         </div>
       </section>
 
@@ -139,10 +139,10 @@ export default function Home() {
       <section className="home-section home-section--mist" aria-labelledby="why-heading">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">为什么是 RVL</span>
-            <h2 id="why-heading">不是中介，是替你把事做完的团队</h2>
+            <span className="eyebrow">我们怎么做 · How we work</span>
+            <h2 id="why-heading">中介把你介绍给别人，我们把事做到底</h2>
             <p>
-              中介把你介绍给别人；我们把中美两边的财务、身份、税务、保险、合规整理成能获批、能执行的方案，然后按月盯着它发生。
+              落地这件事没有一个环节是新的，难的是把二十几件小事按对的顺序、在对的时间、由对的人做完。这就是我们每天在做的。
             </p>
           </div>
           <div className="why-grid">
@@ -160,9 +160,9 @@ export default function Home() {
       <section className="home-section" aria-labelledby="cases-heading">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">案例 · 以代号呈现</span>
-            <h2 id="cases-heading">真实的事，匿名的人</h2>
-            <p>客户以代号呈现，不写姓名、公司名与任何证件信息。过往结果不代表未来审批。</p>
+            <span className="eyebrow">案例 · Cases</span>
+            <h2 id="cases-heading">几件做完的事</h2>
+            <p>客户以代号呈现，不写姓名、公司名与证件信息。每个案子的条件都不同，过往结果不代表未来审批。</p>
           </div>
           <div className="service-grid">
             {CASES.slice(0, 3).map((c) => (
@@ -188,8 +188,8 @@ export default function Home() {
       <section className="home-section home-section--mist" aria-labelledby="faq-heading">
         <div className="container faq-layout">
           <div>
-            <span className="eyebrow">边界 · 我们不做什么</span>
-            <h2 style={{ marginBottom: '1.25rem' }}>说清楚不做的，才能把做的做好</h2>
+            <span className="eyebrow">边界 · Scope</span>
+            <h2 style={{ marginBottom: '1.25rem' }}>先说清楚我们不做的</h2>
             <ul className="boundary-list">
               {BOUNDARIES.map((b) => (
                 <li key={b}>{b}</li>
@@ -199,7 +199,7 @@ export default function Home() {
           <div>
             <span className="eyebrow">常见问题 · FAQ</span>
             <h2 id="faq-heading" style={{ marginBottom: '1.25rem' }}>
-              客户最常问的六个问题
+              签约前大家都会问的
             </h2>
             <div className="faq-list">
               {FAQ.map((f) => (
@@ -218,9 +218,9 @@ export default function Home() {
         <div className="container">
           <div className="cta-inner">
             <span className="eyebrow">第一步</span>
-            <h2 id="cta-heading">先用 $300，把该不该做、走哪条路、花多少钱算清楚</h2>
+            <h2 id="cta-heading">先把方向、步骤和预算写在纸上</h2>
             <p style={{ margin: '1rem 0 2rem' }}>
-              路径评估 $300 起，5 个工作日出书面落地方案，60 天内签约全额抵扣。每月限量排期。
+              路径评估 $300 起。面谈后 5 个工作日拿到书面落地方案；60 天内签约，这 $300 全额抵扣。
             </p>
             <div className="hero-actions" style={{ justifyContent: 'center' }}>
               <Link href="/assessment" className="btn-primary">

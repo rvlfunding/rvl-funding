@@ -13,9 +13,9 @@ export default function ContactPage() {
       <section className="page-hero">
         <div className="container">
           <p className="eyebrow">联系 · Contact</p>
-          <h1>一封邮件，或一个 15 分钟的电话</h1>
+          <h1>先聊两句</h1>
           <p className="hero-text">
-            写两三句话：你的公司在做什么、现在在美国的状态、卡在哪里。我们 1 个工作日内回复下一步。
+            告诉我们三件事：公司做什么、在美国到了哪一步、现在卡在哪里。1 个工作日内回复下一步怎么走。
           </p>
           <div className="hero-actions">
             <a className="btn-primary" href={`mailto:${SITE.email}?subject=${encodeURIComponent('咨询 · RVL Funding')}`}>
@@ -54,7 +54,7 @@ export default function ContactPage() {
           <div className="contact-split">
             <div>
               <p className="section-label">已经知道要什么？</p>
-              <h2 style={{ color: 'var(--white)', marginBottom: '1rem' }}>直接走对应的入口</h2>
+              <h2 style={{ color: 'var(--white)', marginBottom: '1rem' }}>直接去对应的页面</h2>
               <ul className="contact-links">
                 <li>
                   <Link href="/assessment">路径评估 → 填表预约，$1,800 起</Link>

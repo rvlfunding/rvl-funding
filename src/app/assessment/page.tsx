@@ -23,7 +23,7 @@ export default function AssessmentPage() {
       <section className="page-hero">
         <div className="container">
           <p className="eyebrow">{p.eyebrow} · Path Assessment</p>
-          <h1>先用 $300，拿到一份可以交给律师的落地方案</h1>
+          <h1>花 $300，把赴美落地这件事写在纸上</h1>
           <p className="hero-text">{p.promise}</p>
           <div className="hero-actions">
             <a className="btn-primary" href="#book">
@@ -39,7 +39,7 @@ export default function AssessmentPage() {
       <section className="section-intro">
         <div className="container">
           <p className="section-label">你拿到的</p>
-          <h2>一份能拿给律师核对的书面落地方案</h2>
+          <h2>面谈之后，你手里会有这些</h2>
           <div className="service-grid" style={{ marginTop: '2rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
             {DELIVERABLES.map((d) => (
               <article className="service-card" key={d.title}>
@@ -55,10 +55,10 @@ export default function AssessmentPage() {
         <div className="container assessment-layout">
           <div>
             <span className="eyebrow">预约</span>
-            <h2 id="book-heading">填表，1 个工作日内回复排期</h2>
+            <h2 id="book-heading">预约评估</h2>
             <p style={{ marginBottom: '1.5rem' }}>{p.priceNote}</p>
             <ul className="dot-list">
-              <li>先付款后排期；面谈线上或洛杉矶面对面</li>
+              <li>付款后排期；面谈可线上，也可在洛杉矶面对面</li>
               <li>面谈后 5 个工作日交付书面落地方案</li>
               <li>60 天内签约月费或项目管理，评估费全额抵扣</li>
               <li>面谈前不需要发任何证件</li>

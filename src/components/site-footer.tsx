@@ -8,14 +8,14 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-trust-strip">
         <div className="container footer-trust-inner">
-          <span>RVL Funding · 洛杉矶 · 美企落地运营团队 · 移民律师、税法律师、CPA、薪资、保险、人力资源，一个入口</span>
+          <span>RVL Funding · City of Industry, CA · 服务意向与已落地美国的中国企业</span>
         </div>
       </div>
       <div className="footer-content">
         <div className="footer-brand">
           <h4>RVL Funding</h4>
           <p>
-            你在美国的企业管家，按月。合规日历、经营记录、律师与财税、薪资系统、保险和人力资源——老板在中国，美国事事有回应。
+            洛杉矶的美企落地运营团队。公司设立、会计税务、薪资与人事、商业保险、移民与法律协调，按月负责。
           </p>
           <p style={{ marginTop: '0.75rem', fontSize: '0.85rem' }}>
             {SITE.address}
