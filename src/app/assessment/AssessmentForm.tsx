@@ -85,17 +85,17 @@ export default function AssessmentForm() {
         <label>
           <span>你现在的阶段</span>
           <select name="stage" value={form.stage} onChange={update('stage')}>
-            <option value="thinking">刚开始考虑，还没设点</option>
-            <option value="landed">已设点 / 已拿 L-1</option>
-            <option value="quoted">拿过移民报价，两年内没动</option>
+            <option value="thinking">计划成立公司 / 工厂 / 仓库</option>
+            <option value="landed">已设点，老板在国内，美国没有统筹的人</option>
+            <option value="quoted">想过移民的事，两年没动</option>
             <option value="renewal">面临延期 / EB-1C / 续保</option>
           </select>
         </label>
         <label>
           <span>申请人数</span>
           <select name="applicants" value={form.applicants} onChange={update('applicants')}>
-            <option value="1">1 人（$1,800）</option>
-            <option value="2">2 人或含配偶子女（$2,500）</option>
+            <option value="1">1 人（$300 起）</option>
+            <option value="2">2 人或含配偶子女（另报）</option>
           </select>
         </label>
       </div>

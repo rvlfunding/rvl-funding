@@ -2132,3 +2132,58 @@ a.preview-card:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* —— Team (职能展示) —— */
+.team-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 0 0 2rem;
+}
+.team-stat {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.5rem;
+}
+.team-stat .num {
+  color: var(--gold);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1;
+}
+.team-stat .lbl {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+.function-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.1rem;
+}
+.function-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.35rem;
+  border-top: 3px solid var(--gold);
+}
+.function-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.function-card p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.team-note {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+@media (max-width: 640px) {
+  .team-stats {
+    grid-template-columns: 1fr;
+  }
+}

@@ -8,14 +8,14 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-trust-strip">
         <div className="container footer-trust-inner">
-          <span>RVL Funding · 洛杉矶 · 面向在美落地的中国企业 · 所有申请由独立持牌律师递交，税务由合作 CPA 负责</span>
+          <span>RVL Funding · 洛杉矶 · 美企落地运营团队 · 移民律师、税法律师、CPA、薪资、保险、人力资源，一个入口</span>
         </div>
       </div>
       <div className="footer-content">
         <div className="footer-brand">
           <h4>RVL Funding</h4>
           <p>
-            你在美国的运营负责人，按月。保险续保、合规日历、经营记录、律师与 CPA 对接——你在国内，这边的事有人应。
+            你在美国的企业管家，按月。合规日历、经营记录、律师与财税、薪资系统、保险和人力资源——老板在中国，美国事事有回应。
           </p>
           <p style={{ marginTop: '0.75rem', fontSize: '0.85rem' }}>
             {SITE.address}
@@ -73,7 +73,7 @@ export function SiteFooter() {
       </div>
       <div className="footer-divider">
         <div className="footer-bottom">
-          © 2026 RVL Funding. RVL Funding 不是律师事务所，不提供法律、税务或投资意见；本站内容不构成任何审批结果的承诺。 ·{' '}
+          © 2026 RVL Funding. 移民申请由团队中的独立持牌律师递交，税务由 CPA 负责；RVL 不以律师或会计师身份执业，本站内容不构成法律、税务或投资意见，也不构成任何审批结果的承诺。 ·{' '}
           <Link href="/privacy">隐私</Link>
         </div>
       </div>

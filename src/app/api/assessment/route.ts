@@ -30,9 +30,9 @@ function escapeHtml(value: string): string {
 }
 
 const STAGE_LABEL: Record<string, string> = {
-  thinking: '刚开始考虑，还没设点',
-  landed: '已设点 / 已拿 L-1',
-  quoted: '拿过移民报价，两年内没动',
+  thinking: '计划成立公司 / 工厂 / 仓库',
+  landed: '已设点，美国没有统筹的人',
+  quoted: '想过移民，两年没动',
   renewal: '面临延期 / EB-1C / 续保',
 };
 
@@ -128,7 +128,7 @@ export async function POST(req: NextRequest) {
             </div>
             <div style="padding:24px;color:#0a2540;line-height:1.75;font-size:15px;">
               <p>${escapeHtml(name)} 您好，</p>
-              <p>已收到您的路径评估预约。我们会在 1 个工作日内回复可排的时间与付款方式；付款后排期，面谈后 5 个工作日内交付书面报告。</p>
+              <p>已收到您的路径评估预约。我们会在 1 个工作日内回复可排的时间与付款方式；付款后排期，面谈后 5 个工作日内交付书面落地方案。</p>
               <p>面谈前请准备：国内公司近两年的大致营收与人数、您在美国的现状（是否已设点、已持有何种身份）、家庭成员情况、预算范围。不需要发送任何证件。</p>
               <p style="color:#5a6b82;font-size:13px;">RVL Funding 不是律师事务所，评估报告不构成法律意见；法律判断以持牌律师为准。</p>
               <p>RVL Funding · ${escapeHtml('info@rvlfunding.com')}</p>

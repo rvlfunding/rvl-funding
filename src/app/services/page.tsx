@@ -60,15 +60,15 @@ export default function ServicesPage() {
                 </tr>
                 <tr>
                   <th>形态</th>
-                  <td>一次性，5 个工作日交付</td>
+                  <td>一次性，面谈后 5 个工作日交付</td>
                   <td>按月，12 个月起签</td>
                   <td>五年，分五段付款</td>
                 </tr>
                 <tr>
                   <th>你买到的</th>
-                  <td>看得懂、能拿给律师核对的书面判断</td>
+                  <td>一份可以交给律师的书面落地方案</td>
                   <td>每个截止日有人盯，每月一份经营记录包</td>
-                  <td>美国这边有一个全程负责、能到场能签字的人</td>
+                  <td>美国这边有一个全程负责、能到场能签字的团队</td>
                 </tr>
               </tbody>
             </table>
@@ -130,7 +130,7 @@ export default function ServicesPage() {
             <span className="eyebrow">不确定选哪个？</span>
             <h2>都从路径评估开始</h2>
             <p style={{ margin: '1rem 0 2rem' }}>
-              评估报告的最后一页就是建议：不做、按月、还是五年。60 天内签约，评估费全额抵扣。
+              落地方案的最后一页就是建议：不做、按月、还是五年。60 天内签约，评估费全额抵扣。
             </p>
             <Link href="/assessment" className="btn-primary">
               预约路径评估

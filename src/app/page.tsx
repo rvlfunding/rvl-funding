@@ -1,29 +1,5 @@
 import Link from 'next/link';
-import { BOUNDARIES, CASES, FAQ, PRODUCTS, SITE, STEPS, WHY } from '@/lib/site-content';
-
-const WATCHLIST = [
-  '保险到期：workers’ comp、责任险、仓库险',
-  '执照年审、Statement of Information',
-  '工资税申报、工伤与审计',
-  '经营记录：流水、工资单、合同、租约归档',
-  '律师与 CPA 要的材料',
-  '政府与保险公司的官方信件',
-];
-
-const AUDIENCE = [
-  {
-    title: '刚拿到 L-1、刚设点的工厂或仓库',
-    text: '人到了，公司注册了，接下来 18 个月有十几件事要按时发生：保险、执照、工资、审计、延期材料。没人盯，到递交时才补。',
-  },
-  {
-    title: '老板在国内，美国这边没有自己人',
-    text: '会计只做账，律师只做案，保险人只卖保单。每一件小事都要你隔着时差亲自催，出了事找不到一个说了算的人。',
-  },
-  {
-    title: '拿过移民报价，两年没动',
-    text: '不是不想做，是看不懂、不敢信、怕被套。缺的不是另一份报价，是一份能拿给律师核对的书面对比。',
-  },
-];
+import { AUDIENCE, BOUNDARIES, CASES, FAQ, HERO, PRODUCTS, STEPS, TEAM, WHY } from '@/lib/site-content';
 
 export default function Home() {
   const [assessment, retainer, program] = PRODUCTS;
@@ -36,29 +12,26 @@ export default function Home() {
         <div className="hero-home-noise" aria-hidden={true} />
         <div className="hero-home-inner">
           <div className="hero-home-copy">
-            <span className="eyebrow">在美落地 · 运营 · 合规 · Landing Operations</span>
-            <h1>{SITE.tagline}</h1>
-            <p className="hero-subtitle">
-              {SITE.taglineEn} — 面向已经在美国落地的中国企业：保险续保、合规日历、经营记录、律师与 CPA
-              对接。你在国内，这边的事有人应。
-            </p>
+            <span className="eyebrow">{HERO.eyebrow}</span>
+            <h1>{HERO.h1}</h1>
+            <p className="hero-subtitle">{HERO.sub}</p>
             <div className="hero-home-actions">
               <Link href="/assessment" className="btn-primary">
-                预约路径评估 · $1,800 起
+                {HERO.primaryCta}
               </Link>
               <Link href="/services#retainer" className="btn-secondary">
-                看月费包含什么
+                {HERO.secondaryCta}
               </Link>
             </div>
           </div>
           <div className="hero-glass-panel hero-watchlist" aria-label="每月替你盯的事">
-            <p className="hero-watchlist-title">每月替你盯的 6 类事</p>
+            <p className="hero-watchlist-title">{HERO.watchlistTitle}</p>
             <ul>
-              {WATCHLIST.map((item) => (
+              {HERO.watchlist.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-            <p className="hero-watchlist-foot">每个截止日提前提醒 · 每月一份经营记录包 · 每季一次检视</p>
+            <p className="hero-watchlist-foot">{HERO.watchlistFoot}</p>
           </div>
         </div>
       </section>
@@ -69,6 +42,7 @@ export default function Home() {
           <div className="section-head">
             <span className="eyebrow">为谁服务 · Who it’s for</span>
             <h2 id="audience-heading">三种情况，我们每天都在处理</h2>
+            <p>想做，不知道怎么做；不想做，怕美国税务；怕被骗。缺的不是价格，是一份可以交给律师的落地方案。</p>
           </div>
           <div className="service-grid">
             {AUDIENCE.map((a) => (
@@ -133,14 +107,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Team */}
+      <section className="home-section" aria-labelledby="team-heading">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">团队 · 一个入口，七个职能</span>
+            <h2 id="team-heading">律师、会计、保险、薪资、人力资源，都在一个团队里</h2>
+            <p>{TEAM.intro}</p>
+          </div>
+          <div className="team-stats">
+            {TEAM.stats.map((s) => (
+              <div className="team-stat" key={s.label}>
+                <div className="num">{s.num}</div>
+                <div className="lbl">{s.label}</div>
+              </div>
+            ))}
+          </div>
+          <div className="function-grid">
+            {TEAM.functions.map((f) => (
+              <article className="function-card" key={f.role}>
+                <h3>{f.role}</h3>
+                <p>{f.text}</p>
+              </article>
+            ))}
+          </div>
+          <p className="team-note">律师与 CPA 为独立持牌专业人士，是 RVL 长期整合的固定合作团队；由 RVL 总协调师统一调度，你只对接一个人。</p>
+        </div>
+      </section>
+
       {/* Why */}
       <section className="home-section home-section--mist" aria-labelledby="why-heading">
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">为什么是 RVL</span>
-            <h2 id="why-heading">不是中介，是替你把事做完的人</h2>
+            <h2 id="why-heading">不是中介，是替你把事做完的团队</h2>
             <p>
-              中介把你介绍给别人；我们把中美两边的财务、身份、保险、合规整理成能获批、能执行的方案，然后按月盯着它发生。
+              中介把你介绍给别人；我们把中美两边的财务、身份、税务、保险、合规整理成能获批、能执行的方案，然后按月盯着它发生。
             </p>
           </div>
           <div className="why-grid">
@@ -197,7 +199,7 @@ export default function Home() {
           <div>
             <span className="eyebrow">常见问题 · FAQ</span>
             <h2 id="faq-heading" style={{ marginBottom: '1.25rem' }}>
-              客户最常问的五个问题
+              客户最常问的六个问题
             </h2>
             <div className="faq-list">
               {FAQ.map((f) => (
@@ -216,9 +218,9 @@ export default function Home() {
         <div className="container">
           <div className="cta-inner">
             <span className="eyebrow">第一步</span>
-            <h2 id="cta-heading">先花 90 分钟，把该不该做、走哪条路、花多少钱算清楚</h2>
+            <h2 id="cta-heading">先用 $300，把该不该做、走哪条路、花多少钱算清楚</h2>
             <p style={{ margin: '1rem 0 2rem' }}>
-              路径评估 $1,800 起，5 个工作日出书面报告，60 天内签约全额抵扣。每月只排 4 个。
+              路径评估 $300 起，5 个工作日出书面落地方案，60 天内签约全额抵扣。每月限量排期。
             </p>
             <div className="hero-actions" style={{ justifyContent: 'center' }}>
               <Link href="/assessment" className="btn-primary">
