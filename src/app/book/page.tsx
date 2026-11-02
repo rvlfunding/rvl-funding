@@ -3,10 +3,10 @@ export default function BookPage() {
     <main className="page-shell">
       <section className="page-hero">
         <div className="container">
-          <p className="eyebrow">Schedule a Call</p>
-          <h1>Book Your Free 15-Minute Consultation</h1>
+          <p className="eyebrow">预约电话 · Schedule a Call</p>
+          <h1>约一个 15 分钟电话</h1>
           <p className="hero-text">
-            Select a time that works for you. We will confirm within one business day.
+            选一个你方便的时间。15 分钟只做一件事：判断你的情况该不该做路径评估。不推销。
           </p>
         </div>
       </section>

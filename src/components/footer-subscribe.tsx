@@ -30,14 +30,13 @@ export function FooterSubscribe() {
 
   return (
     <div className="footer-subscribe">
-      <h5>Briefings</h5>
+      <h5>政策与截止日提醒</h5>
       <p>
-        USCIS policy shifts, tax reminders, and portfolio governance notes—curated for principals and family
-        offices.
+        USCIS 政策变化、加州合规与保险到期提醒、落地运营要点——不定期，只发有用的。
       </p>
       {status === 'success' ? (
         <p style={{ color: 'rgba(212, 175, 55, 0.95)', fontSize: '0.88rem', fontWeight: 600 }}>
-          ✓ You are on the list. We will be in touch every Monday.
+          ✓ 已订阅。有用的才发。
         </p>
       ) : (
         <>
@@ -45,7 +44,7 @@ export function FooterSubscribe() {
             <input
               type="email"
               name="email"
-              placeholder="Work email"
+              placeholder="工作邮箱"
               required
               autoComplete="email"
               value={email}
@@ -59,12 +58,12 @@ export function FooterSubscribe() {
               disabled={status === 'loading'}
               style={{ opacity: status === 'loading' ? 0.6 : 1 }}
             >
-              {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
+              {status === 'loading' ? '提交中…' : '订阅'}
             </button>
           </form>
           {status === 'error' && (
             <p style={{ color: '#ff6b6b', fontSize: '0.8rem', marginTop: '0.5rem' }}>
-              Something went wrong. Please try again.
+              提交失败，请稍后再试。
             </p>
           )}
         </>
