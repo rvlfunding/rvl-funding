@@ -76,6 +76,30 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section className="home-section home-section--mist" aria-labelledby="vs-heading">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">和市场上常见的三类服务比</span>
+            <h2 id="vs-heading">注册代办、名义雇主（EOR/PEO）、运营陪跑，各管哪一段</h2>
+            <p>市场上「从注册到运营」的服务大多只覆盖一段。看清楚每种收费管什么，再决定要不要月费。</p>
+          </div>
+          <div className="service-grid">
+            <article className="service-card">
+              <h3>注册代办 · 按年收费</h3>
+              <p>管注册、EIN、注册代理和年报。公司开出来之后的运营、人事、保险、律师会计的衔接不在范围内。</p>
+            </article>
+            <article className="service-card">
+              <h3>名义雇主 EOR / PEO · 按员工人月计价</h3>
+              <p>管雇佣、发薪、工资税和福利。不管公司本身的合规日历、保险续保、移民运营记录。</p>
+            </article>
+            <article className="service-card">
+              <h3>RVL 运营陪跑 · 按公司每月固定</h3>
+              <p>管公司这一层的全部：合规日历、经营记录、律师与 CPA 对接、保险续保、人事文件；PEO 可作为模块按人头加入。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {PRODUCTS.map((p, i) => (
         <section
           key={p.slug}
