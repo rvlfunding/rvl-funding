@@ -2187,3 +2187,73 @@ a.preview-card:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================
+   品牌方案 A：合规蓝 + 运营绿；金色降为徽记级点缀
+   ========================================================== */
+:root {
+  --green: #1f7a4d;
+  --green-soft: #2a9360;
+  --green-tint: #e8f3ec;
+}
+.eyebrow,
+.section-dark .section-label,
+.pricing-eyebrow,
+.step-num,
+.hero-watchlist-title,
+.case-code,
+.product-col h3,
+.timeline-year,
+.team-stat .num {
+  color: var(--green);
+}
+.section-dark .section-label,
+.step-num,
+.hero-watchlist-title,
+.case-code--dark,
+.team-stat .num {
+  color: #6fcf97;
+}
+.btn-primary,
+a.btn-primary,
+button.btn-primary {
+  background: linear-gradient(180deg, var(--green-soft) 0%, var(--green) 100%);
+  color: var(--white);
+  border-color: rgba(31, 122, 77, 0.5);
+  box-shadow: 0 16px 40px rgba(31, 122, 77, 0.22);
+}
+.btn-primary:hover,
+a.btn-primary:hover,
+button.btn-primary:hover {
+  background: linear-gradient(180deg, #33a06c 0%, var(--green-soft) 100%);
+  box-shadow: 0 20px 48px rgba(31, 122, 77, 0.3);
+}
+.nav-menu a.is-active,
+.nav-menu a:hover,
+.pricing-more:hover,
+.faq-list summary::after,
+.check-list li::before {
+  color: var(--green);
+}
+.nav-menu a::after {
+  background: linear-gradient(90deg, var(--green), rgba(31, 122, 77, 0.2));
+}
+.pricing-card--featured {
+  border-color: rgba(31, 122, 77, 0.45);
+  background: linear-gradient(180deg, #f4faf6 0%, var(--white) 60%);
+  box-shadow: 0 16px 40px rgba(31, 122, 77, 0.12);
+}
+.why-card,
+.function-card {
+  border-left-color: var(--green);
+  border-top-color: var(--green);
+}
+.hero-watchlist li::before,
+.boundary-list li::before,
+.dot-list li::before {
+  background: var(--green);
+}
+.team-stat {
+  border-color: rgba(111, 207, 151, 0.35);
+}
+/* 金色只保留：品牌字标（navy 底金字）、页脚徽记 */

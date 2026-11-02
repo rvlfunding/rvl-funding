@@ -42,7 +42,7 @@ export default function Home() {
           <div className="section-head">
             <span className="eyebrow">为谁服务 · 三种情况我们每天都在处理</span>
             <h2 id="audience-heading">中国企业落地美国后，谁在管日常运营？</h2>
-            <p>三种处境，一个共同点：不缺信息，缺一个把信息变成顺序、把顺序变成结果的人。</p>
+            <p>意向或已落地美国的中国企业——工厂、仓库、供应链、跨境电商；老板在国内，或不能长期待在美国。三种处境，一个共同点：不缺信息，缺一个把信息变成顺序、把顺序变成结果的人。</p>
           </div>
           <div className="service-grid">
             {AUDIENCE.map((a) => (
