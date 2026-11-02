@@ -40,8 +40,8 @@ export default function Home() {
       <section className="home-section home-section--mist" aria-labelledby="audience-heading">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">为谁服务 · Who it’s for</span>
-            <h2 id="audience-heading">三种情况，我们每天都在处理</h2>
+            <span className="eyebrow">为谁服务 · 三种情况我们每天都在处理</span>
+            <h2 id="audience-heading">中国企业落地美国后，谁在管日常运营？</h2>
             <p>想做，不知道怎么做；不想做，怕美国税务；怕被骗。缺的不是价格，是一份可以交给律师的落地方案。</p>
           </div>
           <div className="service-grid">
@@ -60,7 +60,7 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">三个产品 · 三个阶段</span>
-            <h2 id="products-heading">先看清楚，再按月，再五年</h2>
+            <h2 id="products-heading">三种合作方式：路径评估、运营陪跑、全程项目管理</h2>
             <p>
               所有价格为参考价，以书面报价单为准。评估费在 60 天内签约可全额抵扣；月费签约当月起原有单项收费取消。
             </p>
@@ -112,7 +112,7 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">团队 · 一个入口，七个职能</span>
-            <h2 id="team-heading">律师、会计、保险、薪资、人力资源，都在一个团队里</h2>
+            <h2 id="team-heading">我们协调移民律师、税法律师、CPA、保险与 PEO，你只对接一个人</h2>
             <p>{TEAM.intro}</p>
           </div>
           <div className="team-stats">

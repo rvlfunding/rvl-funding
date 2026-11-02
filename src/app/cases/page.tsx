@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { CASES } from '@/lib/site-content';
 
 export const metadata: Metadata = {
-  title: '案例 · Cases | RVL Funding',
-  description: '以代号呈现的真实案例：L-1 全案材料、多公司商业保险与理赔协调、从零搭起的外贸公司。不写姓名与证件信息。',
+  title: '案例｜L-1A 运营记录、workers\u2019 comp 续保、商业保险协调（代号呈现）',
+  description: '代号化案例：L-1A 全案运营记录如何准备、多家关联公司的 workers\u2019 comp 续保与保费审计、理赔与诉讼协调。不写姓名与证件信息。',
 };
 
 export default function CasesPage() {

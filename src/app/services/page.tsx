@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { PRODUCTS } from '@/lib/site-content';
 
 export const metadata: Metadata = {
-  title: '服务与价格 | RVL Funding',
-  description: '路径评估、运营陪跑月费、五年全程项目管理——包含什么、不包含什么、怎么付款、怎么退出，全部写在这一页。',
+  title: '运营陪跑月费与全程项目管理｜公司设立 · 合规日历 · 保险续保 · 运营记录',
+  description: '按月提供美国公司合规日历、payroll 与 PEO、商业保险续保管理、HR 文件及 L-1A/EB-1C 运营记录包；五年全程项目管理可选。价格公开：评估 $300 起、月费 $1,500 起。',
 };
 
 export default function ServicesPage() {

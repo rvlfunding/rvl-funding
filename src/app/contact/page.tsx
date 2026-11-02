@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { SITE } from '@/lib/site-content';
 
 export const metadata: Metadata = {
-  title: '联系 · Contact | RVL Funding',
+  title: '联系 RVL Funding｜洛杉矶 · 中国企业美国落地运营',
   description: '联系 RVL Funding：邮件、15 分钟电话预约、洛杉矶办公室。',
 };
 

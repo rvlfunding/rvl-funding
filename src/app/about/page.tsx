@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { BOUNDARIES, TEAM, WHY } from '@/lib/site-content';
 
 export const metadata: Metadata = {
-  title: '关于 RVL Funding · 美企落地运营团队 | 洛杉矶',
+  title: '关于 RVL Funding｜洛杉矶美企落地运营团队 · 移民律师 · 税法律师 · CPA · 保险 · PEO',
   description:
     'RVL Funding 是洛杉矶的美企落地运营团队：移民律师、税法律师、CPA、薪资与 PEO、商业保险、人力资源七个职能，由金融背景的总协调师统一调度。中国企业在美国的企业管家。',
 };

@@ -4,7 +4,7 @@ import AssessmentForm from './AssessmentForm';
 import { PRODUCTS } from '@/lib/site-content';
 
 export const metadata: Metadata = {
-  title: '路径评估 · Path Assessment | RVL Funding',
+  title: '赴美落地路径评估 $300 起｜L-1A 新办公司、EB-1C 还是 EB-5？',
   description: '一次面谈 + 一份可以交给律师的书面落地方案：公司怎么设、人怎么来、钱怎么出、税怎么交、保险买什么、五年花多少。$300 起，60 天内签约全额抵扣。',
 };
 
