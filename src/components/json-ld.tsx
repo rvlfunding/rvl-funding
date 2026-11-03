@@ -9,7 +9,7 @@ export function JsonLd() {
     url: SITE.url,
     email: SITE.email,
     description:
-      '美企落地运营团队：为意向或已经在美国落地的中国企业提供合规日历、经营记录、律师与财税对接、薪资系统、商业保险与人力资源的按月运营服务。',
+      '美企落地运营团队：为意向或已经在美国落地的中国企业提供合规日历、经营记录、税务与移民材料、薪资系统、商业保险与人力资源的运营服务。',
     areaServed: ['US', 'CN'],
     availableLanguage: ['zh-CN', 'en'],
     address: {

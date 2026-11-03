@@ -122,7 +122,7 @@ export default function AssessmentForm() {
           {message}
         </p>
       )}
-      <p className="form-fine">提交后 1 个工作日内回复排期与付款方式；付款后排期。RVL Funding 不是律师事务所，评估报告不构成法律意见。</p>
+      <p className="form-fine">提交后 1 个工作日内回复排期与付款方式；付款后排期。评估报告为书面方案，任何申请结果由主管机关决定。</p>
     </form>
   );
 }

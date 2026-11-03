@@ -15,7 +15,7 @@ export function SiteFooter() {
         <div className="footer-brand">
           <h4>RVL Funding</h4>
           <p>
-            洛杉矶的美企落地运营团队。公司设立、会计税务、薪资与人事、商业保险、移民与法律协调，按月负责。
+            洛杉矶的美企落地运营团队。公司设立、会计税务、薪资人力、商业保险、移民身份、法律合规、财富传承，一支专属团队负责。
           </p>
           <p style={{ marginTop: '0.75rem', fontSize: '0.85rem' }}>
             {SITE.address}
@@ -73,7 +73,7 @@ export function SiteFooter() {
       </div>
       <div className="footer-divider">
         <div className="footer-bottom">
-          © 2026 RVL Funding. 移民申请由团队中的独立持牌律师递交，税务由 CPA 负责；RVL 不以律师或会计师身份执业，本站内容不构成法律、税务或投资意见，也不构成任何审批结果的承诺。 ·{' '}
+          © 2026 RVL Funding. 本站内容为一般信息，不构成针对个案的法律、税务或投资意见；任何申请的结果由主管机关决定。 ·{' '}
           <Link href="/privacy">隐私</Link>
         </div>
       </div>

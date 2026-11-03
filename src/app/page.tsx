@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { AUDIENCE, BOUNDARIES, CASES, FAQ, HERO, PRODUCTS, STEPS, TEAM, WHY } from '@/lib/site-content';
+import { AUDIENCE, CASES, FAQ, HERO, PRODUCTS, STEPS, TEAM, WHY } from '@/lib/site-content';
 
 export default function Home() {
   const [assessment, retainer, program] = PRODUCTS;
@@ -112,7 +112,7 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">团队 · Team</span>
-            <h2 id="team-heading">我们协调移民律师、税法律师、CPA、保险与 PEO，你只对接一个人</h2>
+            <h2 id="team-heading">每家客户，一支专属团队</h2>
             <p>{TEAM.intro}</p>
           </div>
           <div className="team-stats">
@@ -128,10 +128,12 @@ export default function Home() {
               <article className="function-card" key={f.role}>
                 <h3>{f.role}</h3>
                 <p>{f.text}</p>
+                <Link href={`/team/${f.slug}`} className="fn-link">
+                  看这个职能做什么 →
+                </Link>
               </article>
             ))}
           </div>
-          <p className="team-note">{TEAM.note}</p>
         </div>
       </section>
 
@@ -184,17 +186,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Boundaries + FAQ */}
+      {/* FAQ */}
       <section className="home-section home-section--mist" aria-labelledby="faq-heading">
         <div className="container faq-layout">
           <div>
-            <span className="eyebrow">边界 · Scope</span>
-            <h2 style={{ marginBottom: '1.25rem' }}>先说清楚我们不做的</h2>
-            <ul className="boundary-list">
-              {BOUNDARIES.map((b) => (
-                <li key={b}>{b}</li>
-              ))}
-            </ul>
+            <span className="eyebrow">团队 · Team</span>
+            <h2 style={{ marginBottom: '1.25rem' }}>八个职能，一张时间表</h2>
+            <p>{TEAM.intro}</p>
+            <p style={{ marginTop: '1rem' }}>
+              <Link href="/about#team" className="fn-link">
+                了解团队如何分工 →
+              </Link>
+            </p>
           </div>
           <div>
             <span className="eyebrow">常见问题 · FAQ</span>

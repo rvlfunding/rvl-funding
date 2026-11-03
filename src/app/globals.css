@@ -2290,3 +2290,138 @@ button.btn-primary:hover {
 .team-stat {
   border-color: rgba(125, 220, 159, 0.35);
 }
+
+/* 职能落地页 */
+.fn-en { display: block; font-family: var(--font-inter, Inter, sans-serif); font-size: 0.95rem; letter-spacing: 0.04em; color: var(--green); margin-bottom: 0.5rem; }
+.fn-layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 2.5rem; align-items: start; }
+.fn-duties li { margin-bottom: 0.55rem; }
+.fn-side { display: grid; gap: 1.25rem; }
+.fn-card { border: 1px solid rgba(10, 37, 64, 0.1); border-radius: 14px; padding: 1.25rem 1.4rem; background: var(--white); }
+.fn-card h3 { margin: 0 0 0.6rem; font-size: 1rem; color: var(--green); }
+.fn-card p { margin: 0.4rem 0; font-size: 0.95rem; }
+.fn-nav { display: flex; justify-content: space-between; gap: 1rem; padding: 1.5rem 1.5rem 3rem; font-size: 0.95rem; }
+.fn-nav a { color: var(--green); font-weight: 600; }
+.function-card a.fn-link { display: inline-block; margin-top: 0.6rem; color: var(--green); font-weight: 600; font-size: 0.9rem; }
+@media (max-width: 860px) { .fn-layout { grid-template-columns: 1fr; } }
+
+/* ==========================================================
+   最终配色锁定（2026-11-02）：全站只用一个绿 #15603b；
+   深蓝底上原来的金色/浅绿文字一律改白；金色只保留品牌字标。
+   ========================================================== */
+:root {
+  --green: #15603b;
+  --green-soft: #15603b;
+  --green-dark-bg: #15603b;
+  --green-dark-text: #ffffff;
+  --shadow-gold: 0 20px 50px rgba(21, 96, 59, 0.18);
+}
+.btn-primary,
+a.btn-primary,
+button.btn-primary,
+.hero-home .btn-primary,
+.hero-home a.btn-primary,
+.section-dark .btn-primary,
+.section-dark a.btn-primary,
+.cta-band .btn-primary,
+.cta-band a.btn-primary {
+  background: #15603b;
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+}
+.btn-primary:hover,
+a.btn-primary:hover,
+button.btn-primary:hover,
+.hero-home .btn-primary:hover,
+.hero-home a.btn-primary:hover,
+.section-dark .btn-primary:hover,
+.section-dark a.btn-primary:hover,
+.cta-band .btn-primary:hover,
+.cta-band a.btn-primary:hover {
+  background: #124f31;
+}
+/* 深底上的强调文字：白 */
+.team-stat .num,
+.footer-brand h4,
+.footer-nav h5,
+.footer-subscribe h5,
+.section-dark .section-label,
+.section-dark .eyebrow,
+.hero-home .eyebrow,
+.hero .eyebrow,
+.cta-band .eyebrow,
+.hero-watchlist-title,
+.hero-home-copy .hero-subtitle strong,
+.step-num,
+.case-code--dark,
+.footer-nav a:hover,
+.footer-bottom a:hover,
+.footer-ref-highlight a,
+.col-footer-link:hover {
+  color: #ffffff;
+}
+.team-stat {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+/* 浅底上的强调文字与线条：绿 */
+.eyebrow,
+.section-label,
+.trust-stat .num,
+.resource-pill,
+.preview-card .preview-meta,
+.member-title,
+.resource-cards .resource-card span,
+.nav-menu a.is-active,
+.nav-menu a:hover,
+.pricing-eyebrow,
+.pricing-more:hover,
+.product-col h3,
+.timeline-year,
+.case-code {
+  color: var(--green);
+}
+.function-card {
+  border-top-color: var(--green);
+}
+.nav-menu a::after {
+  background: var(--green);
+}
+/* 金色只留品牌字标 */
+.brand-mark {
+  color: #d4af37;
+}
+.btn-subscribe,
+.btn-subscribe:hover {
+  background: #15603b;
+  color: #fff;
+  box-shadow: none;
+}
+.social-links a,
+.social-links a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.member-avatar {
+  background: #15603b;
+}
+.hero-watchlist li::before,
+.dot-list li::before,
+.check-list li::before {
+  background: var(--green);
+  color: var(--green);
+}
+.faq-list summary::after,
+.contact-links a:hover,
+.case-code--dark {
+  color: var(--green);
+}
+.hero-home .hero-watchlist li::before,
+.section-dark .case-code--dark {
+  background: #fff;
+  color: #fff;
+}
+.lead-form input:focus,
+.lead-form textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(21, 96, 59, 0.15);
+}

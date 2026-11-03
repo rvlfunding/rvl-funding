@@ -73,7 +73,7 @@ export default function ContactPage() {
                 护照、身份证、保单号、银行信息。第一次联系只需要文字描述；需要材料时我们会用安全的方式单独索取。
               </p>
               <p style={{ marginTop: '1rem', fontSize: '0.85rem', opacity: 0.7 }}>
-                RVL Funding 不是律师事务所，不提供法律、税务或投资意见。
+                本站内容为一般信息，不构成针对个案的法律、税务或投资意见。
               </p>
             </div>
           </div>

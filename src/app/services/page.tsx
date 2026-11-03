@@ -66,9 +66,9 @@ export default function ServicesPage() {
                 </tr>
                 <tr>
                   <th>你买到的</th>
-                  <td>方向、步骤、预算、风险，写成一份能拿给律师核对的方案</td>
-                  <td>一个长期在场的人：截止日有人盯，记录按月整理，材料提前备齐</td>
-                  <td>从设立到绿卡，一张五年时间表，一个团队负责到底</td>
+                  <td>方向、步骤、预算、风险，写成一份能照着走的书面方案</td>
+                  <td>一支长期在场的团队：截止日有人盯，记录按月整理，材料提前备齐</td>
+                  <td>从设立到绿卡，一张五年时间表，一支团队负责到底</td>
                 </tr>
               </tbody>
             </table>
@@ -86,7 +86,7 @@ export default function ServicesPage() {
           <div className="service-grid">
             <article className="service-card">
               <h3>注册代办 · 按年收费</h3>
-              <p>管注册、EIN、注册代理和年报。公司开出来之后的运营、人事、保险、律师会计的衔接不在范围内。</p>
+              <p>管注册、EIN、注册代理和年报。公司开出来之后的运营、人事、保险、税务与移民的衔接不在范围内。</p>
             </article>
             <article className="service-card">
               <h3>名义雇主 EOR / PEO · 按员工人月计价</h3>
@@ -94,7 +94,7 @@ export default function ServicesPage() {
             </article>
             <article className="service-card">
               <h3>RVL 运营陪跑 · 按公司每月固定</h3>
-              <p>管公司这一层的全部：合规日历、经营记录、律师与 CPA 对接、保险续保、人事文件；PEO 可作为模块按人头加入。</p>
+              <p>管公司这一层的全部：合规日历、经营记录、税务与移民材料、保险续保、人事文件；PEO 可作为模块按人头加入。</p>
             </article>
           </div>
         </div>
