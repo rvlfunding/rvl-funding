@@ -15,7 +15,7 @@ export function SiteFooter() {
         <div className="footer-brand">
           <h4>RVL Funding</h4>
           <p>
-            洛杉矶的美企落地运营团队。公司设立、会计税务、薪资人力、商业保险、移民身份、法律合规、财富传承，一支专属团队负责。
+            洛杉矶的美企落地运营团队。公司设立、会计税务、薪资人力、风险与保险、移民与身份、法律合规、财富传承，一支专属团队负责。
           </p>
           <p style={{ marginTop: '0.75rem', fontSize: '0.85rem' }}>
             {SITE.address}

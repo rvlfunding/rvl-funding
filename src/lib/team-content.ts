@@ -114,7 +114,7 @@ export const TEAM_FUNCTIONS: TeamFunction[] = [
     roleEn: 'Payroll, HR & Benefits',
     short: '发薪、工资税、入离职文件、员工手册，团体医疗与养老金计划。',
     summary:
-      '通过 PEO 体系为客户公司运行薪资与人力资源：按期发薪、申报工资税、办理入离职、维护员工手册与合规培训记录；并为公司设立团体医疗（group health）与团体养老金计划（401(k) 等），让小公司也能用大公司的标准招人、留人。目前体系内在管的外包员工超过 40 人。',
+      '通过 PEO 体系为客户公司运行薪资与人力资源：按期发薪、申报工资税、办理入离职、维护员工手册与合规培训记录；并为公司设立团体医疗（group health）与团体养老金计划（401(k) 等），让小公司也能用大公司的标准招人、留人。目前在职员工 40 余人。',
     duties: [
       '薪资运行（payroll）：周薪 / 双周薪 / 月薪，直接存款，工资单',
       '工资税申报与缴纳：联邦 941 / 940、州失业保险、W-2 / 1099 年度申报',
@@ -142,7 +142,7 @@ export const TEAM_FUNCTIONS: TeamFunction[] = [
   },
   {
     slug: 'insurance',
-    role: '风险与商业保险',
+    role: '风险与保险',
     roleEn: 'Risk & Commercial Insurance',
     short: '责任险、财产险、劳工保险的投保、续保、COI 与理赔。',
     summary:

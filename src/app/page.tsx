@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { AUDIENCE, CASES, FAQ, HERO, PRODUCTS, STEPS, TEAM, WHY } from '@/lib/site-content';
+import { AUDIENCE, AUDIENCE_INTRO, CASES, FAQ, HERO, PRODUCTS, STEPS, TEAM, WHY } from '@/lib/site-content';
 
 export default function Home() {
   const [assessment, retainer, program] = PRODUCTS;
@@ -24,12 +24,17 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="hero-glass-panel hero-watchlist" aria-label="每月替你盯的事">
+          <div className="hero-glass-panel hero-watchlist" aria-label="合规日历">
             <p className="hero-watchlist-title">{HERO.watchlistTitle}</p>
             <ul>
-              {HERO.watchlist.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
+              {HERO.watchlist.map((item) => {
+                const [k, ...rest] = item.split('：');
+                return (
+                  <li key={item}>
+                    <strong>{k}</strong>：{rest.join('：')}
+                  </li>
+                );
+              })}
             </ul>
             <p className="hero-watchlist-foot">{HERO.watchlistFoot}</p>
           </div>
@@ -42,7 +47,7 @@ export default function Home() {
           <div className="section-head">
             <span className="eyebrow">为谁服务 · 三种情况我们每天都在处理</span>
             <h2 id="audience-heading">中国企业落地美国后，谁在管日常运营？</h2>
-            <p>意向或已落地美国的中国企业——工厂、仓库、供应链、跨境电商；老板在国内，或不能长期待在美国。三种处境，一个共同点：不缺信息，缺一个把信息变成顺序、把顺序变成结果的人。</p>
+            <p>{AUDIENCE_INTRO}四种处境，一个共同点：不缺信息，缺一支把信息变成顺序、把顺序变成结果的团队。</p>
           </div>
           <div className="service-grid">
             {AUDIENCE.map((a) => (

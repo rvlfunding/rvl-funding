@@ -9,7 +9,7 @@ export const SITE = {
   name: 'RVL Funding',
   tagline: '你在美国的企业管家',
   taglineEn: 'Your operations lead in the U.S.',
-  sector: '美企落地 · 落地运营 · Landing Operations',
+  sector: '美企落地 · 运营统筹 · Landing Operations',
   email: 'info@rvlfunding.com',
   address: '17800 Castleton St, City of Industry, CA 91748',
   hours: '周一至周五 10:00–16:00（美西时间 Pacific Time）',
@@ -20,33 +20,36 @@ export const SITE = {
 export const HERO = {
   eyebrow: SITE.sector,
   h1: SITE.tagline,
-  sub: `${SITE.taglineEn} · 你派驻美国的运营负责人：不发工资、不办签证、按月付费。`,
+  sub: `${SITE.taglineEn} · 您在美国的运营负责人。`,
   primaryCta: '预约路径评估 · $300 起',
   secondaryCta: '看月费包含什么',
-  watchlistTitle: '每月替你盯的 6 类事',
+  watchlistTitle: '合规日历 · Compliance Calendar',
   watchlist: [
-    '合规日历：年审、Statement of Information、各类申报，到期前有人提醒、有人办',
-    '经营记录：流水、工资单、合同、租约，按移民局要看的格式按月归档',
-    '移民与财税：申请和报税要的材料，提前备齐、翻译、归档',
-    '薪资与人事：工资照发、工资税照报，劳工保险（workers\u2019 comp）随薪资配置，审计有人应对',
-    '商业保险：一般责任险（GL）、企业主综合险（BOP）、财产与货运险到期前续，出险时报，COI 保险证明随要随出',
-    '公司秘书：注册代理、营业执照、官方信件接收与翻译',
+    '每月：发薪与工资税存缴｜销售税申报｜记账、对账、月度报表｜经营记录归档',
+    '每季：Form 941（加州 DE 9）｜预缴所得税｜30 分钟检视电话',
+    '每年：公司与个人报税、Form 5472｜franchise tax、Statement of Information、执照续期｜W-2 / 1099｜workers\u2019 comp 审计与各保单续保',
   ],
-  watchlistFoot: '到期前提醒 · 每月一份经营记录包 · 每季一次检视电话',
+  watchlistFoot: '到期提醒 · 公司秘书 · 官方信件、签证延期、新员工报备',
 };
+
+export const AUDIENCE_INTRO = '意向或已落地美国的中小跨国企业。';
 
 export const AUDIENCE = [
   {
-    title: '正在计划在美国开公司、建厂或设仓',
-    text: '方向定了，顺序没人排。先选州还是先开户？人什么时候过来？第一张保单买什么？每一步都有人做过，就是没人把它们串成一张表。',
+    title: '正在计划在美国开公司、建厂、设仓或者创立品牌',
+    text: '方向定了，顺序没人排：先选州还是先开户，人什么时候过来，第一张保单买什么。我们把每一步串成一张表。',
   },
   {
-    title: '公司已经落地，老板在国内',
-    text: '会计只管账，律师只管案，保险经纪只管保单。三方之间的空档没人补，最后都压回老板的微信里。真正让人迟迟不敢动的，是怕美国的税一步错、步步错。',
+    title: '公司已经落地，决策人和主创团队长期在境外',
+    text: '会计只管账，律师只管案，保险经纪只管保单，三方之间的空档没人补。我们做美国这边长期在场的运营团队。',
   },
   {
-    title: '想过移民的事，两年没动',
-    text: '报价看过，讲座听过，朋友也问过，还是没动。不是不想，是怕——怕被骗，怕钱交了没人负责。缺的不是再一份报价，是一份写清楚谁做什么、什么时候做的落地方案。',
+    title: '想长期合法在美国工作的企业主',
+    text: 'L-1A、EB-1C 看的是公司的真实运营。从第一个月起按移民局要看的格式留记录，递交那天不用回头补。',
+  },
+  {
+    title: '不需要大量雇员的美国本地初创企业',
+    text: '人少，事一样多。合规日历、官方信件、年度申报有人盯，创始人把时间留给业务。',
   },
 ];
 
@@ -134,9 +137,9 @@ export const PRODUCTS: Product[] = [
 ];
 
 export const STEPS = [
-  { n: '01', title: '评估', text: '付费面谈，拿到书面方案。先把该不该做、走哪条路、花多少钱、找谁做写在纸上。' },
-  { n: '02', title: '方案', text: '按评估结论定合作方式：按月陪跑，或全程项目管理。包含什么、不包含什么、怎么付、怎么退，签约前全部写清。' },
-  { n: '03', title: '执行', text: '签约当天起 RVL 接手美国这边的日常。每月一份记录包，每季一次检视，到期的事提前有人提醒。' },
+  { n: '01', title: '评估', text: '付费面谈，拿到一对一定制方案。先把该不该做、走哪条路、花多少钱、找谁做写在纸上。' },
+  { n: '02', title: '方案', text: '按评估结论定合作方式：按月陪跑，或按项目全程负责。包含什么、不包含什么、怎么付、怎么退，签约前全部写清。' },
+  { n: '03', title: '执行', text: '签约当天起 RVL 接手美国公司日常。每月一份记录包，每季一次检视，到期的事提前有人提醒。' },
 ];
 
 import { TEAM_FUNCTIONS } from './team-content';
@@ -144,11 +147,11 @@ import { TEAM_FUNCTIONS } from './team-content';
 /** 团队八个职能（短句版给卡片，详情见 team-content.ts）。对外口径：一个整体团队。 */
 export const TEAM = {
   intro:
-    '每家客户，一支专属团队。公司设立、会计税务、薪资人力、商业保险、移民身份、法律合规、财富传承，八个职能同在一张时间表上，由项目统筹统一调度，对您和您的公司负责。',
+    '项目统筹、公司设立、会计税务、薪资人力、风险与保险、移民与身份、法律合规、财富传承，八个职能同在一张时间表上，对您和您的公司负责。',
   functions: TEAM_FUNCTIONS.map((f) => ({ slug: f.slug, role: `${f.role} · ${f.roleEn}`, text: f.short })),
   stats: [
     { num: '8', label: '个专业职能，按行业惯例分工' },
-    { num: '40+', label: '通过 PEO 体系在管的外包员工' },
+    { num: '40+', label: '在职员工' },
     { num: '1', label: '支为每家客户组建的专属团队' },
   ],
 };
