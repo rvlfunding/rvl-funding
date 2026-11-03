@@ -24,7 +24,7 @@ export function SiteHeader() {
           <div className="brand-mark">RVL</div>
           <div className="brand-text">
             <h4>RVL FUNDING</h4>
-            <p>美企落地 · 落地运营</p>
+            <p>美企落地 · 运营统筹</p>
           </div>
         </Link>
 
