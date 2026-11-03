@@ -63,7 +63,7 @@ export default function ContactPage() {
                   <Link href="/services#retainer">运营陪跑月费 → 看包含与条款</Link>
                 </li>
                 <li>
-                  <Link href="/services#program">全程项目管理 → 先做评估，再出五年方案</Link>
+                  <Link href="/services#program">全程项目管理 → 先做评估，再出方案</Link>
                 </li>
               </ul>
             </div>

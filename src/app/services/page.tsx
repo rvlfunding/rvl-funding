@@ -4,7 +4,7 @@ import { PRODUCTS } from '@/lib/site-content';
 
 export const metadata: Metadata = {
   title: '运营陪跑月费与全程项目管理｜公司设立 · 合规日历 · 保险续保 · 运营记录',
-  description: '按月提供美国公司合规日历、payroll 与 PEO、商业保险续保管理、HR 文件及 L-1A/EB-1C 运营记录包；五年全程项目管理可选。价格公开：评估 $300 起、月费 $1,500 起。',
+  description: '按月提供美国公司合规日历、payroll 与 PEO、商业保险续保管理、HR 文件及 L-1A/EB-1C 运营记录包；到 I-140 的全程项目管理可选。价格公开：评估 $300 起、月费 $2,500 起。',
 };
 
 export default function ServicesPage() {
@@ -15,7 +15,7 @@ export default function ServicesPage() {
           <p className="eyebrow">服务与价格 · Services &amp; Pricing</p>
           <h1>三种合作方式，一套看得见的规则</h1>
           <p className="hero-text">
-            一次性的评估、按月的陪跑、五年的全程负责。深度不同，规则一样：包含什么、不包含什么、怎么付、怎么退，签约前全部写清。价格为参考价，以书面报价单为准。
+            一次性的评估、按月的陪跑、到 I-140 的全程项目管理。深度不同，规则一样：包含什么、不包含什么、怎么付、怎么退，签约前全部写清。价格为参考价，以书面报价单为准。
           </p>
           <div className="hero-actions">
             <Link className="btn-primary" href="/assessment">
@@ -62,13 +62,13 @@ export default function ServicesPage() {
                   <th>形态</th>
                   <td>一次性，面谈后 5 个工作日交付</td>
                   <td>按月，12 个月起签</td>
-                  <td>五年，分五段付款</td>
+                  <td>一次付清，任一阶段可退出</td>
                 </tr>
                 <tr>
                   <th>你买到的</th>
                   <td>方向、步骤、预算、风险，写成一份能照着走的书面方案</td>
                   <td>一支长期在场的团队：截止日有人盯，记录按月整理，材料提前备齐</td>
-                  <td>从设立到绿卡，一张五年时间表，一支团队负责到底</td>
+                  <td>从设立到 I-140 递交，一张时间表，一支团队负责到底</td>
                 </tr>
               </tbody>
             </table>
@@ -154,7 +154,7 @@ export default function ServicesPage() {
             <span className="eyebrow">不确定选哪个？</span>
             <h2>三条路都从评估开始</h2>
             <p style={{ margin: '1rem 0 2rem' }}>
-              评估方案的最后一页会给出建议：不做、按月、还是五年。60 天内签约，评估费全额抵扣。
+              评估方案的最后一页会给出建议：不做、按月、还是全案。60 天内签约，评估费全额抵扣。
             </p>
             <Link href="/assessment" className="btn-primary">
               预约路径评估
