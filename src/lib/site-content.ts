@@ -7,7 +7,7 @@
 
 export const SITE = {
   name: 'RVL Funding',
-  tagline: '你在美国的企业管家。',
+  tagline: '你在美国的企业管家',
   taglineEn: 'Your operations lead in the U.S.',
   sector: '美企落地 · 落地运营 · Landing Operations',
   email: 'info@rvlfunding.com',
@@ -20,7 +20,7 @@ export const SITE = {
 export const HERO = {
   eyebrow: SITE.sector,
   h1: SITE.tagline,
-  sub: `${SITE.taglineEn} · 相当于你派驻美国的运营负责人——不发固定工资、不用办签证、按月付费。执照、报税、工资、保险、律师和会计的事，这边有人接住、排好、办完。`,
+  sub: `${SITE.taglineEn} · 你派驻美国的运营负责人：不发工资、不办签证、按月付费。`,
   primaryCta: '预约路径评估 · $300 起',
   secondaryCta: '看月费包含什么',
   watchlistTitle: '每月替你盯的 6 类事',
@@ -167,8 +167,8 @@ export const TEAM = {
       text: '月度记账、财务报表、公司与个人报税、销售税；中美两边的申报口径对齐，报表按移民局和银行要看的格式出。',
     },
     {
-      role: '薪资与人力资源 · Payroll & HR（PEO）',
-      text: 'payroll、工资税、劳工保险（workers\u2019 comp）随薪资配置、入职与离职文件、员工手册、合规培训记录；通过 PEO 体系在管的外包员工 40+ 人。',
+      role: '薪资、人力与员工福利 · Payroll, HR & Benefits（PEO）',
+      text: 'payroll、工资税、劳工保险（workers\u2019 comp）随薪资配置、入职与离职文件、员工手册；团体医疗（group health）与团体养老金计划（401(k) / SEP）的设立与年度管理，让小公司也能按大公司的标准留人；通过 PEO 体系在管的外包员工 40+ 人。',
     },
     {
       role: '风险与保险 · Risk & Insurance（P&C）',
@@ -179,8 +179,8 @@ export const TEAM = {
       text: 'L-1A、EB-1C、EB-5、NIW / EB-1A 的资格判断与递交由律师负责；RVL 负责运营记录包与全部支持材料。',
     },
     {
-      role: '法律与合规 · Legal & Compliance（律师）',
-      text: '中美架构与税务居民身份、转让定价、资金出入境、合同与租约审阅、股权文件、劳动法合规；与 CPA 协同出具一致口径。',
+      role: '法律、合规与传承 · Legal, Compliance & Estate（律师）',
+      text: '中美架构与税务居民身份、转让定价、资金出入境、合同与租约审阅、股权文件、劳动法合规；企业主的信托（trust）与资产保护安排，让公司股权、美国房产和家庭传承放在同一张架构图上；与 CPA 协同出具一致口径。',
     },
   ],
   stats: [

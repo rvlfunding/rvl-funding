@@ -2192,9 +2192,11 @@ a.preview-card:hover {
    品牌方案 A：合规蓝 + 运营绿；金色降为徽记级点缀
    ========================================================== */
 :root {
-  --green: #1f7a4d;
-  --green-soft: #2a9360;
+  --green: #15603b;        /* 浅底上的绿：文字、标签、按钮，调深 */
+  --green-soft: #1b7347;
   --green-tint: #e8f3ec;
+  --green-dark-bg: #23905c; /* 深蓝底上的绿：按钮，保持亮度 */
+  --green-dark-text: #7ddc9f; /* 深蓝底上的绿字 */
 }
 .eyebrow,
 .section-dark .section-label,
@@ -2208,25 +2210,29 @@ a.preview-card:hover {
   color: var(--green);
 }
 .section-dark .section-label,
+.section-dark .eyebrow,
+.hero-home .eyebrow,
+.hero .eyebrow,
+.cta-band .eyebrow,
 .step-num,
 .hero-watchlist-title,
 .case-code--dark,
 .team-stat .num {
-  color: #6fcf97;
+  color: var(--green-dark-text);
 }
 .btn-primary,
 a.btn-primary,
 button.btn-primary {
   background: linear-gradient(180deg, var(--green-soft) 0%, var(--green) 100%);
   color: var(--white);
-  border-color: rgba(31, 122, 77, 0.5);
-  box-shadow: 0 16px 40px rgba(31, 122, 77, 0.22);
+  border-color: rgba(21, 96, 59, 0.5);
+  box-shadow: 0 16px 40px rgba(21, 96, 59, 0.2);
 }
 .btn-primary:hover,
 a.btn-primary:hover,
 button.btn-primary:hover {
-  background: linear-gradient(180deg, #33a06c 0%, var(--green-soft) 100%);
-  box-shadow: 0 20px 48px rgba(31, 122, 77, 0.3);
+  background: linear-gradient(180deg, #23905c 0%, var(--green-soft) 100%);
+  box-shadow: 0 20px 48px rgba(21, 96, 59, 0.28);
 }
 .nav-menu a.is-active,
 .nav-menu a:hover,
@@ -2236,12 +2242,12 @@ button.btn-primary:hover {
   color: var(--green);
 }
 .nav-menu a::after {
-  background: linear-gradient(90deg, var(--green), rgba(31, 122, 77, 0.2));
+  background: linear-gradient(90deg, var(--green), rgba(21, 96, 59, 0.2));
 }
 .pricing-card--featured {
-  border-color: rgba(31, 122, 77, 0.45);
+  border-color: rgba(21, 96, 59, 0.4);
   background: linear-gradient(180deg, #f4faf6 0%, var(--white) 60%);
-  box-shadow: 0 16px 40px rgba(31, 122, 77, 0.12);
+  box-shadow: 0 16px 40px rgba(21, 96, 59, 0.12);
 }
 .why-card,
 .function-card {
@@ -2257,3 +2263,30 @@ button.btn-primary:hover {
   border-color: rgba(111, 207, 151, 0.35);
 }
 /* 金色只保留：品牌字标（navy 底金字）、页脚徽记 */
+
+/* 深蓝底上的主按钮：用亮一档的绿，避免与 navy 粘在一起 */
+.hero-home .btn-primary,
+.hero .btn-primary,
+.section-dark .btn-primary,
+.cta-band .btn-primary,
+.hero-home a.btn-primary,
+.hero a.btn-primary,
+.section-dark a.btn-primary,
+.cta-band a.btn-primary {
+  background: linear-gradient(180deg, #2a9d66 0%, var(--green-dark-bg) 100%);
+  border-color: rgba(125, 220, 159, 0.45);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+.hero-home .btn-primary:hover,
+.hero .btn-primary:hover,
+.section-dark .btn-primary:hover,
+.cta-band .btn-primary:hover,
+.hero-home a.btn-primary:hover,
+.hero a.btn-primary:hover,
+.section-dark a.btn-primary:hover,
+.cta-band a.btn-primary:hover {
+  background: linear-gradient(180deg, #33ad72 0%, #2a9d66 100%);
+}
+.team-stat {
+  border-color: rgba(125, 220, 159, 0.35);
+}
