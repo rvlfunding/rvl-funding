@@ -2425,3 +2425,9 @@ button.btn-primary:hover,
   border-color: var(--green);
   box-shadow: 0 0 0 3px rgba(21, 96, 59, 0.15);
 }
+.social-link,
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
