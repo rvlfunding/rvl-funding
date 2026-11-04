@@ -177,15 +177,14 @@ function formatDateShort() {
 
 // ── SEND EMAIL ─────────────────────────────────────────────────────────────
 async function getSubscribers() {
-  try {
-    const filePath = path.join(__dirname, '..', 'public', 'subscribers.json');
-    const raw = fs.readFileSync(filePath, 'utf-8');
-    const data = JSON.parse(raw);
-    return data.subscribers || [];
-  } catch (e) {
-    console.error('Failed to read subscribers.json:', e.message);
-    return [];
-  }
+  // Subscriber emails are personal data and must never sit in public/ (served to anyone).
+  // Set the GitHub Actions secret SUBSCRIBER_EMAILS to a comma-separated list instead.
+  const list = (process.env.SUBSCRIBER_EMAILS || '')
+    .split(',')
+    .map((e) => e.trim())
+    .filter((e) => e.includes('@'));
+  if (list.length === 0) console.log('SUBSCRIBER_EMAILS is not set — no digest recipients');
+  return list;
 }
 
 function buildEmailHTML(immigrationItems, financialItems, date) {
