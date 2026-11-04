@@ -1,4 +1,5 @@
-import { EMAIL, FOOTER, SOCIAL } from '../content';
+import Link from 'next/link';
+import { EMAIL, FOOTER, R, SOCIAL } from '../content';
 
 const icons: Record<keyof typeof SOCIAL, { label: string; path: string }> = {
   youtube: {
@@ -24,9 +25,9 @@ export function Footer() {
     <footer className="site-foot">
       <div className="wrap cols">
         <div>
-          <div className="brand">
+          <Link className="brand" href={R.home} aria-label="RVL 中文首页">
             <b>RVL</b>
-          </div>
+          </Link>
           <p className="foot-about">
             {FOOTER.tagline}
             <br />
@@ -37,38 +38,40 @@ export function Footer() {
           <div className="social" aria-label="社交媒体">
             {(Object.keys(icons) as Array<keyof typeof SOCIAL>).map((k) => {
               const url = SOCIAL[k];
-              return (
-                <a
-                  key={k}
-                  href={url || '#top'}
-                  aria-label={icons[k].label}
-                  {...(url ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                >
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d={icons[k].path} />
-                  </svg>
+              const svg = (
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d={icons[k].path} />
+                </svg>
+              );
+              // 社交主页地址待提供：未填写时只显示图标，不做空链接。
+              return url ? (
+                <a key={k} href={url} aria-label={icons[k].label} target="_blank" rel="noopener noreferrer">
+                  {svg}
                 </a>
+              ) : (
+                <span key={k} className="off" title={`${icons[k].label}（待提供）`}>
+                  {svg}
+                </span>
               );
             })}
           </div>
         </div>
         {FOOTER.columns.map((col) => (
-          <div key={col.title}>
-            <h4>{col.title}</h4>
+          <nav key={col.title} aria-label={col.title}>
+            <h2 className="foot-h">{col.title}</h2>
             <ul>
               {col.links.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href}>{l.label}</a>
+                  <Link href={l.href}>{l.label}</Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         ))}
       </div>
       <div className="wrap legal">
         <p className="comp">{FOOTER.compliance}</p>
         <p>{FOOTER.legal}</p>
-        <p>{FOOTER.credits}</p>
       </div>
     </footer>
   );

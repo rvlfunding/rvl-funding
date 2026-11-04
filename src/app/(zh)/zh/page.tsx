@@ -1,131 +1,58 @@
-import type { Metadata } from 'next';
 import { ClientTabs } from './_components/ClientTabs';
-import { Footer } from './_components/Footer';
-import { Header } from './_components/Header';
+import { JsonLd } from './_components/JsonLd';
 import { SelfAssessment } from './_components/SelfAssessment';
-import {
-  CtaBand,
-  Faq,
-  Hero,
-  Insights,
-  Logos,
-  Marquee,
-  Network,
-  Pricing,
-  Process,
-  Services,
-  Team,
-} from './_components/Sections';
-import { EMAIL, FAQ, IMG, PAGE_PATH, SEO, SERVICES, SITE_URL, SOCIAL } from './content';
+import { CtaBand, Faq, Hero, Insights, Marquee, Network, Pricing, Process, Services, Team } from './_components/Sections';
+import { ALT, EMAIL, HOME_FAQ, HOME_SEO, IMG, R, SERVICES, SITE_URL } from './content';
+import { breadcrumb, buildMetadata, faqPage, graph, ORG_ID, organization, webPage } from './seo';
 
-export const metadata: Metadata = {
-  title: SEO.title,
-  description: SEO.description,
-  keywords: SEO.keywords,
-  alternates: {
-    canonical: PAGE_PATH,
-    languages: {
-      'zh-Hans': PAGE_PATH,
-      en: '/',
-      'x-default': '/',
-    },
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'zh_CN',
-    url: PAGE_PATH,
-    siteName: 'RVL Funding',
-    title: SEO.title,
-    description: SEO.description,
-    images: [{ url: IMG.hero, width: 1343, alt: '洛杉矶夜景' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: SEO.title,
-    description: SEO.description,
-    images: [IMG.hero],
-  },
-  robots: { index: true, follow: true },
-};
+export const metadata = buildMetadata({
+  path: R.home,
+  title: HOME_SEO.title,
+  description: HOME_SEO.description,
+  keywords: HOME_SEO.keywords,
+  imageAlt: ALT.hero,
+  en: '/',
+  absoluteTitle: true,
+});
 
-function jsonLd() {
-  const pageUrl = `${SITE_URL}${PAGE_PATH}`;
-  const orgId = `${SITE_URL}/#organization`;
-  const sameAs = Object.values(SOCIAL).filter(Boolean);
-  return {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'Organization',
-        '@id': orgId,
-        name: 'RVL Funding',
-        url: SITE_URL,
-        email: EMAIL,
-        ...(sameAs.length ? { sameAs } : {}),
-      },
-      {
-        '@type': 'ProfessionalService',
-        '@id': `${pageUrl}#service`,
-        name: 'RVL Funding',
-        url: pageUrl,
-        description: SEO.description,
-        email: EMAIL,
-        image: `${SITE_URL}${IMG.hero}`,
-        parentOrganization: { '@id': orgId },
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Walnut',
-          addressRegion: 'CA',
-          addressCountry: 'US',
-        },
-        areaServed: [
-          { '@type': 'City', name: 'Los Angeles' },
-          { '@type': 'AdministrativeArea', name: 'Southern California' },
-        ],
-        availableLanguage: ['zh-Hans', 'en'],
-        priceRange: 'USD 1,500–10,000',
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
-          name: '服务范围',
-          itemListElement: SERVICES.items.map((s) => ({
-            '@type': 'Offer',
-            itemOffered: { '@type': 'Service', name: s.title, description: s.text },
-          })),
-        },
-      },
-      {
-        '@type': 'WebPage',
-        '@id': pageUrl,
-        url: pageUrl,
-        name: SEO.title,
-        inLanguage: 'zh-Hans',
-        isPartOf: { '@type': 'WebSite', url: SITE_URL, name: 'RVL Funding' },
-        about: { '@id': `${pageUrl}#service` },
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [{ '@type': 'ListItem', position: 1, name: '首页', item: pageUrl }],
-      },
-      {
-        '@type': 'FAQPage',
-        mainEntity: FAQ.items.map((f) => ({
-          '@type': 'Question',
-          name: f.q,
-          acceptedAnswer: { '@type': 'Answer', text: f.a },
+function homeLd() {
+  const url = `${SITE_URL}${R.home}`;
+  return graph(
+    organization(),
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${url}#business`,
+      name: 'RVL Funding',
+      url,
+      description: HOME_SEO.description,
+      email: EMAIL,
+      image: `${SITE_URL}${IMG.hero}`,
+      parentOrganization: { '@id': ORG_ID },
+      areaServed: [
+        { '@type': 'City', name: 'Los Angeles' },
+        { '@type': 'Country', name: 'United States' },
+      ],
+      availableLanguage: ['zh-Hans', 'en'],
+      priceRange: 'USD 300–300,000',
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: '服务范围',
+        itemListElement: SERVICES.items.map((s) => ({
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name: s.title, description: s.text, url: `${SITE_URL}${s.href}` },
         })),
       },
-    ],
-  };
+    },
+    webPage(R.home, HOME_SEO.title, HOME_SEO.description),
+    breadcrumb([{ name: '首页', path: R.home }]),
+    faqPage(HOME_FAQ.items, R.home),
+  );
 }
 
 export default function ZhHomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd()).replace(/</g, '\\u003c') }}
-      />
-      <Header />
+      <JsonLd data={homeLd()} />
       <main id="top">
         <Hero />
         <Marquee />
@@ -138,10 +65,8 @@ export default function ZhHomePage() {
         <Team />
         <Insights />
         <Faq />
-        <Logos />
         <CtaBand />
       </main>
-      <Footer />
     </>
   );
 }

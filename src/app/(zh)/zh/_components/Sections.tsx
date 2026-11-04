@@ -1,31 +1,29 @@
+import Link from 'next/link';
 import {
+  ALT,
   BOOKING,
   CTA,
-  FAQ,
   HERO,
+  HOME_FAQ,
   IMG,
   INSIGHTS,
-  LOGOS,
   MARQUEE,
   NETWORK,
   PRICING,
   PROCESS,
   SERVICES,
   TEAM,
+  type FaqItem,
 } from '../content';
-
-function Tbd({ children = '待确认' }: { children?: string }) {
-  return <span className="tbd">{children}</span>;
-}
 
 export function Hero() {
   return (
-    <section className="hero">
-      <div className="bg" style={{ ['--hero-img' as string]: `url('${IMG.hero}')` }} role="img" aria-label="洛杉矶夜景" />
+    <section className="hero" aria-labelledby="hero-title">
+      <div className="bg" style={{ ['--hero-img' as string]: `url('${IMG.hero}')` }} role="img" aria-label={ALT.hero} />
       <div className="wrap">
         <div>
           <div className="eyebrow">{HERO.eyebrow}</div>
-          <h1>
+          <h1 id="hero-title">
             {HERO.titleLines[0]}
             <br />
             {HERO.titleLines[1]}
@@ -46,14 +44,17 @@ export function Hero() {
             ))}
           </div>
         </div>
-        <aside className="nodes" aria-label={HERO.nodesTitle}>
-          <h2 className="nodes-title">{HERO.nodesTitle}</h2>
+        <aside className="nodes" aria-labelledby="hero-faq">
+          <h2 className="nodes-title" id="hero-faq">
+            {HERO.cardTitle}
+          </h2>
           <ol>
-            {HERO.nodes.map((n) => (
-              <li key={n}>{n}</li>
+            {HERO.card.map((n) => (
+              <li key={n.q}>
+                <Link href={n.href}>{n.q}</Link>
+              </li>
             ))}
           </ol>
-          <p className="foot">{HERO.nodesFoot}</p>
         </aside>
       </div>
     </section>
@@ -62,36 +63,40 @@ export function Hero() {
 
 export function Marquee() {
   return (
-    <div className="marquee" aria-label="服务关键词">
+    <nav className="marquee" aria-label="服务关键词">
       <div className="track">
         {MARQUEE.map((m) => (
-          <span key={m}>{m}</span>
+          <Link key={m.label} href={m.href}>
+            {m.label}
+          </Link>
         ))}
         {MARQUEE.map((m) => (
-          <span key={`dup-${m}`} aria-hidden="true">
-            {m}
-          </span>
+          <Link key={`dup-${m.label}`} href={m.href} aria-hidden="true" tabIndex={-1}>
+            {m.label}
+          </Link>
         ))}
       </div>
-    </div>
+    </nav>
   );
 }
 
 export function Services() {
   return (
-    <section className="band" id="services">
+    <section className="band" id="services" aria-labelledby="services-title">
       <div className="wrap">
         <div className="eyebrow">{SERVICES.eyebrow}</div>
-        <h2 className="h2">{SERVICES.title}</h2>
+        <h2 className="h2" id="services-title">
+          {SERVICES.title}
+        </h2>
         <p className="lead">{SERVICES.lead}</p>
         <div className="svc">
           {SERVICES.items.map((s) => (
-            <a key={s.n} href="#cta">
+            <Link key={s.n} href={s.href}>
               <span className="n">{s.n}</span>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
               <span className="more">{s.more}</span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -101,10 +106,12 @@ export function Services() {
 
 export function Process() {
   return (
-    <section className="band process" id="process">
+    <section className="band process" id="process" aria-labelledby="process-title">
       <div className="wrap">
         <div className="eyebrow">{PROCESS.eyebrow}</div>
-        <h2 className="h2">{PROCESS.title}</h2>
+        <h2 className="h2" id="process-title">
+          {PROCESS.title}
+        </h2>
         <p className="lead">{PROCESS.lead}</p>
         <ol className="steps">
           {PROCESS.steps.map((s, i) => (
@@ -123,15 +130,17 @@ export function Process() {
 
 export function Pricing() {
   return (
-    <section className="band pricing" id="pricing">
+    <section className="band pricing" id="pricing" aria-labelledby="pricing-title">
       <div className="wrap">
         <div className="top">
           <div>
             <div className="eyebrow">{PRICING.eyebrow}</div>
-            <h2 className="h2">{PRICING.title}</h2>
+            <h2 className="h2" id="pricing-title">
+              {PRICING.title}
+            </h2>
             <p className="lead">{PRICING.lead}</p>
           </div>
-          <div className="photo" style={{ backgroundImage: `url('${IMG.signing}')` }} role="img" aria-label="签署文件" />
+          <div className="photo" style={{ backgroundImage: `url('${IMG.signing}')` }} role="img" aria-label={ALT.signing} />
         </div>
         <div className="plans">
           {PRICING.plans.map((p) => (
@@ -142,13 +151,12 @@ export function Pricing() {
                 {p.price}
                 <small>{p.unit}</small>
               </div>
-              <p className="note">{p.note}</p>
               <ul>
                 {p.points.map((pt) => (
                   <li key={pt}>{pt}</li>
                 ))}
               </ul>
-              <a className={p.featured ? 'btn btn-gold' : 'btn btn-navy'} href={BOOKING[p.href]}>
+              <a className={p.featured ? 'btn btn-gold' : 'btn btn-navy'} href={p.href}>
                 {p.cta}
               </a>
             </div>
@@ -160,40 +168,53 @@ export function Pricing() {
   );
 }
 
+export function Roles() {
+  return (
+    <div className="roles">
+      {NETWORK.roles.map((r) => (
+        <div className="role" key={r.role}>
+          <b>{r.role}</b>
+          <span>{r.scope}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export function Principles({ level = 3 }: { level?: 2 | 3 }) {
+  const H = level === 2 ? 'h2' : 'h3';
+  return (
+    <>
+      <H className="principles-title" id="principles">
+        {NETWORK.principlesTitle}
+      </H>
+      <div className="principles">
+        {NETWORK.principles.map((p) => (
+          <div key={p.title}>
+            <p className="p-title">{p.title}</p>
+            <p>{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
 export function Network() {
   return (
-    <section className="band network alt" id="network">
+    <section className="band network alt" id="network" aria-labelledby="network-title">
       <div className="wrap grid">
         <div>
           <div className="eyebrow">{NETWORK.eyebrow}</div>
-          <h2 className="h2">{NETWORK.title}</h2>
+          <h2 className="h2" id="network-title">
+            {NETWORK.title}
+          </h2>
           <p className="lead">{NETWORK.lead}</p>
-          <div className="roles">
-            {NETWORK.roles.map((r) => (
-              <div className="role" key={r.role}>
-                <b>{r.role}</b>
-                <span>{r.scope}</span>
-              </div>
-            ))}
-          </div>
-          <p className="fine">
-            {NETWORK.fine}
-            <Tbd>{NETWORK.fineTbd}</Tbd>
-          </p>
+          <Roles />
         </div>
         <div>
-          <div className="netphoto" style={{ backgroundImage: `url('${IMG.advisors}')` }} role="img" aria-label="两位顾问交谈" />
-          <h3 className="principles-title" id="principles">
-            {NETWORK.principlesTitle}
-          </h3>
-          <div className="principles">
-            {NETWORK.principles.map((p) => (
-              <div key={p.title}>
-                <h4>{p.title}</h4>
-                <p>{p.text}</p>
-              </div>
-            ))}
-          </div>
+          <div className="netphoto" style={{ backgroundImage: `url('${IMG.advisors}')` }} role="img" aria-label={ALT.advisors} />
+          <Principles />
         </div>
       </div>
     </section>
@@ -202,29 +223,19 @@ export function Network() {
 
 export function Team() {
   return (
-    <section className="band team" id="team">
+    <section className="band team" id="team" aria-labelledby="team-title">
       <div className="wrap grid">
         <div>
           <div className="eyebrow">{TEAM.eyebrow}</div>
-          <h2 className="h2">{TEAM.title}</h2>
+          <h2 className="h2" id="team-title">
+            {TEAM.title}
+          </h2>
           <p className="lead">{TEAM.lead}</p>
-          <div className="people">
-            {TEAM.people.map((p) => (
-              <div className="person" key={p.name}>
-                <div className={p.placeholder ? 'avatar ph' : 'avatar'}>{p.initial}</div>
-                <div>
-                  <h3>{p.name}</h3>
-                  <div className="r">{p.role}</div>
-                  <p>
-                    {p.bio}
-                    {p.tbd ? <Tbd>{p.tbd}</Tbd> : null}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Link className="more-link" href={TEAM.more.href}>
+            {TEAM.more.label}
+          </Link>
         </div>
-        <div className="teamphoto" style={{ backgroundImage: `url('${IMG.team}')` }} role="img" aria-label={TEAM.photoAlt} />
+        <div className="teamphoto" style={{ backgroundImage: `url('${IMG.team}')` }} role="img" aria-label={ALT.team} />
       </div>
     </section>
   );
@@ -232,18 +243,20 @@ export function Team() {
 
 export function Insights() {
   return (
-    <section className="band" id="insights">
+    <section className="band" id="insights" aria-labelledby="insights-title">
       <div className="wrap">
         <div className="ins-head">
           <div>
             <div className="eyebrow">{INSIGHTS.eyebrow}</div>
-            <h2 className="h2">{INSIGHTS.title}</h2>
+            <h2 className="h2" id="insights-title">
+              {INSIGHTS.title}
+            </h2>
           </div>
-          <a href={INSIGHTS.allHref}>{INSIGHTS.allLabel}</a>
+          <Link href={INSIGHTS.allHref}>{INSIGHTS.allLabel}</Link>
         </div>
         <div className="insights">
           {INSIGHTS.posts.map((p) => (
-            <a className="post" href={p.href || '#insights'} key={p.title}>
+            <Link className="post" href={p.href} key={p.title}>
               <span className="cat">{p.cat}</span>
               <h3>{p.title}</h3>
               <p>{p.text}</p>
@@ -251,65 +264,63 @@ export function Insights() {
                 <span>{p.kind}</span>
                 <span>阅读</span>
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+/** 常见问题折叠列表，首页与各服务页共用。 */
+export function FaqList({ items, openFirst = true }: { items: FaqItem[]; openFirst?: boolean }) {
+  return (
+    <div className="faq-list">
+      {items.map((f, i) => (
+        <details key={f.q} open={openFirst && i === 0}>
+          <summary>
+            <span>{f.q}</span>
+            {f.en ? (
+              <small lang="en" className="en-q">
+                {f.en}
+              </small>
+            ) : null}
+          </summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
   );
 }
 
 export function Faq() {
   return (
-    <section className="band faq alt" id="faq">
+    <section className="band faq alt" id="faq" aria-labelledby="faq-title">
       <div className="wrap grid">
         <div>
-          <div className="eyebrow">{FAQ.eyebrow}</div>
-          <h2 className="h2">{FAQ.title}</h2>
-          <p className="lead">{FAQ.lead}</p>
+          <div className="eyebrow">{HOME_FAQ.eyebrow}</div>
+          <h2 className="h2" id="faq-title">
+            {HOME_FAQ.title}
+          </h2>
+          <p className="lead">{HOME_FAQ.lead}</p>
+          <Link className="more-link" href="/zh/faq">
+            查看全部常见问题
+          </Link>
         </div>
-        <div>
-          {FAQ.items.map((f, i) => (
-            <details key={f.q} open={i === 0}>
-              <summary>{f.q}</summary>
-              <p>{f.a}</p>
-            </details>
-          ))}
-        </div>
+        <FaqList items={HOME_FAQ.items} />
       </div>
     </section>
   );
 }
 
-export function Logos() {
+export function CtaBand({ title = CTA.title, text = CTA.text }: { title?: string; text?: string }) {
   return (
-    <section className="logos" aria-label="媒体与合作机构">
-      <div className="wrap">
-        {LOGOS.rows.map((row) => (
-          <div className="row" key={row.label}>
-            <div className="lbl">{row.label}</div>
-            <div className="slots">
-              {Array.from({ length: row.slots }, (_, i) => (
-                <div className="slot" key={i}>
-                  {LOGOS.slotText}
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-export function CtaBand() {
-  return (
-    <section className="cta" id="cta">
+    <section className="cta" id="cta" aria-labelledby="cta-title">
       <div className="bg" style={{ ['--cta-img' as string]: `url('${IMG.meeting}')` }} />
       <div className="wrap">
         <div>
-          <h2>{CTA.title}</h2>
-          <p>{CTA.text}</p>
+          <h2 id="cta-title">{title}</h2>
+          <p>{text}</p>
         </div>
         <div className="ctas">
           <a className="btn btn-gold" href={BOOKING.business}>

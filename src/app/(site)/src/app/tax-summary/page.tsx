@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+// Duplicate of /tax-summary created by a mistaken nested folder. Kept reachable, but not indexed.
+export const metadata: Metadata = {
+  robots: { index: false, follow: true },
+  alternates: { canonical: '/tax-summary' },
+};
+
 export default function TaxSummaryPage() {
   return (
     <main className="page-shell">

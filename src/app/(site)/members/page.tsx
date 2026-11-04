@@ -1,3 +1,10 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Members',
+  robots: { index: false, follow: true },
+};
+
 export default function MembersPage() {
   return (
     <main className="page-shell">

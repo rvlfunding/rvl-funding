@@ -17,6 +17,7 @@ const nav = [
   },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
+  { href: '/zh', label: '中文' },
 ] as const;
 
 export function SiteHeader() {

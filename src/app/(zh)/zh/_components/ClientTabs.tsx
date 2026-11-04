@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 import { BOOKING, CLIENTS } from '../content';
 
@@ -66,9 +67,14 @@ export function ClientTabs() {
                   <li key={p}>{p}</li>
                 ))}
               </ul>
-              <a className="btn btn-navy" href={t.id === 'fam' ? BOOKING.family : BOOKING.business}>
-                {t.cta}
-              </a>
+              <div className="panel-actions">
+                <a className="btn btn-navy" href={t.id === 'fam' ? BOOKING.family : BOOKING.business}>
+                  {t.cta}
+                </a>
+                <Link className="more-link" href={t.more.href}>
+                  {t.more.label}
+                </Link>
+              </div>
             </div>
           </div>
         ))}
