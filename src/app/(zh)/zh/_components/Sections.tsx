@@ -156,7 +156,7 @@ export function Pricing() {
                   <li key={pt}>{pt}</li>
                 ))}
               </ul>
-              <a className={p.featured ? 'btn btn-gold' : 'btn btn-navy'} href={p.href}>
+              <a className="btn btn-navy" href={p.href}>
                 {p.cta}
               </a>
             </div>

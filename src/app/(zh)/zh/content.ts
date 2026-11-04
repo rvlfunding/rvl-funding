@@ -59,12 +59,16 @@ export const IMG = {
   signing: '/images/home-v2/signing.jpg',
   advisors: '/images/home-v2/advisors.jpg',
   meeting: '/images/home-v2/meeting.jpg',
+  clientsBusiness: '/images/home-v2/clients-business.jpg',
+  clientsFamily: '/images/home-v2/clients-family.jpg',
 };
 
 export const ALT = {
   hero: '洛杉矶市中心夜景，RVL 服务华人企业家美国落地',
   team: '高层办公室中的企业团队会议',
   family: '夕阳下走过木桥的两位家庭成员',
+  clientsBusiness: '砖墙挑高的开放式办公室里，员工在工位上工作',
+  clientsFamily: '三位长者在明亮的窗边谈笑',
   signing: '签署商业文件',
   advisors: '两位顾问在办公室交谈',
   meeting: '俯瞰城市的现代会议室',
@@ -141,8 +145,8 @@ export const CLIENTS = {
     {
       id: 'biz',
       label: '企业客户',
-      image: IMG.team,
-      imageAlt: ALT.team,
+      image: IMG.clientsBusiness,
+      imageAlt: ALT.clientsBusiness,
       heading: '已在或即将在美国开展业务的中国企业及跨境卖家',
       points: [
         '首位美国员工即将入职，薪酬、税务登记与劳工险尚未就绪',
@@ -156,8 +160,8 @@ export const CLIENTS = {
     {
       id: 'fam',
       label: '家庭客户',
-      image: IMG.family,
-      imageAlt: ALT.family,
+      image: IMG.clientsFamily,
+      imageAlt: ALT.clientsFamily,
       heading: '企业主及其家庭、高净值家庭',
       points: [
         '比较 EB-1A、EB-1C 等身份路径的申请条件、成本与周期',
