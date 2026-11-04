@@ -176,16 +176,13 @@ function formatDateShort() {
 }
 
 // ── SEND EMAIL ─────────────────────────────────────────────────────────────
-async function getSubscribers() {
-  // Subscriber emails are personal data and must never sit in public/ (served to anyone).
-  // Set the GitHub Actions secret SUBSCRIBER_EMAILS to a comma-separated list instead.
-  const list = (process.env.SUBSCRIBER_EMAILS || '')
-    .split(',')
-    .map((e) => e.trim())
-    .filter((e) => e.includes('@'));
-  if (list.length === 0) console.log('SUBSCRIBER_EMAILS is not set — no digest recipients');
-  return list;
-}
+/**
+ * Subscribers live in a Resend segment (Resend dashboard > Audience > Segments), never in public/.
+ * Resend sends the digest as a Broadcast, adds the unsubscribe link and skips anyone who unsubscribed.
+ * Set the GitHub Actions secret RESEND_SEGMENT_ID to that segment's id.
+ */
+const RESEND_SEGMENT_ID = process.env.RESEND_SEGMENT_ID;
+const POSTAL_ADDRESS = 'RVL Funding · 17800 Castleton St, City of Industry, CA 91748, USA';
 
 function buildEmailHTML(immigrationItems, financialItems, date) {
   const articleHTML = (items) =>
@@ -255,15 +252,19 @@ function buildEmailHTML(immigrationItems, financialItems, date) {
         You're receiving this because you subscribed at rvlfunding.com.
         This is not investment or legal advice.
       </p>
+      <p style="margin:6px 0 0;font-size:10px;color:#5a6b82;">${POSTAL_ADDRESS}</p>
+      <p style="margin:6px 0 0;font-size:11px;">
+        <a href="{{{RESEND_UNSUBSCRIBE_URL}}}" style="color:#5a6b82;text-decoration:underline;">Unsubscribe</a>
+      </p>
     </div>
   </div>
 </body>
 </html>`;
 }
 
-async function sendDigest(subscribers, immigrationItems, financialItems) {
-  if (subscribers.length === 0) {
-    console.log('No subscribers — skipping email send');
+async function sendDigest(immigrationItems, financialItems) {
+  if (!RESEND_SEGMENT_ID) {
+    console.log('RESEND_SEGMENT_ID is not set — skipping email send');
     return;
   }
 
@@ -271,30 +272,27 @@ async function sendDigest(subscribers, immigrationItems, financialItems) {
   const html = buildEmailHTML(immigrationItems, financialItems, date);
   const subject = `RVL Insights — ${date} Weekly Briefing`;
 
-  let sent = 0;
-  for (const email of subscribers) {
-    try {
-      const res = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${RESEND_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          from: 'RVL Funding Insights <onboarding@resend.dev>',
-          to: email,
-          subject,
-          html,
-        }),
-      });
-      if (res.ok) sent++;
-      // Avoid rate limiting
-      await new Promise((r) => setTimeout(r, 100));
-    } catch (e) {
-      console.warn(`Failed to send to ${email}:`, e.message);
-    }
+  // One Broadcast to the segment. Resend fills in {{{RESEND_UNSUBSCRIBE_URL}}} per recipient
+  // and does not send to contacts who have unsubscribed.
+  const res = await fetch('https://api.resend.com/broadcasts', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      segment_id: RESEND_SEGMENT_ID,
+      from: 'RVL Funding Insights <info@rvlfunding.com>',
+      reply_to: 'info@rvlfunding.com',
+      subject,
+      html,
+      send: true,
+    }),
+  });
+  const body = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    console.error('Broadcast failed:', res.status, body);
+    process.exitCode = 1;
+    return;
   }
-  console.log(`✅ Sent to ${sent}/${subscribers.length} subscribers`);
+  console.log(`✅ Broadcast sent (${body.id ?? 'no id returned'})`);
 }
 
 // ── MAIN ───────────────────────────────────────────────────────────────────
@@ -334,9 +332,7 @@ async function main() {
 
   // 4. Send email digest
   if (immigrationItems.length > 0 || financialItems.length > 0) {
-    const subscribers = await getSubscribers();
-    console.log(`📬 Sending to ${subscribers.length} subscribers...`);
-    await sendDigest(subscribers, immigrationItems, financialItems);
+    await sendDigest(immigrationItems, financialItems);
   } else {
     console.log('No new relevant items this week — skipping email');
   }
