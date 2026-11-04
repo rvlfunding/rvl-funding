@@ -76,7 +76,8 @@ export function SiteFooter() {
       </div>
       <div className="footer-divider">
         <div className="footer-bottom">
-          © 2026 RVL Funding. All rights reserved. General information only, not legal, tax or investment advice.
+          © 2026 RVL Funding. All rights reserved. General information only, not legal, tax or investment advice.{' '}
+          <Link href="/privacy">Privacy policy</Link>
         </div>
       </div>
     </footer>

@@ -71,7 +71,9 @@ export function Footer() {
       </div>
       <div className="wrap legal">
         <p className="comp">{FOOTER.compliance}</p>
-        <p>{FOOTER.legal}</p>
+        <p>
+          {FOOTER.legal} · <Link href="/zh/privacy">隐私政策</Link>
+        </p>
       </div>
     </footer>
   );

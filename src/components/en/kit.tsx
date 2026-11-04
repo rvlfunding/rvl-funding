@@ -6,7 +6,7 @@ export const EMAIL = 'info@rvlfunding.com';
 export const ORG_ID = `${SITE}/#organization`;
 
 /** English pages that have a Chinese equivalent. Only true equivalents are paired for hreflang. */
-const ZH_PAIR: Record<string, string> = { '/': '/zh', '/about': '/zh/about' };
+const ZH_PAIR: Record<string, string> = { '/': '/zh', '/about': '/zh/about', '/privacy': '/zh/privacy' };
 
 export function enMetadata({
   path,

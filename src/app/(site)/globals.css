@@ -1600,3 +1600,13 @@ a.preview-card:hover {
   .en-grid-2 { grid-template-columns: 1fr; }
   .page-hero .hero-actions { flex-direction: column; align-items: stretch; }
 }
+
+/* Privacy policy */
+.en-legal { max-width: 760px; }
+.en-legal h3 { margin: 1.4rem 0 .5rem; font-size: 1.05rem; }
+.en-legal ul { padding-left: 1.2rem; margin: .5rem 0 1rem; }
+.en-legal li { margin: .35rem 0; line-height: 1.65; }
+.en-legal p { line-height: 1.7; }
+.en-draft-note { border-left: 3px solid #d4af37; background: #fff8e6; padding: .8rem 1rem; border-radius: 4px; font-weight: 600; }
+.en-tbc { background: #fff3cd; color: #7a5a00; padding: 0 .25rem; border-radius: 3px; font-size: .92em; }
+.footer-bottom a { color: inherit; text-decoration: underline; }

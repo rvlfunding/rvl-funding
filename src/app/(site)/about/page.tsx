@@ -7,24 +7,6 @@ const TITLE = 'About RVL Funding: A U.S.-Based Team for Chinese Companies and Fa
 const DESCRIPTION =
   'RVL Funding is a bilingual advisory team in Los Angeles County. We set up and run the U.S. side for Chinese-owned companies and coordinate immigration attorneys, CPAs and insurers for founders and their families.';
 
-const PEOPLE = [
-  {
-    name: 'Ruby',
-    role: 'Founder',
-    bio: 'More than a decade working between China and the United States, first in cross-border trade and now advising founders and families on setting up in the U.S., status planning and cross-border finances. Works in Mandarin and English.',
-  },
-  {
-    name: 'Victor',
-    role: 'Senior Advisor, U.S. Immigration',
-    bio: 'U.S. immigration attorney focused on visa and status strategy for business owners and their families.',
-  },
-  {
-    name: 'Leo',
-    role: 'Senior Advisor, Cross-Border Tax and Operations',
-    bio: 'Tax professional with Big Four and family-office experience, focused on cross-border tax planning and compliance.',
-  },
-];
-
 export const metadata = enMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
 export default function AboutPage() {
@@ -38,7 +20,6 @@ export default function AboutPage() {
         data={graph(
           { ...webPage(PATH, TITLE, DESCRIPTION, 'AboutPage'), about: { '@id': ORG_ID } },
           breadcrumb(crumbs),
-          ...PEOPLE.map((p) => ({ '@type': 'Person', name: p.name, jobTitle: p.role, worksFor: { '@id': ORG_ID } })),
         )}
       />
       <PageHero
@@ -58,18 +39,6 @@ export default function AboutPage() {
         title="Most problems start after the company is formed"
         lead="Formation is the easy part. What goes wrong for Chinese-owned companies is usually what follows: a bank that won’t open the account, a missed Form 5472, payroll set up for the wrong state, or a visa filing that the company’s records can’t support. We built RVL Funding to handle that follow-through from inside the United States."
       />
-
-      <Section id="people" tone="mist" label="People" title="Who you work with">
-        <div className="service-grid">
-          {PEOPLE.map((p) => (
-            <article className="service-card" key={p.name}>
-              <h3>{p.name}</h3>
-              <p className="en-plan-type">{p.role}</p>
-              <p>{p.bio}</p>
-            </article>
-          ))}
-        </div>
-      </Section>
 
       <Section id="principles" label="Principles" title="How we work">
         <Cards items={PRINCIPLES} />

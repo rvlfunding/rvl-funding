@@ -378,3 +378,8 @@ summary span{display:block}
   .state-grid{grid-template-columns:minmax(0,1fr)}
   .answer{padding:20px}
 }
+/* 隐私政策 */
+.draft-note{border-left:3px solid var(--gold,#b8955a);background:#fbf6ec;padding:12px 16px;border-radius:4px;font-weight:600;margin-bottom:18px}
+.tbc{background:#fbefd2;color:#7a5a00;padding:0 4px;border-radius:3px}
+.article-body ul{padding-left:1.2em}
+.legal a{color:inherit;text-underline-offset:3px}
