@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
               <p style="font-size:12px;font-weight:700;color:#d4af37;letter-spacing:0.1em;text-transform:uppercase;">New Subscriber</p>
               <h2 style="color:#0a2540;margin:8px 0;">Someone just subscribed</h2>
               <p style="color:#5a6b82;font-size:15px;">Email: <strong>${email}</strong></p>
-              <p style="color:#5a6b82;font-size:13px;">Add this email to <code>public/subscribers.json</code> to include them in the weekly digest.</p>
+              <p style="color:#5a6b82;font-size:13px;">Add this email to the SUBSCRIBER_EMAILS secret in GitHub Actions to include them in the weekly digest.</p>
             </div>
           </div>
         `,
