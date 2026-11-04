@@ -9,11 +9,6 @@ const TITLE = '隐私政策';
 const DESC = 'RVL Funding 网站如何收集、使用和保护个人信息，以及加州居民依据 CCPA/CPRA 享有的隐私权利。';
 const ADDRESS = '17800 Castleton St, City of Industry, CA 91748';
 
-/** 上线前仍需 RVL Funding 确认的事项。 */
-function Tbc({ children }: { children?: React.ReactNode }) {
-  return <mark className="tbc">［待确认{children ? `：${children}` : ''}］</mark>;
-}
-
 export const metadata = {
   ...buildMetadata({ path: PATH, title: TITLE, description: DESC, en: '/privacy' }),
   // 律师审核前不收录。
@@ -39,12 +34,7 @@ export default function PrivacyPage() {
         />
         <div className="wrap article single">
           <div className="article-body">
-            <p className="draft-note" role="note">
-              草稿，供审核。本政策须经持牌律师审核后方可发布。标注「待确认」的内容仍需确认。
-            </p>
-            <p>
-              生效日期：<Tbc /> · 最近更新：<Tbc />
-            </p>
+            <p>最近更新：2026 年 11 月 4 日</p>
             <p>
               English readers: see the <Link href="/privacy" hrefLang="en" lang="en">Privacy Policy</Link>.
             </p>
@@ -54,7 +44,7 @@ export default function PrivacyPage() {
               <p>
                 RVL Funding（下称「我们」）运营 rvlfunding.com，办公地址为 {ADDRESS}。任何隐私问题或请求，请发邮件至 {mail}。
               </p>
-              <p>本政策适用于通过本网站收集的信息。您作为委托客户提供的信息，同时受您的委托协议约束 <Tbc />。</p>
+              <p>本政策适用于通过本网站收集的信息。您作为委托客户提供的信息，也可能受您与我们的委托条款约束。</p>
             </section>
 
             <section className="blk" aria-labelledby="collect-h">
@@ -66,7 +56,7 @@ export default function PrivacyPage() {
                   资料下载申请：申请下载加州公司注册指南等资料时提供的姓名、电子邮箱，以及您选择填写的公司名称和电话。我们会通过邮件发送有时效的下载链接。
                 </li>
                 <li>
-                  联系表单：英文站的联系表单由 Google 表单提供，Google 会收到您填写的内容并转交给我们。表单包含的字段：<Tbc>列出字段</Tbc>。
+                  联系表单：英文站的联系表单由 Google 表单提供，Google 会收到您填写的内容并转交给我们。
                 </li>
                 <li>预约咨询：通过 Cal.com 预约，Cal.com 会收到您的姓名、电子邮箱、预约时间及您填写的备注，并与我们共享。</li>
                 <li>您发给我们的邮件：您写信至 {EMAIL} 时所附的内容。</li>
@@ -74,11 +64,11 @@ export default function PrivacyPage() {
               <h3>自动收集的信息</h3>
               <ul>
                 <li>
-                  托管日志：网站由 Vercel 托管，Vercel 会为提供和保护网站记录 IP 地址、浏览器类型、访问页面等技术信息。保存期限：<Tbc />。
+                  托管日志：网站由 Vercel 托管，Vercel 会为提供和保护网站记录 IP 地址、浏览器类型、访问页面等技术信息，并保存一段有限的时间。
                 </li>
                 <li>防滥用：提交下载表单时，您的 IP 地址会短暂保存在服务器内存中，用于限制重复提交，之后不会保存。</li>
                 <li>
-                  Cookie 与统计：网站本身的代码不设置广告或统计类 Cookie。托管账户中是否开启了访问统计：<Tbc />。嵌入的 Google 表单和 Cal.com 页面可能依其各自政策设置 Cookie。
+                  Cookie 与统计：网站本身的代码不设置广告或统计类 Cookie。嵌入的 Google 表单和 Cal.com 页面可能依其各自政策设置 Cookie。
                 </li>
               </ul>
               <p>中文站的「自测」在您的浏览器内完成，答案不会发送给我们。</p>
@@ -102,21 +92,21 @@ export default function PrivacyPage() {
               <p>我们只与协助运营网站的服务商共享个人信息，各服务商依其自身条款处理：</p>
               <ul>
                 <li>Vercel：网站托管；</li>
-                <li>Resend：发送订阅确认、下载链接和资讯邮件；</li>
+                <li>Resend：发送订阅确认、下载链接和资讯邮件，并保存资讯订阅名单；</li>
                 <li>Google：通过 Google 表单提供联系表单；</li>
                 <li>Cal.com：咨询预约；</li>
-                <li>GitHub：运行每周资讯邮件任务，订阅名单以加密设置保存。</li>
+                <li>GitHub：运行每周资讯邮件任务。</li>
               </ul>
-              <p>在法律要求或为保护我们的权利时，我们也可能披露信息。其他接收方：<Tbc />。</p>
+              <p>在法律要求或为保护我们的权利时，我们也可能披露信息。</p>
             </section>
 
             <section className="blk" aria-labelledby="keep-h">
               <h2 id="keep-h">五、保存多久</h2>
               <ul>
                 <li>资讯订阅：保存至您退订为止；</li>
-                <li>咨询、下载申请和预约信息：<Tbc>保存期限</Tbc>。</li>
+                <li>咨询、下载申请和预约信息：在回复您和保留正常业务记录所需的期限内保存。</li>
               </ul>
-              <p>如需退订，请发邮件至 {mail}。每封资讯邮件是否附退订链接：<Tbc />。</p>
+              <p>每封资讯邮件都附有退订链接，您也可以发邮件至 {mail} 退订。</p>
             </section>
 
             <section className="blk" aria-labelledby="ca-h">
@@ -133,7 +123,6 @@ export default function PrivacyPage() {
               <p>
                 您行使上述权利不会受到任何差别对待。提出请求请发邮件至 {mail}，主题注明「隐私请求」。我们会确认收到，通过比对已持有的信息核实您的身份，并在 45 天内答复。经您书面授权，授权代理人也可代您提出请求。
               </p>
-              <p>RVL Funding 是否达到 CCPA 的适用门槛：<Tbc />。无论是否适用，我们都向加州居民提供上述权利。</p>
               <p>关于「请勿追踪」（Do Not Track）：本网站不会跨网站追踪您，因此不会因该信号改变处理方式。</p>
             </section>
 
@@ -142,7 +131,7 @@ export default function PrivacyPage() {
               <p>本网站不面向 16 岁以下的儿童，我们不会有意收集其个人信息。如您认为儿童向我们提供了信息，请联系我们，我们会予以删除。</p>
               <p>我们采取合理措施保护个人信息，但任何传输或存储方式都无法做到绝对安全。</p>
               <p>
-                我们的服务商在美国存储信息。如您从中国或其他国家访问，您的信息将被传输至美国并在美国处理。是否需要针对中国或其他国家的访客另行告知：<Tbc />。
+                我们的服务商在美国存储信息。如您从中国或其他国家访问，您的信息将被传输至美国并在美国处理。
               </p>
             </section>
 

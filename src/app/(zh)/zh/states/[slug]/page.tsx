@@ -68,7 +68,6 @@ export default async function StatePage({ params }: Props) {
                         <th scope="row">{f.k}</th>
                         <td>
                           {f.v}
-                          {f.tbd ? <span className="tbd">待确认</span> : null}
                           {f.src ? <sup className="src">[{f.src}]</sup> : null}
                         </td>
                       </tr>

@@ -35,26 +35,19 @@ export function Footer() {
             <br />
             {FOOTER.location}
           </p>
-          <div className="social" aria-label="社交媒体">
-            {(Object.keys(icons) as Array<keyof typeof SOCIAL>).map((k) => {
-              const url = SOCIAL[k];
-              const svg = (
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d={icons[k].path} />
-                </svg>
-              );
-              // 社交主页地址待提供：未填写时只显示图标，不做空链接。
-              return url ? (
-                <a key={k} href={url} aria-label={icons[k].label} target="_blank" rel="noopener noreferrer">
-                  {svg}
-                </a>
-              ) : (
-                <span key={k} className="off" title={`${icons[k].label}（待提供）`}>
-                  {svg}
-                </span>
-              );
-            })}
-          </div>
+          {(Object.keys(icons) as Array<keyof typeof SOCIAL>).some((k) => SOCIAL[k]) ? (
+            <div className="social" aria-label="社交媒体">
+              {(Object.keys(icons) as Array<keyof typeof SOCIAL>)
+                .filter((k) => SOCIAL[k])
+                .map((k) => (
+                  <a key={k} href={SOCIAL[k]} aria-label={icons[k].label} target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d={icons[k].path} />
+                    </svg>
+                  </a>
+                ))}
+            </div>
+          ) : null}
         </div>
         {FOOTER.columns.map((col) => (
           <nav key={col.title} aria-label={col.title}>

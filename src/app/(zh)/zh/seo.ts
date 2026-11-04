@@ -48,6 +48,14 @@ export function organization() {
     name: 'RVL Funding',
     url: SITE_URL,
     email: EMAIL,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '17800 Castleton St',
+      addressLocality: 'City of Industry',
+      addressRegion: 'CA',
+      postalCode: '91748',
+      addressCountry: 'US',
+    },
     ...(sameAs.length ? { sameAs } : {}),
   };
 }

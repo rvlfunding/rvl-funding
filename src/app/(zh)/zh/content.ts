@@ -454,7 +454,7 @@ export const CTA = {
 
 export const FOOTER = {
   tagline: '跨国企业家的美国统筹人。',
-  location: '南加州 · 核桃市',
+  location: '17800 Castleton St, City of Industry, CA 91748',
   columns: [
     {
       title: '服务',

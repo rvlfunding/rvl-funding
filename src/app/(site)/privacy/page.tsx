@@ -6,11 +6,6 @@ const TITLE = 'Privacy Policy';
 const DESCRIPTION =
   'How RVL Funding collects, uses and protects personal information on rvlfunding.com, and the privacy rights California residents have under the CCPA and CPRA.';
 
-/** Items RVL Funding still has to confirm before this policy goes live. */
-function Tbc({ children }: { children?: React.ReactNode }) {
-  return <mark className="en-tbc">[To be confirmed{children ? `: ${children}` : ''}]</mark>;
-}
-
 export const metadata = enMetadata({ path: PATH, title: TITLE, description: DESCRIPTION, noindex: true });
 
 export default function PrivacyPage() {
@@ -30,13 +25,7 @@ export default function PrivacyPage() {
 
       <section className="section-intro">
         <div className="container en-legal">
-          <p className="en-draft-note" role="note">
-            Draft for review. This policy must be reviewed by a licensed attorney before it is published. Items marked “To be
-            confirmed” still need confirmation.
-          </p>
-          <p>
-            Effective date: <Tbc /> · Last updated: <Tbc />
-          </p>
+          <p>Last updated: November 4, 2026</p>
           <p>
             中文读者请看<Link href="/zh/privacy" hrefLang="zh-Hans" lang="zh-Hans">隐私政策（中文）</Link>.
           </p>
@@ -50,8 +39,8 @@ export default function PrivacyPage() {
             any privacy question or request, email <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
           </p>
           <p>
-            This policy covers information collected through this website. Information you give us as a client under an engagement is
-            also governed by your engagement agreement <Tbc />.
+            This policy covers information collected through this website. Information you give us as a client may also be covered by
+            the terms of your engagement with us.
           </p>
         </div>
       </Section>
@@ -70,7 +59,7 @@ export default function PrivacyPage() {
             </li>
             <li>
               <strong>Contact form.</strong> The contact form is provided by Google Forms. Google receives what you enter there and
-              passes it to us. The fields on that form are <Tbc>list the fields</Tbc>.
+              passes it to us.
             </li>
             <li>
               <strong>Booking a consultation.</strong> Bookings are made through Cal.com. Cal.com receives your name, email address,
@@ -84,15 +73,14 @@ export default function PrivacyPage() {
           <ul>
             <li>
               <strong>Hosting logs.</strong> The site is hosted by Vercel, which records technical data such as IP address, browser
-              type and pages requested in order to deliver and secure the site. Retention period: <Tbc />.
+              type and pages requested in order to deliver and secure the site, and keeps it for a limited period.
             </li>
             <li>
               <strong>Abuse protection.</strong> When you submit the download form, your IP address is held briefly in server memory to
               limit repeated submissions. It is not stored afterwards.
             </li>
             <li>
-              <strong>Cookies and analytics.</strong> The site’s own code does not set advertising or analytics cookies. Whether any
-              analytics is enabled in our hosting account is <Tbc />. The embedded Google Forms and Cal.com pages may set their own
+              <strong>Cookies and analytics.</strong> The site’s own code does not set advertising or analytics cookies. The embedded Google Forms and Cal.com pages may set their own
               cookies under their own policies.
             </li>
           </ul>
@@ -126,13 +114,13 @@ export default function PrivacyPage() {
           <p>We share personal information only with service providers that help us run the site, under their own terms:</p>
           <ul>
             <li>Vercel: website hosting.</li>
-            <li>Resend: sending sign-up confirmations, download links and the newsletter.</li>
+            <li>Resend: sending sign-up confirmations, download links and the newsletter, and keeping the newsletter list.</li>
             <li>Google: the contact form, through Google Forms.</li>
             <li>Cal.com: consultation booking.</li>
-            <li>GitHub: running the weekly newsletter job, where the subscriber list is kept as an encrypted setting.</li>
+            <li>GitHub: running the weekly newsletter job.</li>
           </ul>
           <p>
-            We may also disclose information when the law requires it, or to protect our rights. Other recipients: <Tbc />.
+            We may also disclose information when the law requires it, or to protect our rights.
           </p>
         </div>
       </Section>
@@ -141,11 +129,10 @@ export default function PrivacyPage() {
         <div className="en-legal">
           <ul>
             <li>Newsletter: until you unsubscribe.</li>
-            <li>Inquiries, download requests and booking details: <Tbc>retention period</Tbc>.</li>
+            <li>Inquiries, download requests and booking details: for as long as we need them to respond to you and to keep ordinary business records.</li>
           </ul>
           <p>
-            To unsubscribe, email <a href={`mailto:${EMAIL}`}>{EMAIL}</a>. Whether each newsletter will also carry an unsubscribe link
-            is <Tbc />.
+            Every newsletter email has an unsubscribe link. You can also email <a href={`mailto:${EMAIL}`}>{EMAIL}</a> to unsubscribe.
           </p>
         </div>
       </Section>
@@ -168,10 +155,6 @@ export default function PrivacyPage() {
             your written permission.
           </p>
           <p>
-            Whether the CCPA’s business thresholds apply to RVL Funding is <Tbc />. We offer these rights to California residents either
-            way.
-          </p>
-          <p>
             Do Not Track: the site does not track you across other websites, so it does not change its behavior in response to Do Not
             Track signals.
           </p>
@@ -190,8 +173,7 @@ export default function PrivacyPage() {
           </p>
           <p>
             Our service providers store information in the United States. If you visit from China or another country, your
-            information will be transferred to and processed in the United States. Whether additional notices are needed for visitors
-            in China or other countries is <Tbc />.
+            information will be transferred to and processed in the United States.
           </p>
         </div>
       </Section>
