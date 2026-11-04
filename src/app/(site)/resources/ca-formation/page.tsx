@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
+import { enMetadata } from '@/components/en/kit';
 import LeadForm from './LeadForm';
 
-export const metadata: Metadata = {
-  title: '美国加州公司注册咨询及服务报价 | California Entity Formation Advisory — RVL Funding',
+export const metadata = enMetadata({
+  path: '/resources/ca-formation',
+  title: 'California Company Formation Guide and Fees for Chinese Owners',
   description:
-    'Bilingual advisory memorandum on forming a company in California: choice of entity (C Corporation, S Corporation, LLC), governance, capitalization, federal and California tax considerations, and RVL’s schedule of professional fees.',
-  alternates: { canonical: '/resources/ca-formation' },
-};
+    'Bilingual (Chinese and English) guide to forming a company in California: C corporation, S corporation or LLC, governance, capitalization, federal and California tax, Form 5472, and RVL Funding’s fee schedule.',
+});
 
 const CONTENTS: Array<[string, string]> = [
   ['公司类型选择', 'C Corporation, S Corporation and LLC compared — including why a C Corp is usually preferred over a single-member LLC for PRC individual shareholders'],
@@ -30,10 +30,13 @@ export default function CaFormationPage() {
       <section className="page-hero">
         <div className="container">
           <p className="eyebrow">Client Resources · 客户资源</p>
-          <h1>美国加州公司注册咨询及服务报价</h1>
+          <h1>
+            California company formation guide and fees{' '}
+            <span lang="zh-Hans">· 美国加州公司注册咨询及服务报价</span>
+          </h1>
           <p className="hero-text">
             California Corporate Formation Advisory and Schedule of Professional Fees — a bilingual
-            (Chinese / English) memorandum issued by RVL Funding, Inc. covering choice of entity,
+            (Chinese / English) memorandum issued by RVL Funding covering choice of entity,
             governance, capitalization, and federal and California tax considerations.
           </p>
         </div>

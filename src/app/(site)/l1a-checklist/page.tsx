@@ -1,27 +1,47 @@
+import { JsonLd, ORG_ID, PageHero, breadcrumb, enMetadata, graph, webPage } from '@/components/en/kit';
+
+const PATH = '/l1a-checklist';
+const TITLE = 'L-1A Visa Document Checklist (Form I-129), New Office and EB-1C Path';
+const DESCRIPTION =
+  'Free L-1A visa checklist: U.S. petitioner documents, qualifying relationship evidence, the manager’s employment history abroad, personal documents, new-office L-1A requirements and the L-1A to EB-1C green card path.';
+const CRUMBS = [
+  { name: 'Home', path: '/' },
+  { name: 'Resources', path: '/resources' },
+  { name: 'L-1A checklist', path: PATH },
+];
+
+export const metadata = enMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
+
 export default function L1AChecklistPage() {
   return (
     <main className="page-shell">
 
-      <section className="page-hero">
-        <div className="container">
-          <p className="eyebrow">Client Resources</p>
-          <h1>L1-A Visa Checklist</h1>
-        </div>
-      </section>
+      <JsonLd
+        data={graph(
+          { ...webPage(PATH, TITLE, DESCRIPTION, 'Article'), headline: 'L-1A Visa Document Checklist (Form I-129)', dateModified: '2026-11-04', author: { '@id': ORG_ID } },
+          breadcrumb(CRUMBS),
+        )}
+      />
+      <PageHero
+        crumbs={CRUMBS}
+        eyebrow="Free checklist"
+        title="L-1A visa document checklist (Form I-129)"
+        text="Documents a multinational company typically gathers to transfer an executive or manager to its U.S. office, including the extra evidence for a new-office petition and how the L-1A leads to an EB-1C green card. Use it to prepare before your immigration attorney reviews the file."
+      />
 
       <section style={{ padding: 'clamp(3rem, 7vw, 5rem) 0', background: 'var(--mist-2)' }}>
         <div className="container">
 
           {/* OVERVIEW */}
           <div style={card}>
-            <h2 style={cardH}>Overview — What is the L1-A Visa?</h2>
+            <h2 style={cardH}>Overview: what is the L-1A visa?</h2>
             <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', lineHeight: 1.8 }}>
               The L-1A nonimmigrant visa allows multinational companies to transfer executives or managers
               from a foreign affiliate, subsidiary, parent, or branch to a U.S. office. The L-1A is also
               a common pathway to the EB-1C green card for multinational managers and executives.
               This checklist covers the key documents required for an L-1A petition (Form I-129).
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginTop: '1.25rem' }}>
+            <div className="en-grid-3" style={{ marginTop: '1.25rem' }}>
               {[
                 ['Initial L-1A', 'Up to 3 years'],
                 ['Extension', 'Up to 2 years per extension (7-year max)'],
@@ -38,7 +58,7 @@ export default function L1AChecklistPage() {
           {/* PART 1 — PETITIONER (U.S. COMPANY) */}
           <div style={card}>
             <h2 style={cardH}>Part 1 — Petitioner Documents (U.S. Company)</h2>
-            <table style={tbl}>
+            <div className="en-table-wrap"><table style={tbl}>
               <thead><tr><th style={th}>Document</th><th style={th}>Notes</th></tr></thead>
               <tbody>
                 {[
@@ -62,13 +82,13 @@ export default function L1AChecklistPage() {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table></div>
           </div>
 
           {/* PART 2 — QUALIFYING RELATIONSHIP */}
           <div style={card}>
             <h2 style={cardH}>Part 2 — Qualifying Relationship Between U.S. &amp; Foreign Entities</h2>
-            <table style={tbl}>
+            <div className="en-table-wrap"><table style={tbl}>
               <thead><tr><th style={th}>Document</th><th style={th}>Notes</th></tr></thead>
               <tbody>
                 {[
@@ -87,13 +107,13 @@ export default function L1AChecklistPage() {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table></div>
           </div>
 
           {/* PART 3 — BENEFICIARY EMPLOYMENT HISTORY */}
           <div style={card}>
             <h2 style={cardH}>Part 3 — Beneficiary's Employment History at Foreign Entity</h2>
-            <table style={tbl}>
+            <div className="en-table-wrap"><table style={tbl}>
               <thead><tr><th style={th}>Document</th><th style={th}>Notes</th></tr></thead>
               <tbody>
                 {[
@@ -111,13 +131,13 @@ export default function L1AChecklistPage() {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table></div>
           </div>
 
           {/* PART 4 — BENEFICIARY PERSONAL DOCUMENTS */}
           <div style={card}>
             <h2 style={cardH}>Part 4 — Beneficiary Personal Documents</h2>
-            <table style={tbl}>
+            <div className="en-table-wrap"><table style={tbl}>
               <thead><tr><th style={th}>Document</th><th style={th}>Notes</th></tr></thead>
               <tbody>
                 {[
@@ -135,7 +155,7 @@ export default function L1AChecklistPage() {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table></div>
           </div>
 
           {/* PART 5 — NEW OFFICE L-1A (if applicable) */}
@@ -144,7 +164,7 @@ export default function L1AChecklistPage() {
             <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>
               Required only when the U.S. entity has been operating for less than one year.
             </p>
-            <table style={tbl}>
+            <div className="en-table-wrap"><table style={tbl}>
               <thead><tr><th style={th}>Document</th><th style={th}>Notes</th></tr></thead>
               <tbody>
                 {[
@@ -161,7 +181,7 @@ export default function L1AChecklistPage() {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table></div>
           </div>
 
           {/* PART 6 — L-1A TO EB-1C PATHWAY */}
@@ -170,7 +190,7 @@ export default function L1AChecklistPage() {
             <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>
               L-1A holders in executive or managerial roles may be sponsored for the EB-1C immigrant visa (green card) by their U.S. employer.
             </p>
-            <table style={tbl}>
+            <div className="en-table-wrap"><table style={tbl}>
               <thead><tr><th style={th}>Step</th><th style={th}>Details</th></tr></thead>
               <tbody>
                 {[
@@ -186,7 +206,7 @@ export default function L1AChecklistPage() {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table></div>
           </div>
 
           {/* DISCLAIMER */}

@@ -1,106 +1,53 @@
+import { EMAIL, JsonLd, PageHero, Section, breadcrumb, enMetadata, graph, webPage } from '@/components/en/kit';
+
+const PATH = '/book';
+const TITLE = 'Book a Free 15-Minute Consultation';
+const DESCRIPTION =
+  'Book a free 15-minute call with RVL Funding about setting up or running a U.S. company, payroll and tax compliance, or U.S. status planning. In English or Mandarin.';
+
+const PREPARE = [
+  'Where your company is today: country, industry and rough annual revenue',
+  'What you want to do in the U.S. and in which state',
+  'Who is involved: owners, family members, existing attorney or CPA',
+  'Any deadline, such as a visa expiry, lease start or first hire',
+];
+
+export const metadata = enMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
+
 export default function BookPage() {
+  const crumbs = [
+    { name: 'Home', path: '/' },
+    { name: 'Book a call', path: PATH },
+  ];
   return (
     <main className="page-shell">
-      <section className="page-hero">
+      <JsonLd data={graph(webPage(PATH, TITLE, DESCRIPTION), breadcrumb(crumbs))} />
+      <PageHero
+        crumbs={crumbs}
+        eyebrow="Book a call"
+        title="Book a free 15-minute consultation"
+        text="Pick a time below. The call is free and confidential, in English or Mandarin, and we confirm within one business day."
+      />
+      <Section id="prepare" label="Before the call" title="Useful to have ready">
+        <ul className="en-points en-points--lg">
+          {PREPARE.map((p) => (
+            <li key={p}>{p}</li>
+          ))}
+        </ul>
+      </Section>
+      <section className="section-dark" aria-label="Booking calendar">
         <div className="container">
-          <p className="eyebrow">Schedule a Call</p>
-          <h1>Book Your Free 15-Minute Consultation</h1>
-          <p className="hero-text">
-            Select a time that works for you. We will confirm within one business day.
-          </p>
-        </div>
-      </section>
-
-      <section
-        style={{
-          padding: 'clamp(3rem, 7vw, 5rem) 0',
-          background: 'linear-gradient(165deg, var(--navy-deep) 0%, var(--navy) 50%, var(--navy-mid) 100%)',
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
-        <div
-          aria-hidden
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'radial-gradient(ellipse 80% 60% at 100% 0%, rgba(212,175,55,0.12), transparent 50%)',
-            pointerEvents: 'none',
-          }}
-        />
-
-        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div
-            style={{
-              background: 'var(--navy-mid)',
-              border: '1px solid rgba(212,175,55,0.4)',
-              borderRadius: 'var(--radius-lg)',
-              boxShadow: '0 40px 100px rgba(0,0,0,0.3)',
-              overflow: 'hidden',
-              maxWidth: '900px',
-              margin: '0 auto',
-            }}
-          >
-            {/* Header bar */}
-            <div
-              style={{
-                background: 'var(--navy-deep)',
-                borderBottom: '2px solid var(--gold)',
-                padding: '1rem 1.5rem',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.75rem',
-              }}
-            >
-              <span
-                style={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: '50%',
-                  background: 'var(--gold)',
-                  display: 'inline-block',
-                  flexShrink: 0,
-                }}
-              />
-              <span
-                style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.14em',
-                  textTransform: 'uppercase' as const,
-                  color: 'rgba(255,255,255,0.85)',
-                }}
-              >
-                RVL Funding · 15-Minute Consultation
-              </span>
-            </div>
-
-            {/* Cal.com iframe */}
+          <div className="en-panel en-panel--form">
             <iframe
               src="https://cal.com/rvl-info-buojoz/15min?embed=true"
-              title="Book a 15-Minute Consultation"
+              title="Book a 15-minute consultation with RVL Funding"
               width="100%"
               height="700"
-              style={{
-                display: 'block',
-                border: 'none',
-                background: 'var(--white)',
-              }}
               loading="lazy"
             />
           </div>
-
-          {/* Bottom note */}
-          <p
-            style={{
-              textAlign: 'center',
-              color: 'rgba(255,255,255,0.4)',
-              fontSize: '0.8rem',
-              marginTop: '1.5rem',
-              letterSpacing: '0.04em',
-            }}
-          >
-            All consultations are strictly confidential · info@rvlfunding.com
+          <p className="en-fine-light">
+            Prefer email? Write to <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
           </p>
         </div>
       </section>

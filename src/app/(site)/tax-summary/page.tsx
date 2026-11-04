@@ -1,13 +1,37 @@
+import { JsonLd, ORG_ID, PageHero, breadcrumb, enMetadata, graph, webPage } from '@/components/en/kit';
+
+const PATH = '/tax-summary';
+const TITLE = '2026 Federal Tax Brackets, Standard Deduction and Contribution Limits';
+const DESCRIPTION =
+  '2026 federal tax summary: income tax brackets, $16,100 / $32,200 standard deduction, capital gains rates, 401(k) $24,500 and IRA $7,500 limits, $15 million estate exemption, AMT and Social Security wage base. Sourced from IRS Rev. Proc. 2025-32.';
+const CRUMBS = [
+  { name: 'Home', path: '/' },
+  { name: 'Resources', path: '/resources' },
+  { name: '2026 tax summary', path: PATH },
+];
+
+export const metadata = enMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
+
 export default function TaxSummaryPage() {
   return (
     <main className="page-shell">
 
-      <section className="page-hero">
-        <div className="container">
-          <p className="eyebrow">Client Resources</p>
-          <h1>2026 Tax Summary</h1>
-        </div>
-      </section>
+      <JsonLd
+        data={graph(
+          { ...webPage(PATH, TITLE, DESCRIPTION, 'Article'), headline: '2026 Federal Tax Summary', dateModified: '2026-11-04', author: { '@id': ORG_ID } },
+          breadcrumb(CRUMBS),
+        )}
+      />
+      <PageHero
+        crumbs={CRUMBS}
+        eyebrow="Free reference"
+        title="2026 federal tax summary: brackets, deductions and limits"
+        text="The 2026 federal figures we use most with clients, in one place: income tax brackets, the standard deduction, capital gains rates, retirement and HSA contribution limits, estate and gift tax, AMT and payroll tax. Sources are listed at the end."
+      >
+        <a className="btn-primary" href="/tax-summary.pdf" download>
+          Download the PDF
+        </a>
+      </PageHero>
 
       <section style={{ padding: 'clamp(3rem, 7vw, 5rem) 0', background: 'var(--mist-2)' }}>
         <div className="container">
@@ -15,10 +39,10 @@ export default function TaxSummaryPage() {
           {/* INCOME TAX BRACKETS — Source: IRS Rev. Proc. 2025-32 */}
           <div style={cardStyle}>
             <h2 style={cardTitle}>2026 Federal Income Tax Brackets</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div className="en-grid-2">
               <div>
                 <p style={tableLabel}>Single / Married Filing Separately</p>
-                <table style={tableStyle}>
+                <div className="en-table-wrap"><table style={tableStyle}>
                   <thead><tr><th style={th}>Rate</th><th style={th}>Taxable Income</th></tr></thead>
                   <tbody>
                     {[
@@ -36,11 +60,11 @@ export default function TaxSummaryPage() {
                       </tr>
                     ))}
                   </tbody>
-                </table>
+                </table></div>
               </div>
               <div>
                 <p style={tableLabel}>Married Filing Jointly / Qualifying Widow(er)</p>
-                <table style={tableStyle}>
+                <div className="en-table-wrap"><table style={tableStyle}>
                   <thead><tr><th style={th}>Rate</th><th style={th}>Taxable Income</th></tr></thead>
                   <tbody>
                     {[
@@ -58,7 +82,7 @@ export default function TaxSummaryPage() {
                       </tr>
                     ))}
                   </tbody>
-                </table>
+                </table></div>
               </div>
             </div>
           </div>
@@ -66,7 +90,7 @@ export default function TaxSummaryPage() {
           {/* CAPITAL GAINS — Source: IRS Rev. Proc. 2025-32 */}
           <div style={cardStyle}>
             <h2 style={cardTitle}>2026 Long-Term Capital Gains &amp; Qualified Dividends</h2>
-            <table style={tableStyle}>
+            <div className="en-table-wrap"><table style={tableStyle}>
               <thead>
                 <tr>
                   <th style={th}>Rate</th>
@@ -89,17 +113,17 @@ export default function TaxSummaryPage() {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table></div>
             <p style={noteStyle}>Net Investment Income Tax (NIIT): additional 3.8% on net investment income for MAGI over $200,000 (single) / $250,000 (MFJ). Short-term gains taxed as ordinary income.</p>
           </div>
 
           {/* STANDARD DEDUCTION + RETIREMENT */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+          <div className="en-grid-2">
 
             {/* Source: IRS Rev. Proc. 2025-32 + OBBBA */}
             <div style={cardStyle}>
               <h2 style={cardTitle}>2026 Standard Deduction</h2>
-              <table style={tableStyle}>
+              <div className="en-table-wrap"><table style={tableStyle}>
                 <tbody>
                   {[
                     ['Single / MFS',                        '$16,100'],
@@ -115,14 +139,14 @@ export default function TaxSummaryPage() {
                     </tr>
                   ))}
                 </tbody>
-              </table>
+              </table></div>
               <p style={noteStyle}>*Senior Bonus phases out at 6% for MAGI over $75,000 (single) / $150,000 (MFJ). Temporary through 2028.</p>
             </div>
 
             {/* Source: IRS Notice 2025-67 + IRS Rev. Proc. 2025-19 (HSA) */}
             <div style={cardStyle}>
               <h2 style={cardTitle}>2026 Retirement Contribution Limits</h2>
-              <table style={tableStyle}>
+              <div className="en-table-wrap"><table style={tableStyle}>
                 <tbody>
                   {[
                     ['401(k) / 403(b) / 457 / TSP',    '$24,500'],
@@ -142,17 +166,17 @@ export default function TaxSummaryPage() {
                     </tr>
                   ))}
                 </tbody>
-              </table>
+              </table></div>
             </div>
           </div>
 
           {/* ESTATE + AMT */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '1.5rem' }}>
+          <div className="en-grid-2" style={{ marginTop: '1.5rem' }}>
 
             {/* Source: IRS Rev. Proc. 2025-32 */}
             <div style={cardStyle}>
               <h2 style={cardTitle}>2026 Estate &amp; Gift Tax</h2>
-              <table style={tableStyle}>
+              <div className="en-table-wrap"><table style={tableStyle}>
                 <tbody>
                   {[
                     ['Federal Estate Tax Exemption',          '$15,000,000'],
@@ -168,14 +192,14 @@ export default function TaxSummaryPage() {
                     </tr>
                   ))}
                 </tbody>
-              </table>
+              </table></div>
               <p style={noteStyle}>OBBBA made the higher TCJA exemption permanent and indexed for inflation going forward.</p>
             </div>
 
             {/* Source: IRS Rev. Proc. 2025-32 (AMT) | SSA COLA 2026 (SS Wage Base) | OBBBA (SALT/CTC) */}
             <div style={cardStyle}>
               <h2 style={cardTitle}>2026 AMT &amp; Other Key Figures</h2>
-              <table style={tableStyle}>
+              <div className="en-table-wrap"><table style={tableStyle}>
                 <tbody>
                   {[
                     ['AMT Exemption — Single',             '$90,100'],
@@ -194,7 +218,7 @@ export default function TaxSummaryPage() {
                     </tr>
                   ))}
                 </tbody>
-              </table>
+              </table></div>
               <p style={noteStyle}>SALT cap increases 1%/yr through 2029, then reverts to $10,000 in 2030. Phase-out above ~$505,000 MAGI.</p>
             </div>
           </div>
@@ -202,7 +226,7 @@ export default function TaxSummaryPage() {
           {/* ROTH IRA — Source: IRS Notice 2025-67 */}
           <div style={{ ...cardStyle, marginTop: '1.5rem' }}>
             <h2 style={cardTitle}>2026 Roth IRA Income Phase-Out Ranges</h2>
-            <table style={tableStyle}>
+            <div className="en-table-wrap"><table style={tableStyle}>
               <thead>
                 <tr>
                   <th style={th}>Filing Status</th>
@@ -223,7 +247,7 @@ export default function TaxSummaryPage() {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table></div>
           </div>
 
           {/* DISCLAIMER */}

@@ -8,15 +8,14 @@ const EN_PATHS = [
   '/',
   '/about',
   '/services',
-  '/cases',
   '/contact',
   '/insights',
-  '/blog',
   '/book',
   '/resources',
   '/resources/ca-formation',
   '/l1a-checklist',
   '/tax-summary',
+  '/ref',
 ];
 
 /** 中英文互为对应的页面。 */

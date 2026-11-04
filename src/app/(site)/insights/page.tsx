@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import Link from 'next/link';
+import { JsonLd, PageHero, Section, breadcrumb, enMetadata, graph, webPage } from '@/components/en/kit';
 import SubscribeForm from './SubscribeForm';
 
 interface Article {
@@ -27,41 +27,15 @@ function getInsightsData(): InsightsData {
   return JSON.parse(raw);
 }
 
-const blogPosts: Article[] = [
-  {
-    id: 'blog-001',
-    date: 'April 2026',
-    title: 'EB-1A Evidence: What Officers Weight First',
-    excerpt:
-      'How to sequence publications, compensation, and leadership proof when your profile is strong but uneven. A practitioner framework for building a file that survives RFE.',
-    category: 'Immigration',
-    readTime: '8 min',
-    href: '/blog',
-  },
-  {
-    id: 'blog-002',
-    date: 'March 2026',
-    title: 'Cross-Border Tax: Compliance Before Optimization',
-    excerpt:
-      'A practical ordering of disclosures and structures when multiple tax residences are in play. Get the sequencing wrong and optimization becomes liability.',
-    category: 'Tax Planning',
-    readTime: '6 min',
-    href: '/blog',
-  },
-  {
-    id: 'blog-003',
-    date: 'February 2026',
-    title: 'Sequencing the Balance Sheet Before the Green Card',
-    excerpt:
-      'Ordering tax, trust, and operating moves ahead of the status inflection point. The decisions made in the 18 months before filing define the next decade.',
-    category: 'Wealth Architecture',
-    readTime: '7 min',
-    href: '/blog',
-  },
-];
+const PATH = '/insights';
+const TITLE = 'U.S. Immigration and Cross-Border Tax Updates, Every Week';
+const DESCRIPTION =
+  'Weekly updates for Chinese-speaking founders and families: USCIS and visa bulletin changes, IRS and cross-border tax developments, and U.S.–China regulatory news, each linked to its original source.';
+
+export const metadata = enMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
 function ArticleCard({ article }: { article: Article }) {
-  const url = article.sourceUrl || article.href || '/blog';
+  const url = article.sourceUrl || article.href || '/insights';
   const isExternal = url.startsWith('http');
 
   return (
@@ -95,175 +69,51 @@ function ArticleCard({ article }: { article: Article }) {
   );
 }
 
-function SectionDivider({ label }: { label: string }) {
+function Grid({ items }: { items: Article[] }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-      <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
-      <div style={{
-        background: 'var(--navy)', color: 'var(--gold)',
-        fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.2em',
-        textTransform: 'uppercase' as const,
-        padding: '0.4rem 1.25rem',
-        borderRadius: '999px', whiteSpace: 'nowrap' as const,
-      }}>
-        {label}
-      </div>
-      <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+    <div className="en-grid-auto">
+      {items.map((article) => (
+        <ArticleCard key={article.id} article={article} />
+      ))}
     </div>
   );
 }
 
 export default function InsightsPage() {
   const data = getInsightsData();
-
+  const crumbs = [
+    { name: 'Home', path: '/' },
+    { name: 'Insights', path: PATH },
+  ];
   return (
     <main className="page-shell">
+      <JsonLd data={graph(webPage(PATH, TITLE, DESCRIPTION, 'CollectionPage'), breadcrumb(crumbs))} />
+      <PageHero
+        crumbs={crumbs}
+        eyebrow="Insights"
+        title="U.S. immigration and cross-border tax updates, every week"
+        text="We read USCIS, the State Department, the IRS and regulators each week and pick the changes that matter to Chinese-speaking founders and families. Each item links to its original source."
+      />
+      <p className="container en-updated">Last updated: {data.lastUpdated}</p>
 
-      {/* ── HERO ── */}
-      <section className="page-hero">
-        <div className="container">
-          <span className="eyebrow">Intelligence</span>
-          <h1>What You Need to Know. Nothing More.</h1>
-          <p className="hero-text">
-            Three curated streams — updated weekly — for principals navigating U.S. immigration,
-            cross-border wealth, and regulatory change.
-          </p>
+      <Section id="immigration" label="Immigration policy" title="USCIS, visa bulletin and enforcement updates">
+        <Grid items={data.immigration} />
+      </Section>
 
-          {/* Three pillars */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '1.5rem',
-            marginTop: '2.5rem',
-            width: '100%',
-            maxWidth: '900px',
-          }}>
-            {[
-              {
-                label: 'Immigration Policy',
-                desc: 'USCIS alerts, visa bulletin shifts, and enforcement signals — filtered for high-skilled and investor categories.',
-              },
-              {
-                label: 'Financial Intelligence',
-                desc: 'IRS guidance, cross-border tax developments, and U.S.–China regulatory signals that affect your balance sheet.',
-              },
-              {
-                label: 'Blog',
-                desc: 'Long-form analysis on immigration strategy, wealth architecture, and the decisions that define your next decade.',
-              },
-            ].map(({ label, desc }) => (
-              <div key={label} style={{
-                padding: '1.75rem 1.5rem',
-                background: 'var(--white)',
-                border: '1px solid var(--border)',
-                borderTop: '3px solid var(--gold)',
-                borderRadius: '12px',
-                boxShadow: '0 8px 32px rgba(10,37,64,0.07)',
-              }}>
-                <p style={{
-                  margin: '0 0 10px',
-                  fontSize: '0.72rem', fontWeight: 700,
-                  color: 'var(--gold)', letterSpacing: '0.14em',
-                  textTransform: 'uppercase' as const,
-                }}>
-                  {label}
-                </p>
-                <p style={{
-                  margin: 0, fontSize: '0.88rem',
-                  color: 'var(--text-muted)',
-                  lineHeight: 1.75,
-                }}>
-                  {desc}
-                </p>
-              </div>
-            ))}
-          </div>
+      <Section id="financial" tone="mist" label="Tax and finance" title="IRS, cross-border tax and U.S.–China regulatory updates">
+        <Grid items={data.financial} />
+      </Section>
 
-          <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '1.25rem' }}>
-            Last updated: {data.lastUpdated}
-          </p>
-        </div>
-      </section>
-
-      {/* ── 1. IMMIGRATION ── */}
-      <section className="section-intro">
-        <div className="container">
-          <SectionDivider label="Immigration Policy" />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
-            {data.immigration.slice(0, 3).map((article) => (
-              <ArticleCard key={article.id} article={article} />
-            ))}
-          </div>
-          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <Link href="/blog" style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-              fontSize: '0.85rem', fontWeight: 700, color: 'var(--navy)',
-              textDecoration: 'none', borderBottom: '2px solid var(--gold)', paddingBottom: '2px',
-            }}>
-              View all Immigration articles →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 2. FINANCIAL ── */}
-      <section className="section-intro" style={{ background: 'var(--mist-2)' }}>
-        <div className="container">
-          <SectionDivider label="Financial & Wealth Intelligence" />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
-            {data.financial.slice(0, 3).map((article) => (
-              <ArticleCard key={article.id} article={article} />
-            ))}
-          </div>
-          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <Link href="/blog" style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-              fontSize: '0.85rem', fontWeight: 700, color: 'var(--navy)',
-              textDecoration: 'none', borderBottom: '2px solid var(--gold)', paddingBottom: '2px',
-            }}>
-              View all Financial articles →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 3. BLOG ── */}
-      <section className="section-intro">
-        <div className="container">
-          <SectionDivider label="Blog" />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
-            {blogPosts.slice(0, 3).map((post) => (
-              <ArticleCard key={post.id} article={post} />
-            ))}
-          </div>
-          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <Link href="/blog" style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-              fontSize: '0.85rem', fontWeight: 700, color: 'var(--navy)',
-              textDecoration: 'none', borderBottom: '2px solid var(--gold)', paddingBottom: '2px',
-            }}>
-              View all Blog articles →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SUBSCRIBE ── */}
-      <section className="cta-band">
+      <section className="cta-band" aria-labelledby="sub-h">
         <div className="container">
           <div className="cta-inner">
-            <span className="eyebrow" style={{ textAlign: 'center' }}>Weekly Briefing</span>
-            <h2>Delivered Every Monday.</h2>
-            <p style={{ color: 'var(--text-muted)', maxWidth: '460px', margin: '0 auto' }}>
-              Immigration policy, financial intelligence, and editorial commentary —
-              curated for Chinese nationals and Chinese-American families.
-              No noise. No sales sequence.
-            </p>
+            <span className="eyebrow">Weekly briefing</span>
+            <h2 id="sub-h">Get the updates every Monday</h2>
+            <p>One short email a week, written for Chinese nationals and Chinese-American families. Unsubscribe any time.</p>
             <SubscribeForm />
           </div>
         </div>
       </section>
-
     </main>
   );
 }
