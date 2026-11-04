@@ -105,6 +105,7 @@ export default function PrivacyPage() {
                 <li>Resend：发送订阅确认、下载链接和资讯邮件；</li>
                 <li>Google：通过 Google 表单提供联系表单；</li>
                 <li>Cal.com：咨询预约；</li>
+                <li>Stripe：处理在线付款，我们不接收也不保存完整的银行卡号；</li>
                 <li>GitHub：运行每周资讯邮件任务，订阅名单以加密设置保存。</li>
               </ul>
               <p>在法律要求或为保护我们的权利时，我们也可能披露信息。其他接收方：<Tbc />。</p>

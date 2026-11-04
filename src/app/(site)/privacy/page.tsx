@@ -129,6 +129,7 @@ export default function PrivacyPage() {
             <li>Resend: sending sign-up confirmations, download links and the newsletter.</li>
             <li>Google: the contact form, through Google Forms.</li>
             <li>Cal.com: consultation booking.</li>
+              <li>Stripe: online payments. We do not receive or store full card numbers.</li>
             <li>GitHub: running the weekly newsletter job, where the subscriber list is kept as an encrypted setting.</li>
           </ul>
           <p>

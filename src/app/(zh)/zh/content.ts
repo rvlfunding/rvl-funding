@@ -28,6 +28,7 @@ export const R = {
   about: '/zh/about',
   faq: '/zh/faq',
   urgent: '/zh/urgent',
+  pay: '/zh/pay',
 } as const;
 
 /** 问题解答页路径。 */
@@ -36,7 +37,8 @@ export const Q = (slug: string) => `/zh/faq/${slug}`;
 /** 预约入口。拿到正式预约链接（如日历页）后替换这些地址。 */
 const mail = (subject: string) => `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}`;
 export const BOOKING = {
-  assessment: mail('预约路径评估'),
+  /** 路径评估走在线付款页；Stripe 未开通时付款页会提示改用邮件。 */
+  assessment: '/zh/pay#assessment',
   business: mail('预约美国落地诊断（企业版）'),
   family: mail('预约美国身份与家庭规划诊断（家庭版）'),
   monthly: mail('咨询月度陪跑服务'),

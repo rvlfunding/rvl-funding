@@ -383,3 +383,8 @@ summary span{display:block}
 .tbc{background:#fbefd2;color:#7a5a00;padding:0 4px;border-radius:3px}
 .article-body ul{padding-left:1.2em}
 .legal a{color:inherit;text-underline-offset:3px}
+
+/* 收款页 */
+.pay-status{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);padding:14px 18px;margin:0 0 28px;font-size:15px}
+form.plan{margin:0}
+form.plan button.btn{width:100%}
