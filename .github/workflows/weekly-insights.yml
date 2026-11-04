@@ -4,6 +4,11 @@ name: Weekly Insights Update
   schedule:
     - cron: '0 17 * * 1'
   workflow_dispatch:
+    inputs:
+      test_segment_id:
+        description: 'Test only: a Resend segment ID that holds just your own address. Leave empty for a normal run.'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -30,9 +35,11 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
           RESEND_SEGMENT_ID: ${{ secrets.RESEND_SEGMENT_ID }}
+          TEST_SEGMENT_ID: ${{ inputs.test_segment_id }}
         run: node scripts/fetch-insights.mjs
 
       - name: Commit updated insights data
+        if: ${{ !inputs.test_segment_id }}
         run: |
           git config user.name "RVL Insights Bot"
           git config user.email "bot@rvlfunding.com"

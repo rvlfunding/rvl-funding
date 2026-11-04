@@ -182,6 +182,12 @@ function formatDateShort() {
  * Set the GitHub Actions secret RESEND_SEGMENT_ID to that segment's id.
  */
 const RESEND_SEGMENT_ID = process.env.RESEND_SEGMENT_ID;
+/**
+ * Test mode: when TEST_SEGMENT_ID is set (the "test_segment_id" input of a manual workflow run),
+ * the digest goes only to that segment, with "[TEST]" in the subject, built from items already on
+ * the site. No feeds are fetched and insights-data.json is not changed.
+ */
+const TEST_SEGMENT_ID = (process.env.TEST_SEGMENT_ID || '').trim();
 const POSTAL_ADDRESS = 'RVL Funding · 17800 Castleton St, City of Industry, CA 91748, USA';
 
 function buildEmailHTML(immigrationItems, financialItems, date) {
@@ -263,14 +269,15 @@ function buildEmailHTML(immigrationItems, financialItems, date) {
 }
 
 async function sendDigest(immigrationItems, financialItems) {
-  if (!RESEND_SEGMENT_ID) {
+  const segmentId = TEST_SEGMENT_ID || RESEND_SEGMENT_ID;
+  if (!segmentId) {
     console.log('RESEND_SEGMENT_ID is not set — skipping email send');
     return;
   }
 
   const date = formatDate();
   const html = buildEmailHTML(immigrationItems, financialItems, date);
-  const subject = `RVL Insights — ${date} Weekly Briefing`;
+  const subject = `${TEST_SEGMENT_ID ? '[TEST] ' : ''}RVL Insights — ${date} Weekly Briefing`;
 
   // One Broadcast to the segment. Resend fills in {{{RESEND_UNSUBSCRIBE_URL}}} per recipient
   // and does not send to contacts who have unsubscribed.
@@ -278,7 +285,7 @@ async function sendDigest(immigrationItems, financialItems) {
     method: 'POST',
     headers: { Authorization: `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      segment_id: RESEND_SEGMENT_ID,
+      segment_id: segmentId,
       from: 'RVL Funding Insights <info@rvlfunding.com>',
       reply_to: 'info@rvlfunding.com',
       subject,
@@ -292,11 +299,19 @@ async function sendDigest(immigrationItems, financialItems) {
     process.exitCode = 1;
     return;
   }
-  console.log(`✅ Broadcast sent (${body.id ?? 'no id returned'})`);
+  console.log(`✅ Broadcast sent${TEST_SEGMENT_ID ? ' to the test segment' : ''} (${body.id ?? 'no id returned'})`);
+  console.log(`   Subject: ${subject}`);
 }
 
 // ── MAIN ───────────────────────────────────────────────────────────────────
 async function main() {
+  if (TEST_SEGMENT_ID) {
+    console.log('🧪 Test mode: sending the latest items already on the site to the test segment only');
+    const existing = JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
+    await sendDigest(existing.immigration.slice(0, 3), existing.financial.slice(0, 3));
+    return;
+  }
+
   console.log('🚀 Starting weekly insights fetch...');
 
   // 1. Fetch all RSS
