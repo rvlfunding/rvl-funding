@@ -38,7 +38,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
-  themeColor: '#0B2340',
+  themeColor: '#0a2540',
 };
 
 export default function ZhRootLayout({ children }: { children: React.ReactNode }) {
