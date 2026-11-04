@@ -6,17 +6,18 @@ import { useState, useRef } from 'react';
 const nav = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
-  { href: '/cases', label: 'Cases' },
   {
-    label: 'Resources',
+    label: 'Library',
     children: [
-      { href: '/resources', label: 'Library' },
+      { href: '/resources', label: 'Resources' },
+      { href: '/l1a-checklist', label: 'L-1A checklist' },
+      { href: '/tax-summary', label: '2026 tax summary' },
       { href: '/insights', label: 'Insights' },
-      { href: '/members', label: 'Members' },
     ],
   },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
+  { href: '/zh', label: '中文', lang: 'zh-Hans' },
 ] as const;
 
 export function SiteHeader() {
@@ -38,8 +39,8 @@ export function SiteHeader() {
         <Link href="/" className="brand-logo">
           <div className="brand-mark">RVL</div>
           <div className="brand-text">
-            <h4>RVL FUNDING</h4>
-            <p>Wealth &amp; Immigration</p>
+            <span className="brand-name">RVL FUNDING</span>
+            <p>U.S. setup &amp; status planning</p>
           </div>
         </Link>
         <nav aria-label="Primary">
@@ -55,6 +56,14 @@ export function SiteHeader() {
                   >
                     {/* Trigger — no arrow, just underline on hover */}
                     <button
+                  type="button"
+                  aria-haspopup="true"
+                  aria-expanded={open}
+                  onClick={() => setOpen((v) => !v)}
+                  onFocus={handleEnter}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Escape') setOpen(false);
+                  }}
                       style={{
                         background: 'none',
                         border: 'none',

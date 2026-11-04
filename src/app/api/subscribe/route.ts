@@ -14,6 +14,23 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing API key' }, { status: 500 });
     }
 
+    // Add the subscriber to the newsletter segment in Resend. Resend keeps the list and handles unsubscribes.
+    const segmentId = process.env.RESEND_SEGMENT_ID;
+    let listNote = 'RESEND_SEGMENT_ID is not set, so this email was not added to the newsletter list. Add it in Resend > Audience.';
+    if (segmentId) {
+      const contactRes = await fetch('https://api.resend.com/contacts', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, unsubscribed: false, segments: [{ id: segmentId }] }),
+      });
+      if (contactRes.ok) {
+        listNote = 'Added to the newsletter list in Resend.';
+      } else {
+        console.error('Resend contact error:', contactRes.status, await contactRes.text().catch(() => ''));
+        listNote = 'Could not add this email to the newsletter list automatically (it may already be there). Check Resend > Audience.';
+      }
+    }
+
     // Send notification to RVL admin
     const adminRes = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -31,7 +48,7 @@ export async function POST(req: NextRequest) {
               <p style="font-size:12px;font-weight:700;color:#d4af37;letter-spacing:0.1em;text-transform:uppercase;">New Subscriber</p>
               <h2 style="color:#0a2540;margin:8px 0;">Someone just subscribed</h2>
               <p style="color:#5a6b82;font-size:15px;">Email: <strong>${email}</strong></p>
-              <p style="color:#5a6b82;font-size:13px;">Add this email to <code>public/subscribers.json</code> to include them in the weekly digest.</p>
+              <p style="color:#5a6b82;font-size:13px;">${listNote}</p>
             </div>
           </div>
         `,
@@ -77,6 +94,9 @@ export async function POST(req: NextRequest) {
               <div style="padding:16px 24px;border-top:1px solid #e8ecf0;text-align:center;">
                 <p style="margin:0;font-size:11px;color:#5a6b82;">
                   © 2026 RVL Funding · <a href="https://www.rvlfunding.com" style="color:#d4af37;">www.rvlfunding.com</a>
+                </p>
+                <p style="margin:6px 0 0;font-size:10px;color:#5a6b82;">
+                  RVL Funding · 17800 Castleton St, City of Industry, CA 91748, USA. Every weekly email has an unsubscribe link.
                 </p>
               </div>
             </div>
